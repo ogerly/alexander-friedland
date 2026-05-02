@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEVmatrose — Alexander Friedland, Software-Architekt</title>
+<meta name="description" content="DEVmatrose — Alexander Friedland, Software-Architekt für KI-native Websysteme, dezentrale Protokolle und produktionsnahe Prototypen. Softwareentwicklung seit 1999.">
+<meta name="keywords" content="Software-Architekt, KI-Workflows, dezentrale Systeme, Vue, Nostr, IPFS, Prototyping, DEVmatrose, Alexander Friedland">
+<meta name="author" content="Alexander Friedland">
+<meta property="og:title" content="DEVmatrose — Alexander Friedland">
+<meta property="og:description" content="Software-Architekt für KI-native Websysteme, dezentrale Protokolle und produktionsnahe Prototypen.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://devmatrose.github.io/devmatrose/">
+<meta property="og:locale" content="de_DE">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alexander Friedland",
+  "url": "https://devmatrose.github.io/devmatrose/",
+  "sameAs": [
+    "https://github.com/ogerly",
+    "https://github.com/DEVmatrose",
+    "https://linkedin.com/in/alexander-friedland"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "DEVmatrose",
+    "url": "https://devmatrose.github.io/devmatrose/"
+  },
+  "jobTitle": "Software-Architekt",
+  "knowsAbout": ["Softwarearchitektur", "KI-Workflows", "dezentrale Systeme", "Vue", "Nostr", "IPFS", "Prototyping"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Cursor dot -->
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="Menü schließen">✕</button>
+  <a href="#identity">Architektur</a>
+  <a href="#services">Leistungen</a>
+  <a href="#projects">Projekte</a>
+  <a href="#about">Über</a>
+  <a href="#logbuch">Logbuch</a>
+  <a href="#contact">Kontakt</a>
+</div>
+
+<!-- Navigation -->
+<nav id="mainNav">
+  <a href="#hero" class="nav-brand">DEVmatrose<span> / Alexander Friedland</span></a>
+  <ul class="nav-links">
+    <li><a href="#identity">Architektur</a></li>
+    <li><a href="#services">Leistungen</a></li>
+    <li><a href="#projects">Projekte</a></li>
+    <li><a href="#about">Über</a></li>
+    <li><a href="#logbuch">Logbuch</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Projekt anfragen</a>
+  <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero -->
+<section id="hero" class="hero">
+  <!-- SVG compass decoration -->
+  <svg class="hero-compass" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="250" cy="250" r="240" stroke="#c9a227" stroke-width="1"/>
+    <circle cx="250" cy="250" r="180" stroke="#c9a227" stroke-width="0.5"/>
+    <circle cx="250" cy="250" r="120" stroke="#c9a227" stroke-width="0.5"/>
+    <circle cx="250" cy="250" r="60" stroke="#c9a227" stroke-width="1"/>
+    <line x1="250" y1="10" x2="250" y2="490" stroke="#c9a227" stroke-width="0.5"/>
+    <line x1="10" y1="250" x2="490" y2="250" stroke="#c9a227" stroke-width="0.5"/>
+    <line x1="80" y1="80" x2="420" y2="420" stroke="#c9a227" stroke-width="0.3"/>
+    <line x1="420" y1="80" x2="80" y2="420" stroke="#c9a227" stroke-width="0.3"/>
+    <polygon points="250,10 242,50 250,42 258,50" fill="#c9a227"/>
+    <polygon points="250,490 242,450 250,458 258,450" fill="#c9a227" opacity="0.3"/>
+    <text x="250" y="270" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" fill="#c9a227" opacity="0.6">N</text>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-tag">Softwareentwickler seit 1999 · DEVmatrose</div>
+    <h1 class="hero-name">Alexander<br><em>Friedland</em></h1>
+    <p class="hero-sub">Software-Architekt für KI-native Websysteme,<br>dezentrale Protokolle und produktionsnahe Prototypen.</p>
+    <p class="hero-claim">
+      Ich baue komplexe technische Ökosysteme — von KI-gestützten Workflows über
+      dezentrale Protokolle bis zu produktionsnahen Prototypen. Für Menschen und Projekte,
+      die keine Standardlösung brauchen, sondern ein tragfähiges System.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Projekt besprechen</a>
+      <a href="#projects" class="btn-secondary">Arbeiten ansehen</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<hr class="divider">
+
+<!-- Identity Architecture -->
+<section id="identity" class="section-pad">
+  <div class="container">
+    <div class="identity-intro">
+      <div>
+        <div class="section-label" data-num="01">Markenarchitektur</div>
+        <h2 class="section-title">Drei Ebenen.<br><em>Eine Person.</em></h2>
+      </div>
+      <div>
+        <p class="section-body">
+          Alles gehört sichtbar zusammen — aber jede Ebene hat eine klare Aufgabe.
+          Die Person, das Labor, die Schmiede. Gewachsen über Jahrzehnte, geordnet
+          in einer kohärenten Präsenz.
+        </p>
+      </div>
+    </div>
+
+    <div class="identity-layers">
+      <!-- Layer 1 -->
+      <div class="layer-card">
+        <div class="layer-num">EBENE 01</div>
+        <div class="layer-handle">Alexander Friedland</div>
+        <div class="layer-role">Person · Architekt · Erfahrung</div>
+        <p class="layer-desc">
+          Softwareentwickler seit 1999. Die Person hinter allem.
+          Vertrauen, Haltung, Biografie und die Überzeugung,
+          dass gute Software aus echtem Verständnis entsteht.
+        </p>
+      </div>
+
+      <!-- Layer 2 -->
+      <div class="layer-card">
+        <div class="layer-num">EBENE 02</div>
+        <div class="layer-handle">@ogerly</div>
+        <div class="layer-role">Entwicklerlabor · Open Source · Experimente</div>
+        <p class="layer-desc">
+          Der öffentliche Maschinenraum. Experimente, Prototypen,
+          Open-Source-Projekte aus Webentwicklung, KI, dezentralen
+          Protokollen und sozialen Netzwerken.
+        </p>
+        <div class="layer-links">
+          <a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer">github.com/ogerly</a>
+          <a href="https://ogerly.github.io" target="_blank" rel="noopener noreferrer">ogerly.github.io</a>
+        </div>
+      </div>
+
+      <!-- Layer 3 -->
+      <div class="layer-card">
+        <div class="layer-num">EBENE 03</div>
+        <div class="layer-handle">DEVmatrose</div>
+        <div class="layer-role">Architekturschmiede · Auftragsarbeit</div>
+        <p class="layer-desc">
+          Die professionelle Seite. Hier kann man beauftragen.
+          Architektur, KI-Workflows, dezentrale Systeme, Prototypen —
+          für Projekte jenseits der Standardlösung.
+        </p>
+        <div class="layer-links">
+          <a href="https://devmatrose.github.io/devmatrose/" target="_blank" rel="noopener noreferrer">devmatrose.github.io</a>
+          <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer">github.com/DEVmatrose</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <div class="stat-num">25+</div>
+        <div class="stat-label">Jahre Erfahrung</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">114</div>
+        <div class="stat-label">Repositories</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1500</div>
+        <div class="stat-label">Nutzer Landmatrose</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Ideen im Labor</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Services -->
+<section id="services" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="02">Leistungen</div>
+    <h2 class="section-title">Was ich <em>baue</em></h2>
+
+    <div class="services-grid grid-auto">
+
+      <div class="service-card">
+        <span class="service-icon">[AI]</span>
+        <h3 class="service-title">KI-Workflows &amp; Agenten</h3>
+        <p class="service-desc">
+          Lokale und hybride KI-Systeme: Transkription, RAG-Architekturen,
+          Agentenstrukturen, Dokumentation, Auswertung und Automatisierung.
+          Von der Datenpipeline bis zum produktionsreifen Workflow.
+        </p>
+        <div class="service-tags">
+          <span class="tag">RAG</span>
+          <span class="tag">Agenten</span>
+          <span class="tag">Whisper</span>
+          <span class="tag">LLM</span>
+          <span class="tag">Pipelines</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">[//]</span>
+        <h3 class="service-title">Software-Architektur &amp; Prototypen</h3>
+        <p class="service-desc">
+          Komplexe Ideen in tragfähige Architektur übersetzen.
+          Technische Roadmaps, Systemdesign und produktionsnahe Prototypen
+          für Projekte, die über den Baukasten hinausgehen.
+        </p>
+        <div class="service-tags">
+          <span class="tag">Architektur</span>
+          <span class="tag">Prototyping</span>
+          <span class="tag">Systemdesign</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">[&lt;/&gt;]</span>
+        <h3 class="service-title">Frontend &amp; Produktinterfaces</h3>
+        <p class="service-desc">
+          Produktionsnahe Frontends mit Vue, modernen UI-Systemen
+          und klarer Nutzerführung. Schwerpunkt auf Interaktivität,
+          Performance und echtem Mehrwert für Nutzerinnen.
+        </p>
+        <div class="service-tags">
+          <span class="tag">Vue</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">PWA</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">[⌘]</span>
+        <h3 class="service-title">Dezentrale Systeme</h3>
+        <p class="service-desc">
+          Anwendungen auf Basis souveräner Technologien.
+          Nostr, IPFS, Bitcoin-nahe Infrastruktur, persistenzarme
+          Kommunikation und technische Selbstermächtigung.
+        </p>
+        <div class="service-tags">
+          <span class="tag">Nostr</span>
+          <span class="tag">IPFS</span>
+          <span class="tag">Bitcoin</span>
+          <span class="tag">P2P</span>
+          <span class="tag">ZPMS</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">[♦]</span>
+        <h3 class="service-title">Ökosysteme &amp; Netzwerke</h3>
+        <p class="service-desc">
+          Matching-Systeme, soziale Netzwerke, kollaborative Plattformen.
+          BigBlueButton-Integration, Video-Aufnahme zu KI-Protokoll,
+          Skill-Matching und Community-Infrastruktur.
+        </p>
+        <div class="service-tags">
+          <span class="tag">BBB</span>
+          <span class="tag">Matching</span>
+          <span class="tag">Communities</span>
+          <span class="tag">API</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">[→]</span>
+        <h3 class="service-title">Projektrettung &amp; technische Ordnung</h3>
+        <p class="service-desc">
+          Ordnung in gewachsene, unklare oder festgefahrene Projekte bringen.
+          Analyse, Refactoring, Dokumentation und belastbare
+          nächste Schritte für Teams in der Klemme.
+        </p>
+        <div class="service-tags">
+          <span class="tag">Audit</span>
+          <span class="tag">Refactoring</span>
+          <span class="tag">Beratung</span>
+          <span class="tag">Dokumentation</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Projects -->
+<section id="projects" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="03">Ausgewählte Projekte</div>
+    <h2 class="section-title">Technischer <em>Leistungsnachweis</em></h2>
+    <p class="section-body" style="margin-bottom: 0;">
+      Aus dem DEVmatrose-Labor: produktionsnahe Systeme,
+      Werkzeuge und Experimente aus echten Entwicklungskontexten.
+    </p>
+
+    <div class="projects-grid grid-auto">
+
+      <div class="project-card">
+        <div class="project-cat">AI · Audio · Transkription</div>
+        <h3 class="project-name">A2T / WhisperX Pipeline</h3>
+        <p class="project-desc">
+          Audio-zu-Text-Pipeline mit WhisperX. Automatische
+          Transkription, Sprecherdiarisierung und Weiterverarbeitung
+          zu strukturierten Protokollen und Meeting-Zusammenfassungen.
+        </p>
+        <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer" class="project-link">↗ DEVmatrose GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">AI · Data · Architektur</div>
+        <h3 class="project-name">RAG Service</h3>
+        <p class="project-desc">
+          Retrieval-Augmented-Generation-Service für
+          dokumentenbasierte KI-Workflows. Modulares System
+          für Wissensabfragen auf eigenen Datenbeständen.
+        </p>
+        <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer" class="project-link">↗ DEVmatrose GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">AI · Labeling · Daten</div>
+        <h3 class="project-name">Aletheia Labeling Studio</h3>
+        <p class="project-desc">
+          Werkzeug für die Erstellung und Verwaltung von
+          Trainingsdaten. Labeling-Interface für
+          strukturierte AI-Datensätze.
+        </p>
+        <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer" class="project-link">↗ DEVmatrose GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">Architektur · AI · Ökosystem</div>
+        <h3 class="project-name">AAMS</h3>
+        <p class="project-desc">
+          Komplexes Ökosystem mit BigBlueButton, Video-Sessions,
+          KI-Protokollen und Matching-System für Menschen
+          mit komplementären Fähigkeiten.
+        </p>
+        <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer" class="project-link">↗ DEVmatrose GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">Dezentral · Sovereign Tech</div>
+        <h3 class="project-name">ZPMS — Zero Persistence Messaging</h3>
+        <p class="project-desc">
+          Persistenzarmes Kommunikationsprotokoll für
+          souveräne digitale Kommunikation. Sicherheit
+          und Selbstbestimmung ohne zentrale Infrastruktur.
+        </p>
+        <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer" class="project-link">↗ DEVmatrose GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">Dezentral · Nostr · Social</div>
+        <h3 class="project-name">Nostr Client &amp; Experimente</h3>
+        <p class="project-desc">
+          Experimente und Werkzeuge rund um das Nostr-Protokoll.
+          Dezentrale soziale Infrastruktur jenseits von
+          plattformkontrollierten Netzwerken.
+        </p>
+        <a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer" class="project-link">↗ @ogerly GitHub</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Quote -->
+<div class="container">
+  <div class="quote-block reveal">
+    <p class="quote-text">
+      „Ich entwickle nicht einfach Software — ich erschaffe Ökosysteme.
+      Systeme, die Menschen, Daten und Werkzeuge so miteinander verbinden,
+      dass etwas entsteht, das größer ist als seine Teile."
+    </p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- About -->
+<section id="about" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="04">Über mich</div>
+    <h2 class="section-title" style="margin-bottom:3rem;">Geschichte &amp; <em>Haltung</em></h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Ich bin Alexander Friedland — Softwareentwickler seit 1999 und Gründer von DEVmatrose.
+          Was als Basteln mit HTML begann, ist über zwei Jahrzehnte zu echter Systemarchitektur
+          geworden. Ich komme aus dem Frontend, denke aber längst fullstack und architektonisch.
+        </p>
+        <p>
+          Mein Steckenpferd waren schon immer Netzwerke — soziale Netzwerke, lange
+          bevor Facebook das Feld dominierte. Mit Joomla habe ich damals Landmatrose gebaut,
+          eine Plattform für Selbstständige mit über 1.500 aktiven Nutzerinnen.
+          Als Facebook kam, hat sich das verändert. Ich habe weitergemacht —
+          u.a. als Teil des Ocelot Open-Source-Netzwerks.
+        </p>
+        <p>
+          In den letzten Jahren hat sich mein Schwerpunkt in Richtung KI-native Systeme
+          verschoben: Transkriptionspipelines mit WhisperX, RAG-Architekturen,
+          Agentensysteme, lokale Modelle. Parallel dazu beschäftige ich mich intensiv
+          mit dezentraler Infrastruktur — Nostr, IPFS, Bitcoin-nahe Protokolle,
+          persistenzarme Kommunikation.
+        </p>
+        <p class="muted">
+          Im letzten Jahr habe ich ein großes Ökosystem rund um BigBlueButton aufgebaut:
+          Video-Sessions, automatische Transkription, KI-Protokolle und ein
+          Matching-System für Menschen mit komplementären Fähigkeiten.
+          Das ist der Typ von Arbeit, der mich wirklich interessiert:
+          Komplexe, bedeutungsvolle Systeme, die tatsächlich funktionieren.
+        </p>
+        <p class="muted">
+          Unter @ogerly veröffentliche ich seit Jahren Experimente, Open-Source-Projekte
+          und technische Erkundungen. DEVmatrose ist die professionelle Seite:
+          eine kleine Architekturschmiede für Menschen und Projekte,
+          die mehr brauchen als Standardsoftware.
+        </p>
+      </div>
+
+      <div class="about-aside">
+        <div class="aside-block reveal">
+          <h4>Kernkompetenzen</h4>
+          <ul>
+            <li>Software-Architektur &amp; Systemdesign</li>
+            <li>Vue.js / TypeScript / Frontend</li>
+            <li>KI-Workflows, RAG, Agenten</li>
+            <li>Dezentrale Protokolle (Nostr, IPFS)</li>
+            <li>Python, Docker, Datenpipelines</li>
+            <li>BigBlueButton / Videoinfrastruktur</li>
+          </ul>
+        </div>
+        <div class="aside-block reveal reveal-delay-1">
+          <h4>Für wen</h4>
+          <ul>
+            <li>Gründer mit komplexen Ideen</li>
+            <li>Teams mit gewachsenen Systemen</li>
+            <li>Projekte mit KI-/Automatisierungsbedarf</li>
+            <li>Menschen mit Sonderlösungen</li>
+            <li>Projekte jenseits von Baukasten-Software</li>
+          </ul>
+        </div>
+        <div class="aside-block reveal reveal-delay-2">
+          <h4>Auf Plattformen</h4>
+          <ul>
+            <li>GitHub @ogerly (seit 12 Jahren aktiv)</li>
+            <li>GitHub DEVmatrose (Organisation)</li>
+            <li>LinkedIn (Alexander Friedland)</li>
+            <li>Twitter / X</li>
+            <li>Instagram @devmatrose</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Logbuch -->
+<section id="logbuch" class="section-pad">
+  <div class="container">
+    <div class="logbuch-intro">
+      <div>
+        <div class="section-label" data-num="05">Logbuch</div>
+        <h2 class="section-title">Architekturjournal &amp;<br><em>Deep Dives</em></h2>
+      </div>
+      <div>
+        <p class="section-body">
+          Das DEVmatrose-Logbuch ist mein öffentlicher Denk- und Arbeitsraum.
+          Keine Marketingparolen — technische Überlegungen, Architekturentscheidungen
+          und Beobachtungen aus echter Entwicklungsarbeit.
+        </p>
+        <a href="https://devmatrose.github.io/devmatrose/blog" target="_blank" rel="noopener noreferrer"
+           class="btn-secondary" style="margin-top: 1.5rem; display: inline-block;">
+          Alle Einträge →
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <a href="https://devmatrose.github.io/devmatrose/blog" target="_blank" rel="noopener noreferrer" class="logbuch-entry">
+        <div class="entry-date">Architektur</div>
+        <div>
+          <div class="entry-title">Warum Agenten Gedächtnis brauchen — nicht nur Tools</div>
+          <div class="entry-excerpt">
+            Über den Unterschied zwischen reaktiven Tool-Aufrufen und echten
+            Agentensystemen mit persistentem Kontext und Entscheidungsarchitektur.
+          </div>
+        </div>
+      </a>
+
+      <a href="https://devmatrose.github.io/devmatrose/blog" target="_blank" rel="noopener noreferrer" class="logbuch-entry">
+        <div class="entry-date">Dezentral</div>
+        <div>
+          <div class="entry-title">Vom sozialen Netzwerk zum Agentennetzwerk</div>
+          <div class="entry-excerpt">
+            Warum die nächste Webarchitektur nicht zentral sein darf — und was
+            Nostr, IPFS und persistenzarme Protokolle damit zu tun haben.
+          </div>
+        </div>
+      </a>
+
+      <a href="https://devmatrose.github.io/devmatrose/blog" target="_blank" rel="noopener noreferrer" class="logbuch-entry">
+        <div class="entry-date">Praxis</div>
+        <div>
+          <div class="entry-title">Workpaper vs. Prompt: Warum Struktur wichtiger ist als Magie</div>
+          <div class="entry-excerpt">
+            Überlegungen zum Unterschied zwischen echtem Systemdenken und
+            der Illusion, mit dem richtigen Prompt alle Probleme zu lösen.
+          </div>
+        </div>
+      </a>
+
+      <a href="https://devmatrose.github.io/devmatrose/blog" target="_blank" rel="noopener noreferrer" class="logbuch-entry">
+        <div class="entry-date">KI-Infrastruktur</div>
+        <div>
+          <div class="entry-title">Lokale Modelle, eigene Infrastruktur — souveräne KI</div>
+          <div class="entry-excerpt">
+            Warum lokale KI-Infrastruktur für bestimmte Anwendungsfälle
+            sinnvoller ist als Cloud-Abhängigkeit — und was dabei zu beachten ist.
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Contact -->
+<section id="contact" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="06">Kontakt</div>
+    <h2 class="section-title" style="margin-bottom: 3rem;">Projekt <em>anfragen</em></h2>
+
+    <div class="contact-grid">
+      <div>
+        <p style="font-size: 1rem; line-height: 1.85; color: var(--text); margin-bottom: 2rem;">
+          Du hast eine komplexe Idee, ein festgefahrenes Projekt oder einen
+          Bereich, in dem Standardsoftware nicht reicht?
+          Ich freue mich auf ungewöhnliche Anfragen.
+        </p>
+
+        <div class="contact-channels">
+          <a href="mailto:devmatrose@proton.me" class="channel">
+            <div class="channel-left">
+              <span class="channel-name">E-Mail</span>
+              <span class="channel-handle">devmatrose@proton.me</span>
+            </div>
+            <span class="channel-arrow">↗</span>
+          </a>
+          <a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer" class="channel">
+            <div class="channel-left">
+              <span class="channel-name">GitHub</span>
+              <span class="channel-handle">@ogerly · @DEVmatrose</span>
+            </div>
+            <span class="channel-arrow">↗</span>
+          </a>
+          <a href="https://devmatrose.github.io/devmatrose/" target="_blank" rel="noopener noreferrer" class="channel">
+            <div class="channel-left">
+              <span class="channel-name">Website</span>
+              <span class="channel-handle">devmatrose.github.io</span>
+            </div>
+            <span class="channel-arrow">↗</span>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="channel">
+            <div class="channel-left">
+              <span class="channel-name">Twitter / X</span>
+              <span class="channel-handle">@DEVmatrose</span>
+            </div>
+            <span class="channel-arrow">↗</span>
+          </a>
+          <a href="https://instagram.com/devmatrose" target="_blank" rel="noopener noreferrer" class="channel">
+            <div class="channel-left">
+              <span class="channel-name">Instagram</span>
+              <span class="channel-handle">@devmatrose</span>
+            </div>
+            <span class="channel-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <form id="contactForm" class="contact-form-wrap reveal" novalidate>
+        <h3>Projekt anfragen</h3>
+        <p>Kurz beschreiben was du brauchst — ich melde mich.</p>
+        <div class="form-group">
+          <label for="fieldName">Name</label>
+          <input type="text" placeholder="Dein Name" id="fieldName" required>
+        </div>
+        <div class="form-group">
+          <label for="fieldEmail">E-Mail</label>
+          <input type="email" placeholder="deine@email.de" id="fieldEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="fieldType">Projekttyp</label>
+          <select id="fieldType">
+            <option value="">Bitte wählen…</option>
+            <option>KI-Workflow &amp; Agenten</option>
+            <option>Software-Architektur &amp; Prototyp</option>
+            <option>Frontend &amp; Produktinterface</option>
+            <option>Dezentrale Systeme</option>
+            <option>Ökosystem &amp; Plattform</option>
+            <option>Projektrettung &amp; Beratung</option>
+            <option>Anderes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fieldMsg">Kurzbeschreibung</label>
+          <textarea placeholder="Was soll entstehen? Was ist das Problem?" id="fieldMsg" required></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="formSubmit">Anfrage senden →</button>
+        <div id="formStatus" style="margin-top: 1rem; font-family: var(--mono); font-size: 0.75rem; color: var(--gold); display: none;"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div>
+    <div class="footer-brand">DEVmatrose — Alexander Friedland</div>
+    <div class="footer-copy">Softwareentwickler seit 1999 · Software-Architekt für KI-native Websysteme</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer">@ogerly</a></li>
+    <li><a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer">DEVmatrose</a></li>
+    <li><a href="https://devmatrose.github.io/devmatrose/" target="_blank" rel="noopener noreferrer">Website</a></li>
+    <li><a href="mailto:devmatrose@proton.me">E-Mail</a></li>
+    <li><a href="#logbuch">Logbuch</a></li>
+  </ul>
+</footer>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

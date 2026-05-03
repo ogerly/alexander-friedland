@@ -1,36 +1,48 @@
 // components/contact.js
 import { $ } from '../utils/dom.js';
 
-const CONTACT_EMAIL = 'devmatrose@proton.me';
+const FORM_ENDPOINT = 'https://formspree.io/f/xqkrvpng';
 
 export function initContact() {
   const formEl = $('#contactForm');
   const statusEl = $('#formStatus');
+  const submitBtn = $('#formSubmit');
 
-  if (!formEl || !statusEl) return;
+  if (!formEl || !statusEl || !submitBtn) return;
 
-  formEl.addEventListener('submit', (e) => {
+  formEl.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     if (formEl.checkValidity()) {
-      const name = $('#fieldName').value.trim();
-      const email = $('#fieldEmail').value.trim();
-      const type = $('#fieldType').value;
-      const msg = $('#fieldMsg').value.trim();
+      submitBtn.disabled = true;
+      submitBtn.textContent = '→ Senden…';
 
-      const subject = encodeURIComponent('Projektanfrage: ' + (type || 'Allgemein'));
-      const body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'E-Mail: ' + email + '\n' +
-        'Projekttyp: ' + (type || '—') + '\n\n' +
-        msg
-      );
+      try {
+        const formData = new FormData(formEl);
+        const response = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
 
-      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
-
-      statusEl.style.color = 'var(--gold)';
-      statusEl.textContent = '→ E-Mail-Client wird geöffnet…';
-      statusEl.style.display = 'block';
+        if (response.ok) {
+          statusEl.style.color = 'var(--gold)';
+          statusEl.textContent = '→ Anfrage gesendet! Ich melde mich.';
+          statusEl.style.display = 'block';
+          formEl.reset();
+        } else {
+          statusEl.style.color = '#e05a5a';
+          statusEl.textContent = '→ Fehler beim Senden. Bitte versuche es später.';
+          statusEl.style.display = 'block';
+        }
+      } catch (err) {
+        statusEl.style.color = '#e05a5a';
+        statusEl.textContent = '→ Netzwerkfehler. Bitte versuche es später.';
+        statusEl.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Anfrage senden →';
+      }
     } else {
       const firstInvalid = formEl.querySelector(':invalid');
       if (firstInvalid) firstInvalid.focus();

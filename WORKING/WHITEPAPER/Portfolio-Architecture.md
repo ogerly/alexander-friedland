@@ -60,4 +60,92 @@ Trotz des Fokus auf minimale Dateigrößen und "Raw Engineering" werden Accessib
 * Pflichtfelder sind semantisch mit `required` ausgezeichnet und werden vom Browser als Fokus-Trap bei fehlerhaften Submits angesteuert.
 
 ## 6. Datenfluss & Backend (Zero Persistence)
+
 Analog zur ZPMS-Philosophie (Zero Persistence Messaging) wird auf ein dediziertes Datenbank-Backend für simple Kontaktanfragen verzichtet. Das System nutzt den `mailto:`-Standard (mit URL-encodierten Parametern) als Fallback, der die Souveränität und Sicherheit komplett auf das Mail-Ökosystem des Users auslagert.
+
+### 6.1 Kontaktformular — Formspree Integration
+
+Für die Projektanfrage-Funktion wird **Formspree** (https://formspree.io) als Lightweight-Form-to-Email-Dienst eingesetzt. Dieser Dienst bridge die Lücke zwischen statischen GitHub Pages und E-Mail-Versand, ohne dass ein eigenes Backend nötig ist.
+
+#### Architektur
+
+```
+index.html (Formular)
+    ↓ POST (fetch API)
+Formspree Endpoint (https://formspree.io/f/[ID])
+    ↓ E-Mail Relay
+devmatrose@proton.me
+```
+
+#### Setup
+
+1. Account auf formspree.io erstellen
+2. Neues Formular erstellen → erhält eindeutige ID (z.B. `xqkrvpng`)
+3. Formular `action` in `index.html` setzen: `action="https://formspree.io/f/xqkrvpng"`
+4. `method="POST"` für HTTP-Post
+
+#### Funktionsweise im Code (`components/contact.js`)
+
+```js
+const FORM_ENDPOINT = 'https://formspree.io/f/xqkrvpng';
+
+formEl.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  if (formEl.checkValidity()) {
+    const formData = new FormData(formEl);
+    const response = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    
+    if (response.ok) {
+      // Erfolg: Status-Message anzeigen, Formular resetten
+      statusEl.textContent = '→ Anfrage gesendet! Ich melde mich.';
+      formEl.reset();
+    } else {
+      // Fehler: Error-Message anzeigen
+      statusEl.textContent = '→ Fehler beim Senden.';
+    }
+  }
+});
+```
+
+#### Datenfluss
+
+| Schritt | Was passiert |
+|---|---|
+| 1 | Nutzer füllt Formular aus, klickt "Anfrage senden" |
+| 2 | `FormData` wird aus dem Formular extrahiert (Name, E-Mail, Projekttyp, Nachricht) |
+| 3 | `fetch()` POST-Request an Formspree Endpoint |
+| 4 | Formspree validiert, parst FormData |
+| 5 | Formspree sendet E-Mail an `devmatrose@proton.me` |
+| 6 | Response zurück an Browser → JSON `{success: true}` |
+| 7 | JS zeigt Status-Message, reset Formular |
+
+#### Vorteile
+
+- **Kein Backend nötig:** Formspree handle everything
+- **Spam-Schutz:** Honeypot-Feld, Rate-Limiting
+- **HTTPS:** End-to-end encrypted
+- **Free tier:** 50 submissions/Monat
+- **Native Validation:** Browser `checkValidity()` + Formspree Server-Side Validation
+
+#### Limitations
+
+- **Rate-Limit:** 50 submissions/Monat im Free tier
+- **External Service:** Abhängigkeit von Formspree
+- **No Custom SMTP:** Cannot use Proton Mail SMTP directly
+
+#### Alternative: FormSubmit
+
+Alternativ kann **FormSubmit** (https://formsubmit.co) verwendet werden:
+
+```html
+<form action="https://formsubmit.co/devmatrose@proton.me" method="POST">
+```
+
+- Keine Registrierung nötig
+- Unbegrenzt Free tier
+- Erste Submit → Bestätigungs-E-Mail → aktivieren

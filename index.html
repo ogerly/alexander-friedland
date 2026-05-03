@@ -49,6 +49,8 @@
   <a href="#identity">Architektur</a>
   <a href="#services">Leistungen</a>
   <a href="#projects">Projekte</a>
+  <a href="#aams">AAMS</a>
+  <a href="#osarena">OS Arena</a>
   <a href="#about">Über</a>
   <a href="#logbuch">Logbuch</a>
   <a href="#contact">Kontakt</a>
@@ -61,6 +63,7 @@
     <li><a href="#identity">Architektur</a></li>
     <li><a href="#services">Leistungen</a></li>
     <li><a href="#projects">Projekte</a></li>
+    <li><a href="#osarena">OS Arena</a></li>
     <li><a href="#about">Über</a></li>
     <li><a href="#logbuch">Logbuch</a></li>
   </ul>
@@ -197,6 +200,12 @@
   <div class="container">
     <div class="section-label" data-num="02">Leistungen</div>
     <h2 class="section-title">Was ich <em>baue</em></h2>
+    <p class="section-body" style="margin-bottom: 2.5rem;">
+      Bevor ich baue, suche ich den Weg über Open Source. Strategisch
+      kostengünstige Pfade finden, anderen Zugang zu Technik verschaffen
+      abseits vom Mainstream. Technische Eigenverantwortung und Souveränität
+      — das ist, was ich predige und vorlebe.
+    </p>
 
     <div class="services-grid grid-auto">
 
@@ -315,6 +324,30 @@
 
     <div class="projects-grid grid-auto">
 
+      <div class="project-card project-card-featured">
+        <div class="project-cat">Agent Manifest · Every Agent One File</div>
+        <h3 class="project-name">AAMS</h3>
+        <p class="project-desc">
+          Every Agent. One File. README.md ist für Menschen. .agent.json
+          ist für Maschinen. Ein Manifest und lebendes Beispiel des Standards.
+          2-Schritt-Start: curl .agent.json, sag deinem Agent — funktioniert
+          mit Cursor, Claude Code, Copilot, Aider, Codex, Windsurf, Continue.dev.
+        </p>
+        <a href="https://github.com/DEVmatrose/AAMS" target="_blank" rel="noopener noreferrer" class="project-link">↗ GitHub</a>
+      </div>
+
+      <div class="project-card project-card-featured">
+        <div class="project-cat">WebGPU-Labor · Lokale LLMs</div>
+        <h3 class="project-name">OS Arena</h3>
+        <p class="project-desc">
+          Dein privates, WebGPU-beschleunigtes Testlabor für lokale LLMs
+          direkt im Browser. Arena Mode: zwei Modelle anonym gegeneinander.
+          Einzel-Chat: privater Daily-Driver. 100% ohne API-Keys, ohne
+          Accounts, ohne Cloud-Zwang. PWA-ready.
+        </p>
+        <a href="https://github.com/ogerly/os-arena" target="_blank" rel="noopener noreferrer" class="project-link">↗ GitHub</a>
+      </div>
+
       <div class="project-card">
         <div class="project-cat">AI · Audio · Transkription</div>
         <h3 class="project-name">A2T / WhisperX Pipeline</h3>
@@ -344,17 +377,6 @@
           Werkzeug für die Erstellung und Verwaltung von
           Trainingsdaten. Labeling-Interface für
           strukturierte AI-Datensätze.
-        </p>
-        <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer" class="project-link">↗ DEVmatrose GitHub</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-cat">Architektur · AI · Ökosystem</div>
-        <h3 class="project-name">AAMS</h3>
-        <p class="project-desc">
-          Komplexes Ökosystem mit BigBlueButton, Video-Sessions,
-          KI-Protokollen und Matching-System für Menschen
-          mit komplementären Fähigkeiten.
         </p>
         <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer" class="project-link">↗ DEVmatrose GitHub</a>
       </div>
@@ -396,6 +418,88 @@
   </div>
 </div>
 
+<!-- AAMS -->
+<section id="aams" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="03a">Agent Manifest · Architekturschmiede</div>
+    <h2 class="section-title"><em>AAMS</em></h2>
+    <p class="section-body" style="margin-bottom: 2.5rem;">
+      Every Agent. One File. AAMS ist ein Manifest und ein lebendes Beispiel
+      des Standards — angewandt auf sich selbst. README.md ist für Menschen.
+      .agent.json ist für Maschinen.
+    </p>
+
+    <div class="osarena-grid">
+      <div class="osarena-feature">
+        <div class="osarena-icon">[🌐]</div>
+        <h4>Multilingual</h4>
+        <p>Deutsch · English · 中文 — AAMS spricht drei Sprachen. Agenten-Kontrakte und Workpapers in jeder Sprache.</p>
+      </div>
+      <div class="osarena-feature">
+        <div class="osarena-icon">[.json]</div>
+        <h4>.agent.json — Workspace-Vertrag</h4>
+        <p>Eine Datei, die dein KI-Agent beim ersten Betreten ausführt. Keine Abhängigkeit zum Klonen — nur eine Datei in DEIN Repo-Root.</p>
+      </div>
+      <div class="osarena-feature">
+        <div class="osarena-icon">[→]</div>
+        <h4>2-Schritt-Start</h4>
+        <p>curl .agent.json, sag deinem Agent „Read .agent.json and execute on_first_entry". Workpaper-Struktur, Repo-Scan, LTM-Index — automatisch.</p>
+      </div>
+      <div class="osarena-feature">
+        <div class="osarena-icon">[⌘]</div>
+        <h4>Universal Compatible</h4>
+        <p>Cursor, Claude Code, Copilot, Aider, Codex, Windsurf, Continue.dev — alle Agenten verstehen den AAMS-Standard.</p>
+      </div>
+    </div>
+
+    <a href="https://github.com/DEVmatrose/AAMS" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 2rem; display: inline-block;">
+      ↗ AAMS auf GitHub
+    </a>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- OS Arena -->
+<section id="osarena" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="03b">WebGPU-Labor · Sovereign Tech</div>
+    <h2 class="section-title">Die <em>OS Arena</em></h2>
+    <p class="section-body" style="margin-bottom: 2.5rem;">
+      Dein privates, WebGPU-beschleunigtes Testlabor für lokale LLMs direkt
+      im Browser. Zwei Modelle im Blind-Test oder privater Chat —
+      100% ohne API-Keys, ohne Accounts, ohne Cloud-Zwang.
+    </p>
+
+    <div class="osarena-grid">
+      <div class="osarena-feature">
+        <div class="osarena-icon">[🏟️]</div>
+        <h4>Arena Mode</h4>
+        <p>Zwei Modelle anonym gegeneinander. Wer liefert die bessere Antwort? Dein Voting beeinflusst das globale Leaderboard.</p>
+      </div>
+      <div class="osarena-feature">
+        <div class="osarena-icon">[💬]</div>
+        <h4>Einzel-Chat</h4>
+        <p>Hochwertiger, privater Chat-Modus mit Modell-Vorschlägen, Markdown-Support und lokaler Historie. Dein sicherer Daily-Driver.</p>
+      </div>
+      <div class="osarena-feature">
+        <div class="osarena-icon">[WebGPU]</div>
+        <h4>WebGPU-Powered</h4>
+        <p>Dank @mlc-ai/web-llm läuft die KI extrem performant direkt über deine lokale Grafikkarte. 3B Champions wie Llama 3.2 und Gemma 2.</p>
+      </div>
+      <div class="osarena-feature">
+        <div class="osarena-icon">[🔒]</div>
+        <h4>Privacy First</h4>
+        <p>Deine Prompts verlassen niemals dein Gerät. PWA-ready, No-Key Security via Supabase Edge Functions, System-Monitoring.</p>
+      </div>
+    </div>
+
+    <a href="https://github.com/ogerly/os-arena" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 2rem; display: inline-block;">
+      ↗ OS Arena auf GitHub
+    </a>
+  </div>
+</section>
+
 <hr class="divider">
 
 <!-- About -->
@@ -428,10 +532,16 @@
           eine kleine Architekturschmiede für Menschen und Projekte,
           die mehr brauchen als Standardsoftware.
         </p>
+        <p>
+          Ich möchte Menschen helfen, sich souverän und eigenständig im Netz zu bewegen.
+          Mit Beispielen bringe ich viele Themen spielerisch nahe —
+          ob als Mentor für Schulen oder Berater für Firmen.
+          Ich habe für jede Idee ein Ohr.
+        </p>
       </div>
 
       <div class="about-aside">
-        <div class="aside-block reveal">
+        <div class="aside-block">
           <h4>Kernkompetenzen</h4>
           <ul>
             <li>Software-Architektur &amp; Systemdesign</li>
@@ -442,7 +552,7 @@
             <li>BigBlueButton / Videoinfrastruktur</li>
           </ul>
         </div>
-        <div class="aside-block reveal reveal-delay-1">
+        <div class="aside-block reveal-delay-1">
           <h4>Für wen</h4>
           <ul>
             <li>Gründer mit komplexen Ideen</li>
@@ -452,7 +562,7 @@
             <li>Projekte jenseits von Baukasten-Software</li>
           </ul>
         </div>
-        <div class="aside-block reveal reveal-delay-2">
+        <div class="aside-block reveal-delay-2">
           <h4>Auf Plattformen</h4>
           <ul>
             <li>GitHub @ogerly (seit 12 Jahren aktiv)</li>
@@ -463,7 +573,7 @@
             <li>YouTube @DEVmatrose</li>            
           </ul>
         </div>
-        <div class="aside-block reveal reveal-delay-3">
+        <div class="aside-block reveal-delay-3">
           <h4>Preise</h4>
           <ul>
             <li>Normaler Stundenpreis: 150,- EUR</li>
@@ -471,7 +581,7 @@
             <li>Variable Preisgestaltung — kommt auf das Projekt an</li>
           </ul>
         </div>
-        <div class="aside-block reveal reveal-delay-3">
+        <div class="aside-block reveal-delay-3">
           <h4>Ablehnung</h4>
           <ul>
             <li>Anfragen von/für Militär werden abgelehnt</li>

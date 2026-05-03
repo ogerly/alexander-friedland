@@ -18,7 +18,7 @@ export function initGridReveal(containerSelector, staggerDelay = 0.07) {
   const containers = document.querySelectorAll(containerSelector);
 
   containers.forEach(container => {
-    const cards = container.querySelectorAll('.service-card, .project-card, .layer-card, .stat-item');
+    const cards = container.querySelectorAll('.service-card, .project-card, .layer-card, .stat-item, .osarena-feature');
     cards.forEach((card, i) => {
       card.style.opacity = '0';
       card.style.transform = 'translateY(16px)';
@@ -29,7 +29,7 @@ export function initGridReveal(containerSelector, staggerDelay = 0.07) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.service-card, .project-card, .layer-card, .stat-item').forEach(card => {
+          entry.target.querySelectorAll('.service-card, .project-card, .layer-card, .stat-item, .osarena-feature').forEach(card => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
           });

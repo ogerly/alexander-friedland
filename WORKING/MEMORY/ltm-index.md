@@ -85,6 +85,12 @@ Dieser Stack funktioniert überall — für jedes Projekt. Keine Cloud, keine Ab
 - `WP-2026-08-24-Blog-Migration.md` — Blog-Migration DEVmatrose → Alexander Friedland
 - `WP-2026-08-24-RES-Dozent-Positionierung.md` — Dozent-Titel entfernt, ehrliche Formulierung
 - `WP-2026-08-24-ARCH-Animierter-Hero-Kompass.md` — Animierter SVG-Kompass
+- `WP-2026-08-24-Formular-Update` — Kontaktformular Formspree-URL aktualisiert
+
+### Deployment
+
+- Nur `main` Branch — GitHub Pages dient direkt von `main` aus
+- `deploy` Branch wurde entfernt (24.08.2026)
 
 ## Live-URL
 

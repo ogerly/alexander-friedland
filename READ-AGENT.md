@@ -29,6 +29,9 @@ Alexander Friedland
 
 ## Bewerbungen
 
+> **WICHTIG: Bewerbungen hat nichts mit der Webseite, dem Blog oder der Website zu tun.**
+> Bewerbungen sind ein interner Prozess — rein lokal, keine Verbindung zur öffentlichen Präsenz.
+
 ```
 WORKING/WORKPAPER/Bewerbungen/
 ├── index.md          — Übersicht aller Bewerbungen
@@ -36,9 +39,33 @@ WORKING/WORKPAPER/Bewerbungen/
 └── ...
 ```
 
-Jede Bewerbung als separates Dokument. Antworttext direkt im File.
-Nicht nach GitHub — steht in `.gitignore`.
-Immer auf die Webseite referenzieren.
+### Vorgehensweise
+
+1. Stellenangebot erhalten → prüfen: passt es in den Bereich?
+2. Bewerbungsdokument erstellen: `[Datum]-[stellenname]-[firma].md`
+3. Antworttext im File verfassen (Typ A oder Typ B)
+4. In `index.md` eintragen (Datum, Firma, Position, Status, Typ)
+5. Bewerbung versenden
+6. **Nicht nach GitHub** — steht in `.gitignore`
+
+### Bewerbungstypen
+
+- **Typ A** — Passt in den Bereich → maßgeschneiderter Text, Verweis auf relevante Blog-Artikel
+- **Typ B** — Passt nicht → neutraler Text, "Position passt nicht, aber gerne für andere Rollen"
+
+### Profil-Whitepaper
+
+- `WORKING/WHITEPAPER/alexander-friedland-profil.md` — Alle Daten für Bewerbungen
+- Persönliche Daten, Kernkompetenzen, Werdegang, Philosophie
+- Wird als Grundlage für Antworttexte verwendet
+- **Lokal — nicht nach GitHub**
+
+### LTM-Speicherung
+
+- Bewerbungen werden in LTM (`WORKING/MEMORY/ltm-index.md`) dokumentiert
+- Einträge in `ltm-index.md` unter `### 2026-08-24` mit Workpaper-Referenz
+- Diary-Eintrag in `WORKING/DIARY/2026-08.md`
+- **Niemals** Bewerbungsdokumente nach GitHub pushen
 
 ## Blog
 

@@ -33,6 +33,33 @@
       "bewerbungen": "./WORKING/WORKPAPER/Bewerbungen"
     },
 
+    "bewerbungen_note": {
+      "_doc": "IMPORTANT: Bewerbungen (applications) has NOTHING to do with the website, blog, or public presence. It is a purely internal process — local only, no connection to the public site. Never push Bewerbung documents to GitHub.",
+      "purpose": "Internal application tracking and response text management",
+      "structure": {
+        "index": "./WORKING/WORKPAPER/Bewerbungen/index.md",
+        "documents": "./WORKING/WORKPAPER/Bewerbungen/[DATE]-[position]-[company].md"
+      },
+      "workflow": [
+        "1. Job offer received → check if it fits the profile",
+        "2. Create document: [DATE]-[position]-[company].md",
+        "3. Write response text (Type A: fits / Type B: does not fit)",
+        "4. Add to index.md (date, company, position, status, type)",
+        "5. Send application",
+        "6. NEVER commit to GitHub — in .gitignore"
+      ],
+      "profil_whitepaper": "./WORKING/WHITEPAPER/alexander-friedland-profil.md",
+      "profil_note": "Contains all personal data for applications — local only, not for GitHub"
+    },
+
+    "bewerbungen_ltm": {
+      "_doc": "Bewerbungen tracking in LTM (Long-Term Memory). Each application session is documented here.",
+      "ltm_location": "./WORKING/MEMORY/ltm-index.md",
+      "diary_location": "./WORKING/DIARY/{YYYY}-{MM}.md",
+      "ingest_rule": "After each Bewerbung session: update ltm-index.md and diary with workpaper reference",
+      "naming": "WP-{DATE}-RES-Bewerbungen-{description}.md"
+    },
+
     "documentation_model": {
       "_doc": "Four-layer documentation model conventions. Describes the relationship between workpaper, whitepaper, diary, and memory layers.",
       "workpaper": {

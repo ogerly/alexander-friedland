@@ -246,7 +246,101 @@
   }
 
   .hero-content {
+    position: relative;
+    z-index: 1;
     max-width: 700px;
+  }
+
+  /* Animated compass — decorative, sits behind the copy */
+  .hero-compass {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    right: -12%;
+    inline-size: min(56vw, 620px);
+    block-size: auto;
+    translate: 0 -50%;
+    opacity: 0.5;
+    pointer-events: none;
+    -webkit-mask-image: radial-gradient(circle, #000 55%, transparent 78%);
+    mask-image: radial-gradient(circle, #000 55%, transparent 78%);
+  }
+
+  @media (max-width: 900px) {
+    .hero-compass {
+      inline-size: 130vw;
+      right: -35%;
+      top: 42%;
+      opacity: 0.22;
+    }
+  }
+
+  .compass-glow {
+    transform-origin: 250px 250px;
+    animation: compass-breathe 6s ease-in-out infinite;
+  }
+
+  .compass-sweep {
+    transform-origin: 250px 250px;
+    animation: compass-rotate 7s linear infinite;
+  }
+
+  .compass-ring--outer {
+    transform-origin: 250px 250px;
+    animation: compass-rotate 90s linear infinite;
+  }
+
+  .compass-ring--mid {
+    transform-origin: 250px 250px;
+    animation: compass-rotate-reverse 60s linear infinite;
+  }
+
+  .compass-orbit-dot {
+    filter: drop-shadow(0 0 4px rgba(232, 201, 106, 0.9));
+  }
+
+  .compass-node {
+    transform-origin: center;
+    animation: compass-pulse 3s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+  }
+
+  .compass-north {
+    animation: compass-glow-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes compass-rotate {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes compass-rotate-reverse {
+    to { transform: rotate(-360deg); }
+  }
+
+  @keyframes compass-breathe {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.9; }
+  }
+
+  @keyframes compass-pulse {
+    0%, 100% { opacity: 0.35; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.6); }
+  }
+
+  @keyframes compass-glow-pulse {
+    0%, 100% { filter: drop-shadow(0 0 0 rgba(201, 162, 39, 0)); }
+    50% { filter: drop-shadow(0 0 6px rgba(201, 162, 39, 0.8)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .compass-glow,
+    .compass-sweep,
+    .compass-ring--outer,
+    .compass-ring--mid,
+    .compass-node,
+    .compass-north {
+      animation: none;
+    }
   }
 
   .hero-tag {

@@ -67,17 +67,63 @@
 
 <!-- Hero -->
 <section id="hero" class="hero">
-  <!-- SVG compass decoration -->
-  <svg class="hero-compass" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="250" cy="250" r="240" stroke="#c9a227" stroke-width="1"/>
-    <circle cx="250" cy="250" r="180" stroke="#c9a227" stroke-width="0.5"/>
-    <circle cx="250" cy="250" r="120" stroke="#c9a227" stroke-width="0.5"/>
-    <circle cx="250" cy="250" r="60" stroke="#c9a227" stroke-width="1"/>
+  <!-- SVG compass — animated -->
+  <svg class="hero-compass" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <defs>
+      <radialGradient id="compassGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#c9a227" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#c9a227" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="sweepGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#c9a227" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#c9a227" stop-opacity="0.55"/>
+      </linearGradient>
+      <clipPath id="compassClip">
+        <circle cx="250" cy="250" r="239"/>
+      </clipPath>
+    </defs>
+
+    <!-- soft ambient glow, breathing -->
+    <circle class="compass-glow" cx="250" cy="250" r="230" fill="url(#compassGlow)"/>
+
+    <!-- radar sweep, clipped to outer ring -->
+    <g clip-path="url(#compassClip)">
+      <g class="compass-sweep">
+        <path d="M250,250 L250,10 A240,240 0 0,1 476,166 Z" fill="url(#sweepGradient)"/>
+      </g>
+    </g>
+
+    <!-- static crosshair -->
     <line x1="250" y1="10" x2="250" y2="490" stroke="#c9a227" stroke-width="0.5"/>
     <line x1="10" y1="250" x2="490" y2="250" stroke="#c9a227" stroke-width="0.5"/>
     <line x1="80" y1="80" x2="420" y2="420" stroke="#c9a227" stroke-width="0.3"/>
     <line x1="420" y1="80" x2="80" y2="420" stroke="#c9a227" stroke-width="0.3"/>
-    <polygon points="250,10 242,50 250,42 258,50" fill="#c9a227"/>
+
+    <!-- rotating dashed rings -->
+    <g class="compass-ring compass-ring--outer">
+      <circle cx="250" cy="250" r="240" stroke="#c9a227" stroke-width="1" stroke-dasharray="2 10"/>
+    </g>
+    <g class="compass-ring compass-ring--mid">
+      <circle cx="250" cy="250" r="180" stroke="#c9a227" stroke-width="0.5" stroke-dasharray="1 7"/>
+      <circle class="compass-orbit-dot" cx="430" cy="250" r="3.5" fill="#e8c96a"/>
+    </g>
+
+    <!-- inner static rings -->
+    <circle cx="250" cy="250" r="120" stroke="#c9a227" stroke-width="0.5"/>
+    <circle cx="250" cy="250" r="60" stroke="#c9a227" stroke-width="1"/>
+
+    <!-- pulsing cardinal nodes -->
+    <circle class="compass-node" cx="250" cy="10"  r="3" fill="#c9a227" style="--delay:0s"/>
+    <circle class="compass-node" cx="490" cy="250" r="3" fill="#c9a227" style="--delay:.6s"/>
+    <circle class="compass-node" cx="250" cy="490" r="3" fill="#c9a227" style="--delay:1.2s"/>
+    <circle class="compass-node" cx="10"  cy="250" r="3" fill="#c9a227" style="--delay:1.8s"/>
+    <circle class="compass-node" cx="420" cy="420" r="2" fill="#c9a227" style="--delay:.3s"/>
+    <circle class="compass-node" cx="80"  cy="80"  r="2" fill="#c9a227" style="--delay:.9s"/>
+    <circle class="compass-node" cx="420" cy="80"  r="2" fill="#c9a227" style="--delay:1.5s"/>
+    <circle class="compass-node" cx="80"  cy="420" r="2" fill="#c9a227" style="--delay:2.1s"/>
+
+    <!-- N/S markers -->
+    <polygon class="compass-north" points="250,10 242,50 250,42 258,50" fill="#c9a227"/>
     <polygon points="250,490 242,450 250,458 258,450" fill="#c9a227" opacity="0.3"/>
     <text x="250" y="270" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" fill="#c9a227" opacity="0.6">N</text>
   </svg>

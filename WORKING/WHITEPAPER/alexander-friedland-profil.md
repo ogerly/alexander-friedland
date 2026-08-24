@@ -16,7 +16,7 @@
 
 ## Positionierung
 
-> Softwareentwickler seit 1999. Lokale KI-Modelle für Coding. Blog über KI, dezentrale Systeme und Coding. Videos zum Lernen. Technische Schulungen für Schulen und Unternehmen.
+> Softwareentwickler seit 1999. Vielseitiger Webentwickler und Coder. Kenne das Internet von Anfang an. Lokale KI-Modelle für Coding. Blog über KI, dezentrale Systeme und Coding. Videos zum Lernen. Technische Schulungen für Schulen und Unternehmen.
 
 ## Echter Wert: Lokales KI-Coding
 
@@ -95,6 +95,8 @@ DEVmatrose existiert nicht mehr. Firma gelöscht, keine Referenzen mehr.
 
 > Digitale Arbeit sollte lokal, autonom und souverän sein. Keine Abhängigkeit von Cloud-Diensten, keine versteckten Kosten, keine Daten in fremden Händen.
 
+> Ich bin lernwillig und offen für Neues — nicht gegen Altes, sondern für das, was funktioniert. KI ist und bleibt ein Thema, ohne das in Zukunft nicht gehen wird. Die Abhängigkeit von Frontier-Modellen im Geschäftsleben ist jedoch nicht ratsam — überhaupt nicht ratsam. Lokale Modelle geben die Souveränität zurück.
+
 ## Blog
 
 - **19 Artikel** auf ogerly.github.io/alexander-friedland/blog/
@@ -136,17 +138,27 @@ Betreff: [Betrefftext]
 
 Dann folgt der reine Text — **ohne Markdown-Formatierung**, **ohne HTML**, **ohne Code-Blöcke**.
 
+Immer einfügen:
+- Softwareentwickler seit 1999, vielseitig, kenne das Internet von Anfang an
+- Lernwillig und offen für Neues — nicht gegen Altes, sondern für das, was funktioniert
+- KI ist und bleibt ein Thema, ohne das in Zukunft nicht gehen wird
+- Die Abhängigkeit von Frontier-Modellen im Geschäftsleben ist nicht ratsam — überhaupt nicht ratsam
+
 Beispiel:
 
 Betreff: Bewerbung als Senior Technology Architect (Referenz-Nr.: 12444-563465373262847-DT-S)
 
 Sehr geehrte Frau Kocsis,
 
-vielen Dank für die Vorstellung der Position...
+vielen Dank für die Vorstellung der Position als Senior Technology Architect bei der Deutschen Telekom.
 
-[Reiner Text, keine Formatierung]
+Softwareentwickler seit 1999 — ich kenne das Internet von Anfang an. Mein Profil ist vielseitig: Webentwicklung, Software-Architektur, dezentrale Systeme und seit 2024 lokales KI-Coding. Ich bin lernwillig und offen für Neues — nicht gegen Altes, sondern für das, was funktioniert.
+
+KI ist und bleibt ein Thema, ohne das in Zukunft nicht gehen wird. Die Abhängigkeit von Frontier-Modellen im Geschäftsleben ist jedoch nicht ratsam — überhaupt nicht ratsam. Mein Ansatz: Lokale Modelle, die Souveränität geben.
+
+[weiterer Text]
 
 Mit freundlichen Grüßen
 Alexander Friedland
 
-Dieses Format ermöglicht einfaches Kopieren ohne Probleme.
+ 

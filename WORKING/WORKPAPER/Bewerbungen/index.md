@@ -47,3 +47,4 @@ Alexander Friedland
 | Datum | Firma | Position | Status | Versendet | Plattform | Typ | Link |
 |-------|-------|----------|--------|-----------|-----------|-----|------|
 | 2026-08-24 | Deutsche Telekom AG | Senior Technology Architect | Versendet | 2026-08-24 | Arbeitsamt | B | [lesen](./2026-08-24-senior-technology-architect-deutsche-telekom.md) |
+| 2026-08-24 | CANCOM SE | IT Architect | Antwort verfasst | — | Arbeitsamt | B | [lesen](./2026-08-24-it-architect-cancom.md) |

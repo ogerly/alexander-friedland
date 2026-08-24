@@ -159,6 +159,19 @@
   }
   .nav-links a:hover { color: var(--gold); }
 
+  .nav-social {
+    display: none;
+    gap: 1rem;
+  }
+  .nav-social a {
+    color: var(--text-secondary);
+    transition: color 0.2s;
+  }
+  .nav-social a:hover { color: var(--gold); }
+  @media (min-width: 901px) {
+    .nav-social { display: flex; }
+  }
+
   .nav-cta {
     display: none;
     font-family: var(--font-body);
@@ -232,6 +245,17 @@
     padding: 0.5rem;
     font-family: var(--font-mono);
   }
+
+  .mobile-nav-social {
+    display: flex;
+    gap: 1.5rem;
+    margin-block: 1rem 0;
+  }
+  .mobile-nav-social a {
+    color: var(--text-secondary);
+    transition: color 0.2s;
+  }
+  .mobile-nav-social a:hover { color: var(--gold); }
 
   /* ── HERO ── */
   .hero {

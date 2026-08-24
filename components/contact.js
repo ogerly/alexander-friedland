@@ -27,7 +27,7 @@ export function initContact() {
 
         if (response.ok) {
           statusEl.style.color = 'var(--gold)';
-          statusEl.textContent = '→ Anfrage gesendet! Ich melde mich.';
+          statusEl.textContent = '→ Nachricht gesendet! Ich melde mich.';
           statusEl.style.display = 'block';
           formEl.reset();
         } else {

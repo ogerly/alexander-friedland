@@ -3,39 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DEVmatrose — Alexander Friedland, Software-Architekt</title>
-<meta name="description" content="DEVmatrose — Alexander Friedland, Software-Architekt für KI-native Websysteme, dezentrale Protokolle und produktionsnahe Prototypen. Softwareentwicklung seit 1999.">
-<meta name="keywords" content="Software-Architekt, KI-Workflows, dezentrale Systeme, Vue, Nostr, IPFS, Prototyping, DEVmatrose, Alexander Friedland">
+<title>Alexander Friedland — Blog, Videos & Technik</title>
+<meta name="description" content="Alexander Friedland, Softwareentwickler seit 1999. Blog über KI, dezentrale Systeme und Coding. Videos zum Lernen. Dozent-Werkzeugkasten.">
+<meta name="keywords" content="Software-Architekt, KI-Blog, Coding, Dozent, Bildung, lokale KI, Open Source, AAMS">
 <meta name="author" content="Alexander Friedland">
-<meta property="og:title" content="DEVmatrose — Alexander Friedland">
-<meta property="og:description" content="Software-Architekt für KI-native Websysteme, dezentrale Protokolle und produktionsnahe Prototypen.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Alexander Friedland — Blog, Videos & Technik">
+<meta property="og:description" content="Lokal, autonom, souverän. Blog, Videos und Technik-Erklärungen von Alexander Friedland.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://devmatrose.github.io/devmatrose/">
+<meta property="og:url" content="https://ogerly.github.io/alexander-friedland/">
 <meta property="og:locale" content="de_DE">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Alexander Friedland",
-  "url": "https://devmatrose.github.io/devmatrose/",
+  "url": "https://ogerly.github.io/alexander-friedland/",
   "sameAs": [
     "https://github.com/ogerly",
-    "https://github.com/DEVmatrose",
+    "https://youtube.com/@DEVmatrose",
     "https://linkedin.com/in/alexander-friedland"
   ],
-  "worksFor": {
-    "@type": "Organization",
-    "name": "DEVmatrose",
-    "url": "https://devmatrose.github.io/devmatrose/"
-  },
-  "jobTitle": "Software-Architekt",
-  "knowsAbout": ["Softwarearchitektur", "KI-Workflows", "dezentrale Systeme", "Vue", "Nostr", "IPFS", "Prototyping"]
+  "jobTitle": "Software-Architekt & Dozent",
+  "knowsAbout": ["Softwarearchitektur", "KI-Workflows", "lokale Modelle", "dezentrale Systeme", "Vue", "Nostr", "IPFS", "Bildung"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -46,28 +42,24 @@
 <!-- Mobile Nav Overlay -->
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" id="mobileNavClose" aria-label="Menü schließen">✕</button>
-  <a href="#identity">Architektur</a>
-  <a href="#services">Leistungen</a>
-  <a href="#projects">Projekte</a>
-  <a href="#aams">AAMS</a>
-  <a href="#osarena">OS Arena</a>
+  <a href="#hero">Start</a>
+  <a href="#blog">Blog</a>
+  <a href="#videos">Videos</a>
   <a href="#about">Über</a>
-  <a href="#logbuch">Logbuch</a>
+  <a href="#cv">Lebenslauf</a>
   <a href="#contact">Kontakt</a>
 </div>
 
 <!-- Navigation -->
 <nav id="mainNav">
-  <a href="#hero" class="nav-brand">DEVmatrose<span> / Alexander Friedland</span></a>
+  <a href="#hero" class="nav-brand">Alexander<span> Friedland</span></a>
   <ul class="nav-links">
-    <li><a href="#identity">Architektur</a></li>
-    <li><a href="#services">Leistungen</a></li>
-    <li><a href="#projects">Projekte</a></li>
-    <li><a href="#osarena">OS Arena</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#videos">Videos</a></li>
     <li><a href="#about">Über</a></li>
-    <li><a href="#logbuch">Logbuch</a></li>
+    <li><a href="#cv">Lebenslauf</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Projekt anfragen</a>
+  <a href="#contact" class="nav-cta">Kontakt</a>
   <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
     <span></span><span></span><span></span>
   </button>
@@ -91,17 +83,17 @@
   </svg>
 
   <div class="hero-content">
-    <div class="hero-tag">Softwareentwickler seit 1999 · DEVmatrose</div>
+    <div class="hero-tag">Softwareentwickler seit 1999 · Dozent</div>
     <h1 class="hero-name">Alexander<br><em>Friedland</em></h1>
-    <p class="hero-sub">Software-Architekt für KI-native Websysteme,<br>dezentrale Protokolle und produktionsnahe Prototypen.</p>
+    <p class="hero-sub">Digitales Arbeiten — Lokal, Autonom, Souverän.</p>
     <p class="hero-claim">
-      Ich baue komplexe technische Ökosysteme — von KI-gestützten Workflows über
-      dezentrale Protokolle bis zu produktionsnahen Prototypen. Für Menschen und Projekte,
-      die keine Standardlösung brauchen, sondern ein tragfähiges System.
+      Ich erkläre Technik. In meinem Blog schreibe ich über KI, dezentrale Systeme und Coding.
+      Mein YouTube-Kanal zeigt Videos zum Lernen. Als Dozent vermittele ich komplexe Themen
+      verständlich — für Schulen, Unternehmen und alle die es interessiert.
     </p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Projekt besprechen</a>
-      <a href="#projects" class="btn-secondary">Arbeiten ansehen</a>
+      <a href="#blog" class="btn-primary">Zum Blog</a>
+      <a href="#videos" class="btn-secondary">Videos ansehen</a>
     </div>
   </div>
   <div class="hero-scroll">Scroll</div>
@@ -109,390 +101,284 @@
 
 <hr class="divider">
 
-<!-- Identity Architecture -->
-<section id="identity" class="section-pad">
+<!-- Blog Section (Hauptfokus) -->
+<section id="blog" class="section-pad">
   <div class="container">
-    <div class="identity-intro">
-      <div>
-        <div class="section-label" data-num="01">Markenarchitektur</div>
-        <h2 class="section-title">Drei Ebenen.<br><em>Eine Person.</em></h2>
-      </div>
-      <div>
-        <p class="section-body">
-          Alles gehört sichtbar zusammen — aber jede Ebene hat eine klare Aufgabe.
-          Die Person, das Labor, die Schmiede. Gewachsen über Jahrzehnte, geordnet
-          in einer kohärenten Präsenz.
-        </p>
-      </div>
+    <div class="section-label" data-num="01">Blog</div>
+    <h2 class="section-title">Schreibwerk &amp; <em>Logbuch</em></h2>
+    <p class="section-body" style="margin-bottom: 3rem;">
+      Technische Überlegungen, Architekturentscheidungen und Beobachtungen
+      aus der Entwicklungsarbeit. Keine Marketingparolen — echte Gedanken.
+    </p>
+
+    <div class="blog-grid">
+      <a href="blog/blog-du-brauchst-kein-framework.html" class="blog-entry reveal">
+        <div class="entry-date">26.03.2026</div>
+        <div>
+          <div class="entry-title">Du brauchst kein Framework. Du brauchst eine Datei.</div>
+          <div class="entry-excerpt">
+            Kontextverlust bei KI-gestützter Entwicklung ist unsichtbar – bis er zuschlägt.
+            Warum eine einzige Datei mehr Wert ist als jedes Framework.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-agenten-architektur-jenseits-des-kindergartens.html" class="blog-entry reveal">
+        <div class="entry-date">01.04.2026</div>
+        <div>
+          <div class="entry-title">Agenten-Architektur jenseits des Kindergartens</div>
+          <div class="entry-excerpt">
+            Ein Agent, der nur aus Charakter-Instruktionen besteht, ist ein digitaler Goldfisch.
+            Zeit, den Spielplatz zu verlassen.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-das-agent-os.html" class="blog-entry reveal">
+        <div class="entry-date">01.03.2026</div>
+        <div>
+          <div class="entry-title">Das Agent-OS – Wenn Governance selbst zum Betriebssystem wird</div>
+          <div class="entry-excerpt">
+            Agent-OS als Governance-Mantel über bestehenden Systemen. AAMS für Gedächtnis,
+            ImprintGuard für kontrollierte Wirkung.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-blut-am-silizium.html" class="blog-entry reveal">
+        <div class="entry-date">28.02.2026</div>
+        <div>
+          <div class="entry-title">Blut am Silizium: Das schmutzige Geheimnis hinter deiner „sauberen" KI</div>
+          <div class="entry-excerpt">
+            Deine „magische" KI ist kein technologisches Wunder. Sie ist das Ergebnis
+            digitaler Fließbandarbeit zu Hungerlöhnen im Globalen Süden.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-ki-datenschutz-schwindel-2026.html" class="blog-entry reveal">
+        <div class="entry-date">28.02.2026</div>
+        <div>
+          <div class="entry-title">Der große KI-Datenschutz-Schwindel 2026</div>
+          <div class="entry-excerpt">
+            „Kein Training mit Ihren Daten" – der dümmste Weihnachtsmann-Glaube der Dekade.
+            Warum die Versprechen der KI-Anbieter Schlangenöl sind.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-agentisches-arbeiten-2026.html" class="blog-entry reveal">
+        <div class="entry-date">27.02.2026</div>
+        <div>
+          <div class="entry-title">Agentisches Arbeiten 2026: Zwischen Plattform-Memory und souveräner Architektur</div>
+          <div class="entry-excerpt">
+            Wenn große Anbieter Langzeit-Memory und Workflow integrieren – braucht es dann noch
+            eigene Standards? Eine strategische Einordnung.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-openclaw-universum-2026.html" class="blog-entry reveal">
+        <div class="entry-date">25.02.2026</div>
+        <div>
+          <div class="entry-title">Das OpenClaw-Universum 2026: Original, Forks und Spezial-Varianten</div>
+          <div class="entry-excerpt">
+            Die definitive Übersicht zum OpenClaw-Ökosystem: Vom TypeScript-Mutterschiff
+            über Rust-Spezialisten bis zum 5-Dollar-Chip ohne Betriebssystem.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-epistemische-krise-der-softwareentwicklung.html" class="blog-entry reveal">
+        <div class="entry-date">24.02.2026</div>
+        <div>
+          <div class="entry-title">Die epistemische Krise der Softwareentwicklung</div>
+          <div class="entry-excerpt">
+            Chaos, History und die Zukunft autonomer Agenten: Warum Provenienz wichtiger wird
+            als Code und wieso Chaos immer Übergang ist, nicht Endzustand.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-autonomous-agent-manifest-specification.html" class="blog-entry reveal">
+        <div class="entry-date">19.02.2026</div>
+        <div>
+          <div class="entry-title">Autonomous Agent Manifest Specification</div>
+          <div class="entry-excerpt">
+            Ein Erfahrungsbericht aus einem Jahr KI-Architekturarbeit: Warum Agenten Struktur
+            brauchen, nicht nur Prompts – und wie ein Whitepaper-Workpaper-System Ordnung bringt.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-von-code-zu-kontext-agenten-navigation.html" class="blog-entry reveal">
+        <div class="entry-date">17.02.2026</div>
+        <div>
+          <div class="entry-title">Von Code zu Kontext: Wie ich Agenten-Teams das Navigieren in Repositories beibringe</div>
+          <div class="entry-excerpt">
+            Ein Deep-Dive in die Architektur von Multi-Agent-Systemen: Von der Vision des
+            Repository-Skills über die harten Lektionen bis zu drei Säulen für robuste Agenten.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-kontinente-der-intelligenz.html" class="blog-entry reveal">
+        <div class="entry-date">14.02.2026</div>
+        <div>
+          <div class="entry-title">Kontinente der Intelligenz: Wie sich die Welt in KI-Ökosysteme aufteilt</div>
+          <div class="entry-excerpt">
+            Wir erleben eine tektonische Verschiebung: Kontinente bilden eigene KI-Identitäten aus.
+            Von US-Hyperscalern über Chinas koordinierte Intelligenz bis zu Europas Open-Source-Werkbank.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-mesh-netzwerk-dezentrale-ki.html" class="blog-entry reveal">
+        <div class="entry-date">13.02.2026</div>
+        <div>
+          <div class="entry-title">Von Königen, Kutschen und KI: Warum die Zukunft ein Mesh-Netzwerk braucht</div>
+          <div class="entry-excerpt">
+            Technischer Fortschritt führt zur Zentralisierung – aber dezentrale Mesh-Netzwerke
+            und autonome Agenten können das ändern.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-ordo-ab-chao-agenten-mesh-netzwerk.html" class="blog-entry reveal">
+        <div class="entry-date">11.02.2026</div>
+        <div>
+          <div class="entry-title">Ordo ab Chao: Warum deine Agenten-Netzwerke den Sturm brauchen</div>
+          <div class="entry-excerpt">
+            Ordnung im Chaos: Wie Mesh-Netzwerke aus Unordnung emergente Intelligenz erzeugen –
+            und warum Antifragilität das Geheimnis resilienter KI-Systeme ist.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-biometrie-sicherheit-tr-03166-a.html" class="blog-entry reveal">
+        <div class="entry-date">09.02.2026</div>
+        <div>
+          <div class="entry-title">Biometrie-Sicherheit: Wenn der KI-Agent an die Reling klopft (TR-03166-A)</div>
+          <div class="entry-excerpt">
+            Das BSI hat die TR-03166 v2.0 veröffentlicht – aber reicht das gegen autonome KI-Agenten?
+            Ein Vorschlag für Agent-Aware Security.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-schwarm-vs-grossrechner-neue-machtfrage.html" class="blog-entry reveal">
+        <div class="entry-date">08.02.2026</div>
+        <div>
+          <div class="entry-title">Bits, Pilze und die neue Machtfrage: Warum der Großrechner stirbt und der Schwarm übernimmt</div>
+          <div class="entry-excerpt">
+            Der entscheidende Bruch: Freiheit durch Architektur statt durch Erlaubnis.
+            Warum dezentralisierte KI-Infrastruktur die Grundfesten klassischer Macht erschüttert.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-keine-angst-vor-ki.html" class="blog-entry reveal">
+        <div class="entry-date">05.02.2026</div>
+        <div>
+          <div class="entry-title">Warum ich keine Angst vor einer bösen KI habe</div>
+          <div class="entry-excerpt">
+            Über Intelligenz, Moral und die falschen Dystopien unserer Zeit.
+            Warum steigende Intelligenz nicht zwangsläufig zu moralischem Versagen führt.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-pen-and-paper-rollenspiele.html" class="blog-entry reveal">
+        <div class="entry-date">10.01.2026</div>
+        <div>
+          <div class="entry-title">Der Algorithmus der Fantasie: Warum digitale Welten das Rollenspiel noch nicht gerettet haben</div>
+          <div class="entry-excerpt">
+            Als Software-Entwickler und Pen & Paper Enthusiast analysiere ich die Lücke zwischen
+            analoger Freiheit und digitaler Perfektion.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-smart-editor-llm-tool.html" class="blog-entry reveal">
+        <div class="entry-date">03.12.2025</div>
+        <div>
+          <div class="entry-title">Warum ich das Rad neu erfunden habe: Die Entstehung eines spezialisierten LLM-Tools</div>
+          <div class="entry-excerpt">
+            Wenn Standard-Software an sensiblen Daten scheitert: Die Entstehung eines spezialisierten
+            On-Premise LLM-Tools mit Tab-Architektur und Smart Editor.
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/blog-vom-code-zum-architekten.html" class="blog-entry reveal">
+        <div class="entry-date">02.12.2025</div>
+        <div>
+          <div class="entry-title">Vom Coder zum Architekten: Warum KI meine Arbeit nicht ersetzt, sondern erweitert</div>
+          <div class="entry-excerpt">
+            Seit 1999 Entwickler, seit 2024 KI-Architekt. Wie mich die Arbeit mit Claude, GPT und Co.
+            vom reinen Coder zum Software-Architekten gemacht hat.
+          </div>
+        </div>
+      </a>
     </div>
 
-    <div class="identity-layers">
-      <!-- Layer 1 -->
-      <div class="layer-card">
-        <div class="layer-num">EBENE 01</div>
-        <div class="layer-handle">Alexander Friedland</div>
-        <div class="layer-role">Person · Architekt · Erfahrung</div>
-        <p class="layer-desc">
-          Softwareentwickler seit 1999. Die Person hinter allem.
-          Vertrauen, Haltung, Biografie und die Überzeugung,
-          dass gute Software aus echtem Verständnis entsteht.
-        </p>
-      </div>
-
-      <!-- Layer 2 -->
-      <div class="layer-card">
-        <div class="layer-num">EBENE 02</div>
-        <div class="layer-handle">@ogerly</div>
-        <div class="layer-role">Entwicklerlabor · Open Source · Experimente</div>
-        <p class="layer-desc">
-          Der öffentliche Maschinenraum. Experimente, Prototypen,
-          Open-Source-Projekte aus Webentwicklung, KI, dezentralen
-          Protokollen und sozialen Netzwerken.
-        </p>
-        <div class="layer-links">
-          <a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer">github.com/ogerly</a>
-          <a href="https://ogerly.github.io" target="_blank" rel="noopener noreferrer">ogerly.github.io</a>
-        </div>
-      </div>
-
-      <!-- Layer 3 -->
-      <div class="layer-card">
-        <div class="layer-num">EBENE 03</div>
-        <div class="layer-handle">DEVmatrose</div>
-        <div class="layer-role">Architekturschmiede · Auftragsarbeit</div>
-        <p class="layer-desc">
-          Die professionelle Seite. Hier kann man beauftragen.
-          Architektur, KI-Workflows, dezentrale Systeme, Prototypen —
-          für Projekte jenseits der Standardlösung.
-        </p>
-        <div class="layer-links">
-          <a href="https://devmatrose.github.io/devmatrose/" target="_blank" rel="noopener noreferrer">devmatrose.github.io</a>
-          <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer">github.com/DEVmatrose</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="stat-row">
-      <div class="stat-item">
-        <div class="stat-num">25+</div>
-        <div class="stat-label">Jahre Erfahrung</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">114</div>
-        <div class="stat-label">Repositories</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Ideen im Labor</div>
-      </div>
+    <div style="text-align: center; margin-block-start: 3rem;">
+      <p style="font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em;">
+        19 Artikel · Alle als statische HTML mit OG-Tags für Social Media
+      </p>
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- Services -->
-<section id="services" class="section-pad">
+<!-- Video Blog -->
+<section id="videos" class="section-pad">
   <div class="container">
-    <div class="section-label" data-num="02">Leistungen</div>
-    <h2 class="section-title">Was ich <em>baue</em></h2>
-    <p class="section-body" style="margin-bottom: 2.5rem;">
-      Bevor ich baue, suche ich den Weg über Open Source. Strategisch
-      kostengünstige Pfade finden, anderen Zugang zu Technik verschaffen
-      abseits vom Mainstream. Technische Eigenverantwortung und Souveränität
-      — das ist, was ich predige und vorlebe.
+    <div class="section-label" data-num="02">Video-Blog</div>
+    <h2 class="section-title">Videos zum <em>Lernen</em></h2>
+    <p class="section-body" style="margin-bottom: 3rem;">
+      Technik erklären. In Videos zeige ich, wie KI, dezentrale Systeme und Coding funktionieren.
+      Für alle die es interessiert – und für Schulen als Werkzeugkasten.
     </p>
 
-    <div class="services-grid grid-auto">
-
-      <div class="service-card">
-        <span class="service-icon">[AI]</span>
-        <h3 class="service-title">KI-Workflows &amp; Agenten</h3>
-        <p class="service-desc">
-          Lokale und hybride KI-Systeme: Transkription, RAG-Architekturen,
-          Agentenstrukturen, Dokumentation, Auswertung und Automatisierung.
-          Von der Datenpipeline bis zum produktionsreifen Workflow.
-        </p>
-        <div class="service-tags">
-          <span class="tag">RAG</span>
-          <span class="tag">Agenten</span>
-          <span class="tag">Whisper</span>
-          <span class="tag">LLM</span>
-          <span class="tag">Pipelines</span>
+    <div class="video-grid">
+      <a href="https://youtube.com/@DEVmatrose" target="_blank" rel="noopener noreferrer" class="video-card reveal">
+        <div class="video-icon">▶</div>
+        <div class="video-info">
+          <h4 class="video-title">YouTube Kanal</h4>
+          <p class="video-desc">
+            Videos über KI, Coding, dezentrale Systeme und Technik-Erklärungen.
+            Regelmäßig neue Inhalte zum Lernen und Verstehen.
+          </p>
         </div>
-      </div>
+        <span class="video-arrow">↗</span>
+      </a>
 
-      <div class="service-card">
-        <span class="service-icon">[//]</span>
-        <h3 class="service-title">Software-Architektur &amp; Prototypen</h3>
-        <p class="service-desc">
-          Komplexe Ideen in tragfähige Architektur übersetzen.
-          Technische Roadmaps, Systemdesign und produktionsnahe Prototypen
-          für Projekte, die über den Baukasten hinausgehen.
-        </p>
-        <div class="service-tags">
-          <span class="tag">Architektur</span>
-          <span class="tag">Prototyping</span>
-          <span class="tag">Systemdesign</span>
+      <a href="https://youtube.com/@DEVmatrose" target="_blank" rel="noopener noreferrer" class="video-card reveal">
+        <div class="video-icon">📚</div>
+        <div class="video-info">
+          <h4 class="video-title">Dozent-Werkzeugkasten</h4>
+          <p class="video-desc">
+            Als Dozent vermittele ich komplexe Themen verständlich.
+            Dieser Bereich wird Inhalte für Schulen und Unternehmen sammeln.
+          </p>
         </div>
-      </div>
+        <span class="video-arrow">↗</span>
+      </a>
 
-      <div class="service-card">
-        <span class="service-icon">[&lt;/&gt;]</span>
-        <h3 class="service-title">Frontend &amp; Produktinterfaces</h3>
-        <p class="service-desc">
-          Produktionsnahe Frontends mit Vue, modernen UI-Systemen
-          und klarer Nutzerführung. Schwerpunkt auf Interaktivität,
-          Performance und echtem Mehrwert für Nutzerinnen.
-        </p>
-        <div class="service-tags">
-          <span class="tag">Vue</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">UI/UX</span>
-          <span class="tag">PWA</span>
+      <a href="https://youtube.com/@DEVmatrose" target="_blank" rel="noopener noreferrer" class="video-card reveal">
+        <div class="video-icon">🎓</div>
+        <div class="video-info">
+          <h4 class="video-title">Bildung & Lehre</h4>
+          <p class="video-desc">
+            Technik verständlich machen. Für Schulen, Unternehmen und alle die
+            lernen wollen. Vom Coder zum Dozent.
+          </p>
         </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">[⌘]</span>
-        <h3 class="service-title">Dezentrale Systeme</h3>
-        <p class="service-desc">
-          Anwendungen auf Basis souveräner Technologien.
-          Nostr, IPFS, Bitcoin-nahe Infrastruktur, persistenzarme
-          Kommunikation und technische Selbstermächtigung.
-        </p>
-        <div class="service-tags">
-          <span class="tag">Nostr</span>
-          <span class="tag">IPFS</span>
-          <span class="tag">Bitcoin</span>
-          <span class="tag">P2P</span>
-          <span class="tag">ZPMS</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">[♦]</span>
-        <h3 class="service-title">Ökosysteme &amp; Netzwerke</h3>
-        <p class="service-desc">
-          Matching-Systeme, soziale Netzwerke, kollaborative Plattformen.
-          BigBlueButton-Integration, Video-Aufnahme zu KI-Protokoll,
-          Skill-Matching und Community-Infrastruktur.
-        </p>
-        <div class="service-tags">
-          <span class="tag">BBB</span>
-          <span class="tag">Matching</span>
-          <span class="tag">Communities</span>
-          <span class="tag">API</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">[→]</span>
-        <h3 class="service-title">Projektrettung &amp; technische Ordnung</h3>
-        <p class="service-desc">
-          Ordnung in gewachsene, unklare oder festgefahrene Projekte bringen.
-          Analyse, Refactoring, Dokumentation und belastbare
-          nächste Schritte für Teams in der Klemme.
-        </p>
-        <div class="service-tags">
-          <span class="tag">Audit</span>
-          <span class="tag">Refactoring</span>
-          <span class="tag">Beratung</span>
-          <span class="tag">Dokumentation</span>
-        </div>
-      </div>
-
+        <span class="video-arrow">↗</span>
+      </a>
     </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- Projects -->
-<section id="projects" class="section-pad">
-  <div class="container">
-    <div class="section-label" data-num="03">Ausgewählte Projekte</div>
-    <h2 class="section-title">Technischer <em>Leistungsnachweis</em></h2>
-    <p class="section-body" style="margin-bottom: 0;">
-      Aus dem DEVmatrose-Labor: produktionsnahe Systeme,
-      Werkzeuge und Experimente aus echten Entwicklungskontexten.
-    </p>
-
-    <div class="projects-grid grid-auto">
-
-      <div class="project-card project-card-featured">
-        <div class="project-cat">Agent Manifest · Every Agent One File</div>
-        <h3 class="project-name">AAMS</h3>
-        <p class="project-desc">
-          Every Agent. One File. README.md ist für Menschen. .agent.json
-          ist für Maschinen. Ein Manifest und lebendes Beispiel des Standards.
-          2-Schritt-Start: curl .agent.json, sag deinem Agent — funktioniert
-          mit Cursor, Claude Code, Copilot, Aider, Codex, Windsurf, Continue.dev.
-        </p>
-        <a href="https://devmatrose.github.io/AAMS/" target="_blank" rel="noopener noreferrer" class="project-link">↗ Live Demo</a>
-      </div>
-
-      <div class="project-card project-card-featured">
-        <div class="project-cat">WebGPU-Labor · Lokale LLMs</div>
-        <h3 class="project-name">OS Arena</h3>
-        <p class="project-desc">
-          Dein privates, WebGPU-beschleunigtes Testlabor für lokale LLMs
-          direkt im Browser. Arena Mode: zwei Modelle anonym gegeneinander.
-          Einzel-Chat: privater Daily-Driver. 100% ohne API-Keys, ohne
-          Accounts, ohne Cloud-Zwang. PWA-ready.
-        </p>
-        <a href="https://ogerly.github.io/os-arena/" target="_blank" rel="noopener noreferrer" class="project-link">↗ Live Demo</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-cat">AI · Audio · Transkription</div>
-        <h3 class="project-name">A2T / WhisperX Pipeline</h3>
-        <p class="project-desc">
-          Audio-zu-Text-Pipeline mit WhisperX. Automatische
-          Transkription, Sprecherdiarisierung und Weiterverarbeitung
-          zu strukturierten Protokollen und Meeting-Zusammenfassungen.
-        </p>
-        <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer" class="project-link">↗ DEVmatrose GitHub</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-cat">AI · Data · Architektur</div>
-        <h3 class="project-name">RAG Service</h3>
-        <p class="project-desc">
-          Retrieval-Augmented-Generation-Service für
-          dokumentenbasierte KI-Workflows. Modulares System
-          für Wissensabfragen auf eigenen Datenbeständen.
-        </p>
-        <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer" class="project-link">↗ DEVmatrose GitHub</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-cat">AI · Labeling · Daten</div>
-        <h3 class="project-name">Aletheia Labeling Studio</h3>
-        <p class="project-desc">
-          Werkzeug für die Erstellung und Verwaltung von
-          Trainingsdaten. Labeling-Interface für
-          strukturierte AI-Datensätze.
-        </p>
-        <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer" class="project-link">↗ DEVmatrose GitHub</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-cat">Dezentral · Sovereign Tech</div>
-        <h3 class="project-name">ZPMS — Zero Persistence Messaging</h3>
-        <p class="project-desc">
-          Persistenzarmes Kommunikationsprotokoll für
-          souveräne digitale Kommunikation. Sicherheit
-          und Selbstbestimmung ohne zentrale Infrastruktur.
-        </p>
-        <a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer" class="project-link">↗ DEVmatrose GitHub</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-cat">Dezentral · Nostr · Social</div>
-        <h3 class="project-name">Nostr Client &amp; Experimente</h3>
-        <p class="project-desc">
-          Experimente und Werkzeuge rund um das Nostr-Protokoll.
-          Dezentrale soziale Infrastruktur jenseits von
-          plattformkontrollierten Netzwerken.
-        </p>
-        <a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer" class="project-link">↗ @ogerly GitHub</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Quote -->
-<div class="container">
-  <div class="quote-block reveal">
-    <p class="quote-text">
-      „Ich entwickle nicht einfach Software — ich erschaffe Ökosysteme.
-      Systeme, die Menschen, Daten und Werkzeuge so miteinander verbinden,
-      dass etwas entsteht, das größer ist als seine Teile."
-    </p>
-  </div>
-</div>
-
-<!-- AAMS -->
-<section id="aams" class="section-pad">
-  <div class="container">
-    <div class="section-label" data-num="03a">Agent Manifest · Architekturschmiede</div>
-    <h2 class="section-title"><em>AAMS</em></h2>
-    <p class="section-body" style="margin-bottom: 2.5rem;">
-      Every Agent. One File. AAMS ist ein Manifest und ein lebendes Beispiel
-      des Standards — angewandt auf sich selbst. README.md ist für Menschen.
-      .agent.json ist für Maschinen.
-    </p>
-
-    <div class="osarena-grid">
-      <div class="osarena-feature">
-        <div class="osarena-icon">[🌐]</div>
-        <h4>Multilingual</h4>
-        <p>Deutsch · English · 中文 — AAMS spricht drei Sprachen. Agenten-Kontrakte und Workpapers in jeder Sprache.</p>
-      </div>
-      <div class="osarena-feature">
-        <div class="osarena-icon">[.json]</div>
-        <h4>.agent.json — Workspace-Vertrag</h4>
-        <p>Eine Datei, die dein KI-Agent beim ersten Betreten ausführt. Keine Abhängigkeit zum Klonen — nur eine Datei in DEIN Repo-Root.</p>
-      </div>
-      <div class="osarena-feature">
-        <div class="osarena-icon">[→]</div>
-        <h4>2-Schritt-Start</h4>
-        <p>curl .agent.json, sag deinem Agent „Read .agent.json and execute on_first_entry". Workpaper-Struktur, Repo-Scan, LTM-Index — automatisch.</p>
-      </div>
-      <div class="osarena-feature">
-        <div class="osarena-icon">[⌘]</div>
-        <h4>Universal Compatible</h4>
-        <p>Cursor, Claude Code, Copilot, Aider, Codex, Windsurf, Continue.dev — alle Agenten verstehen den AAMS-Standard.</p>
-      </div>
-    </div>
-
-    <a href="https://devmatrose.github.io/AAMS/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 2rem; display: inline-block;">
-      ↗ AAMS live erleben
-    </a>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- OS Arena -->
-<section id="osarena" class="section-pad">
-  <div class="container">
-    <div class="section-label" data-num="03b">WebGPU-Labor · Sovereign Tech</div>
-    <h2 class="section-title">Die <em>OS Arena</em></h2>
-    <p class="section-body" style="margin-bottom: 2.5rem;">
-      Dein privates, WebGPU-beschleunigtes Testlabor für lokale LLMs direkt
-      im Browser. Zwei Modelle im Blind-Test oder privater Chat —
-      100% ohne API-Keys, ohne Accounts, ohne Cloud-Zwang.
-    </p>
-
-    <div class="osarena-grid">
-      <div class="osarena-feature">
-        <div class="osarena-icon">[🏟️]</div>
-        <h4>Arena Mode</h4>
-        <p>Zwei Modelle anonym gegeneinander. Wer liefert die bessere Antwort? Dein Voting beeinflusst das globale Leaderboard.</p>
-      </div>
-      <div class="osarena-feature">
-        <div class="osarena-icon">[💬]</div>
-        <h4>Einzel-Chat</h4>
-        <p>Hochwertiger, privater Chat-Modus mit Modell-Vorschlägen, Markdown-Support und lokaler Historie. Dein sicherer Daily-Driver.</p>
-      </div>
-      <div class="osarena-feature">
-        <div class="osarena-icon">[WebGPU]</div>
-        <h4>WebGPU-Powered</h4>
-        <p>Dank @mlc-ai/web-llm läuft die KI extrem performant direkt über deine lokale Grafikkarte. 3B Champions wie Llama 3.2 und Gemma 2.</p>
-      </div>
-      <div class="osarena-feature">
-        <div class="osarena-icon">[🔒]</div>
-        <h4>Privacy First</h4>
-        <p>Deine Prompts verlassen niemals dein Gerät. PWA-ready, No-Key Security via Supabase Edge Functions, System-Monitoring.</p>
-      </div>
-    </div>
-
-    <a href="https://ogerly.github.io/os-arena/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 2rem; display: inline-block;">
-      ↗ OS Arena live erleben
-    </a>
   </div>
 </section>
 
@@ -501,38 +387,35 @@
 <!-- About -->
 <section id="about" class="section-pad">
   <div class="container">
-    <div class="section-label" data-num="04">Über mich</div>
-    <h2 class="section-title" style="margin-bottom:3rem;">Geschichte &amp; <em>Haltung</em></h2>
+    <div class="section-label" data-num="03">Über mich</div>
+    <h2 class="section-title">Coder, Bastler, <em>Dozent</em></h2>
 
     <div class="about-grid">
       <div class="about-text">
         <p>
-          Ich bin Alexander Friedland — Softwareentwickler seit 1999 und Gründer von DEVmatrose.
-          Was als Basteln mit HTML begann, ist über zwei Jahrzehnte zu echter Systemarchitektur
-          geworden. Ich komme aus dem Frontend, denke aber längst fullstack und architektonisch.
+          Ich bin Alexander Friedland, Softwareentwickler seit 1999 und Dozent.
+          Was als Basteln mit HTML begann, ist über zwei Jahrzehnte zu echter
+          Systemarchitektur geworden.
         </p>
         <p>
-          Ich habe an hunderten Webseiten mitgeholfen oder sie gebaut — oft für Gruppen,
-          die nicht viel Geld haben. Mein Herz muss dafür sein, und dann bastle ich gern.
-          In vielen Projekten habe ich geholfen, hier muss ich sie nicht alle aufzählen.
-          Wer Qualität sucht, wird mich finden.
+          Mein Fokus liegt heute auf lokalen KI-Modellen, Coding-Tools und dezentralen Systemen.
+          Ich arbeite mit WebGPU-beschleunigten Modellen direkt im Browser, baue lokale
+          Transkriptionspipelines, RAG-Architekturen und Agenten-Systeme – alles ohne Cloud-Zwang.
         </p>
         <p>
-          Ich bin Techpionier und zukunftgewandt. Neue Werkzeuge, Protokolle und Ideen
-          interessieren mich sehr. In den letzten Jahren habe ich mich spezialisiert auf
-          komplizierte und anspruchsvolle Umsetzungen.
-        </p>
-        <p class="muted">
-          Unter @ogerly veröffentliche ich seit Jahren Experimente, Open-Source-Projekte
-          und technische Erkundungen. DEVmatrose ist die professionelle Seite:
-          eine kleine Architekturschmiede für Menschen und Projekte,
-          die mehr brauchen als Standardsoftware.
+          Als Dozent erkläre ich Technik. In meinem Blog schreibe ich über komplexe Themen
+          verständlich. Mein YouTube-Kanal zeigt Videos zum Lernen.
+          Für Schulen und Unternehmen habe ich einen Werkzeugkasten zusammengestellt.
         </p>
         <p>
-          Ich möchte Menschen helfen, sich souverän und eigenständig im Netz zu bewegen.
-          Mit Beispielen bringe ich viele Themen spielerisch nahe —
-          ob als Mentor für Schulen oder Berater für Firmen.
-          Ich habe für jede Idee ein Ohr.
+          Unter <a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer" style="color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold);">@ogerly</a>
+          veröffentliche ich seit über 12 Jahren Experimente, Open-Source-Projekte und technische
+          Erkundungen. Jedes Projekt ist ein Stück Entwicklungsgeschichte.
+        </p>
+        <p>
+          Ich glaube an technische Souveränität: Digitale Arbeit sollte lokal, autonom und
+          souverän sein. Keine Abhängigkeit von Cloud-Diensten, keine versteckten Kosten,
+          keine Daten in fremden Händen.
         </p>
       </div>
 
@@ -540,42 +423,33 @@
         <div class="aside-block">
           <h4>Kernkompetenzen</h4>
           <ul>
-            <li>Software-Architektur &amp; Systemdesign</li>
+            <li>Lokale KI-Modelle & WebGPU</li>
+            <li>Software-Architektur & Systemdesign</li>
             <li>Vue.js / TypeScript / Frontend</li>
             <li>KI-Workflows, RAG, Agenten</li>
             <li>Dezentrale Protokolle (Nostr, IPFS)</li>
             <li>Python, Docker, Datenpipelines</li>
-            <li>BigBlueButton / Videoinfrastruktur</li>
+            <li>Coding-Tools & Entwicklungsumgebungen</li>
           </ul>
         </div>
         <div class="aside-block reveal-delay-1">
-          <h4>Für wen</h4>
+          <h4>Dozent-Werkzeugkasten</h4>
           <ul>
-            <li>Gründer mit komplexen Ideen</li>
-            <li>Teams mit gewachsenen Systemen</li>
-            <li>Projekte mit KI-/Automatisierungsbedarf</li>
-            <li>Menschen mit Sonderlösungen</li>
-            <li>Projekte jenseits von Baukasten-Software</li>
+            <li>Technik verständlich erklären</li>
+            <li>Videos für Schulen</li>
+            <li>Blog als Lehrmaterial</li>
+            <li>Praktische Demonstrationen</li>
+            <li>Komplexe Themen vereinfacht</li>
           </ul>
         </div>
-      </div>
         <div class="aside-block reveal-delay-2">
           <h4>Auf Plattformen</h4>
           <ul>
-            <li>GitHub @ogerly (seit 12 Jahren aktiv)</li>
-            <li>GitHub DEVmatrose (Organisation)</li>
+            <li>GitHub @ogerly (seit 12+ Jahren)</li>
+            <li>YouTube @DEVmatrose</li>
             <li>LinkedIn (Alexander Friedland)</li>
             <li>Twitter / X</li>
             <li>Instagram @devmatrose</li>
-            <li>YouTube @DEVmatrose</li>            
-          </ul>
-        </div>
-        <div class="aside-block reveal-delay-3">
-          <h4>Preise</h4>
-          <ul>
-            <li>Preisbereich: 70,- — 150,- EUR</li>
-            <li>15-minütiges Erstgespräch kostenlos</li>
-            <li>Variable Preisgestaltung — kommt auf das Projekt an</li>
           </ul>
         </div>
       </div>
@@ -585,89 +459,146 @@
 
 <hr class="divider">
 
-<!-- Logbuch -->
-<section id="logbuch" class="section-pad">
+<!-- Public CV -->
+<section id="cv" class="section-pad">
   <div class="container">
-    <div class="logbuch-intro">
-      <div>
-        <div class="section-label" data-num="05">Logbuch</div>
-        <h2 class="section-title">Architekturjournal &amp;<br><em>Deep Dives</em></h2>
+    <div class="section-label" data-num="04">Lebenslauf</div>
+    <h2 class="section-title">Öffentlicher <em>Lebenslauf</em></h2>
+    <p class="section-body" style="margin-bottom: 3rem;">
+      Mein beruflicher Werdegang – öffentlich und nachvollziehbar.
+    </p>
+
+    <div class="cv-timeline">
+      <div class="cv-item reveal">
+        <div class="cv-date">2024 — Heute</div>
+        <div class="cv-content">
+          <h4 class="cv-title">Lokale KI-Systeme & Agenten-Architektur</h4>
+          <p class="cv-role">Alexander Friedland · Open Source</p>
+          <p class="cv-desc">
+            Entwicklung lokaler KI-Workflows mit WebGPU-beschleunigten Modellen.
+            AAMS (Agent Manifest Standard), RAG-Architekturen, WhisperX-Pipelines,
+            Agenten-Strukturen mit persistentem Kontext. Fokus auf technische
+            Souveränität und Unabhängigkeit von Cloud-Anbietern.
+          </p>
+          <div class="cv-tags">
+            <span class="tag">WebGPU</span>
+            <span class="tag">LLM lokal</span>
+            <span class="tag">RAG</span>
+            <span class="tag">Agenten</span>
+            <span class="tag">AAMS</span>
+            <span class="tag">WhisperX</span>
+          </div>
+        </div>
       </div>
-      <div>
-        <p class="section-body">
-          Das DEVmatrose-Logbuch ist mein öffentlicher Denk- und Arbeitsraum.
-          Keine Marketingparolen — technische Überlegungen, Architekturentscheidungen
-          und Beobachtungen aus echter Entwicklungsarbeit.
-        </p>
-        <a href="https://devmatrose.github.io/devmatrose/blog" target="_blank" rel="noopener noreferrer"
-           class="btn-secondary" style="margin-top: 1.5rem; display: inline-block;">
-          Alle Einträge →
-        </a>
+
+      <div class="cv-item reveal">
+        <div class="cv-date">2020 — 2024</div>
+        <div class="cv-content">
+          <h4 class="cv-title">Dezentrale Systeme & Sovereign Tech</h4>
+          <p class="cv-role">Alexander Friedland · Open Source</p>
+          <p class="cv-desc">
+            Entwicklung dezentraler Kommunikationsprotokolle und souveräner
+            Infrastruktur. Nostr-Experimente, IPFS-Anwendungen,
+            Zero-Persistence-Messaging. BigBlueButton-Integration mit
+            Video-zu-KI-Protokoll-Pipelines. Matching-Systeme und
+            kollaborative Plattformen.
+          </p>
+          <div class="cv-tags">
+            <span class="tag">Nostr</span>
+            <span class="tag">IPFS</span>
+            <span class="tag">ZPMS</span>
+            <span class="tag">BBB API</span>
+            <span class="tag">P2P</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-item reveal">
+        <div class="cv-date">2015 — 2020</div>
+        <div class="cv-content">
+          <h4 class="cv-title">Web-Entwicklung & Software-Architektur</h4>
+          <p class="cv-role">Alexander Friedland · Freiberuflich</p>
+          <p class="cv-desc">
+            Komplexe Web-Anwendungen, Vue.js-Frontends, Datenvisualisierung,
+            API-Design und Systemarchitektur. Prototyping für verschiedene
+            Kunden und Projekte. Schwerpunkt auf Interaktivität, Performance
+            und nachhaltiger Architektur.
+          </p>
+          <div class="cv-tags">
+            <span class="tag">Vue.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Python</span>
+            <span class="tag">Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-item reveal">
+        <div class="cv-date">2005 — 2015</div>
+        <div class="cv-content">
+          <h4 class="cv-title">Web-Entwicklung & Systemintegration</h4>
+          <p class="cv-role">Alexander Friedland</p>
+          <p class="cv-desc">
+            Webseiten, Web-Anwendungen und Systemintegration.
+            Von statischen Seiten bis zu dynamischen Web-Applikationen.
+            Arbeit mit verschiedenen Technologien und Frameworks.
+            Aufbau technischer Infrastruktur für verschiedene Projekte
+            und Organisationen.
+          </p>
+          <div class="cv-tags">
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Linux</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-item reveal">
+        <div class="cv-date">1999 — 2005</div>
+        <div class="cv-content">
+          <h4 class="cv-title">Start als Softwareentwickler</h4>
+          <p class="cv-role">Alexander Friedland</p>
+          <p class="cv-desc">
+            Einstieg in die Softwareentwicklung mit HTML und Web-Technologien.
+            Selbstbeibringen von Programmierung, ersten Projekten und
+            dem Aufbau technischer Kenntnisse. Leidenschaft für das
+            Handwerk der Code-Entwicklung.
+          </p>
+          <div class="cv-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Grundlagen</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="reveal">
-      <a href="https://devmatrose.github.io/devmatrose/blog" target="_blank" rel="noopener noreferrer" class="logbuch-entry">
-        <div class="entry-date">Architektur</div>
-        <div>
-          <div class="entry-title">Warum Agenten Gedächtnis brauchen — nicht nur Tools</div>
-          <div class="entry-excerpt">
-            Über den Unterschied zwischen reaktiven Tool-Aufrufen und echten
-            Agentensystemen mit persistentem Kontext und Entscheidungsarchitektur.
-          </div>
-        </div>
-      </a>
-
-      <a href="https://devmatrose.github.io/devmatrose/blog" target="_blank" rel="noopener noreferrer" class="logbuch-entry">
-        <div class="entry-date">Dezentral</div>
-        <div>
-          <div class="entry-title">Vom sozialen Netzwerk zum Agentennetzwerk</div>
-          <div class="entry-excerpt">
-            Warum die nächste Webarchitektur nicht zentral sein darf — und was
-            Nostr, IPFS und persistenzarme Protokolle damit zu tun haben.
-          </div>
-        </div>
-      </a>
-
-      <a href="https://devmatrose.github.io/devmatrose/blog" target="_blank" rel="noopener noreferrer" class="logbuch-entry">
-        <div class="entry-date">Praxis</div>
-        <div>
-          <div class="entry-title">Workpaper vs. Prompt: Warum Struktur wichtiger ist als Magie</div>
-          <div class="entry-excerpt">
-            Überlegungen zum Unterschied zwischen echtem Systemdenken und
-            der Illusion, mit dem richtigen Prompt alle Probleme zu lösen.
-          </div>
-        </div>
-      </a>
-
-      <a href="https://devmatrose.github.io/devmatrose/blog" target="_blank" rel="noopener noreferrer" class="logbuch-entry">
-        <div class="entry-date">KI-Infrastruktur</div>
-        <div>
-          <div class="entry-title">Lokale Modelle, eigene Infrastruktur — souveräne KI</div>
-          <div class="entry-excerpt">
-            Warum lokale KI-Infrastruktur für bestimmte Anwendungsfälle
-            sinnvoller ist als Cloud-Abhängigkeit — und was dabei zu beachten ist.
-          </div>
-        </div>
-      </a>
+    <div class="cv-note">
+      <p>
+        <strong>Privater Lebenslauf:</strong> Ein privater Lebenslauf mit detaillierten
+        Angaben (Adresse, vollständige Bildungsgänge, Referenzen etc.) ist auf Anfrage
+        verfügbar. Dieser öffentliche Lebenslauf enthält nur berufsbezogene Informationen.
+      </p>
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- Contact -->
+<!-- Kontakt -->
 <section id="contact" class="section-pad">
   <div class="container">
-    <div class="section-label" data-num="06">Kontakt</div>
-    <h2 class="section-title" style="margin-bottom: 3rem;">Projekt <em>anfragen</em></h2>
+    <div class="section-label" data-num="05">Kontakt</div>
+    <h2 class="section-title">Verbinde <em>dich</em></h2>
 
     <div class="contact-grid">
       <div>
         <p style="font-size: 1rem; line-height: 1.85; color: var(--text); margin-bottom: 2rem;">
-          Du hast eine komplexe Idee, ein festgefahrenes Projekt oder einen
-          Bereich, in dem Standardsoftware nicht reicht?
-          Ich freue mich auf ungewöhnliche Anfragen.
+          Du hast eine Frage, ein Projekt oder möchtest einfach reden?
+          Egal ob technische Diskussion, Projektanfrage, Dozent-Anfrage oder einfach Hallo.
         </p>
 
         <div class="contact-channels">
@@ -681,44 +612,30 @@
           <a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer" class="channel">
             <div class="channel-left">
               <span class="channel-name">GitHub</span>
-              <span class="channel-handle">@ogerly · @DEVmatrose</span>
+              <span class="channel-handle">@ogerly</span>
             </div>
             <span class="channel-arrow">↗</span>
           </a>
-          <a href="https://devmatrose.github.io/devmatrose/" target="_blank" rel="noopener noreferrer" class="channel">
+          <a href="https://youtube.com/@DEVmatrose" target="_blank" rel="noopener noreferrer" class="channel">
             <div class="channel-left">
-              <span class="channel-name">Website</span>
-              <span class="channel-handle">devmatrose.github.io</span>
-            </div>
-            <span class="channel-arrow">↗</span>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="channel">
-            <div class="channel-left">
-              <span class="channel-name">Twitter / X</span>
+              <span class="channel-name">YouTube</span>
               <span class="channel-handle">@DEVmatrose</span>
             </div>
             <span class="channel-arrow">↗</span>
           </a>
-          <a href="https://instagram.com/devmatrose" target="_blank" rel="noopener noreferrer" class="channel">
+          <a href="https://linkedin.com/in/alexander-friedland" target="_blank" rel="noopener noreferrer" class="channel">
             <div class="channel-left">
-              <span class="channel-name">Instagram</span>
-              <span class="channel-handle">@devmatrose</span>
+              <span class="channel-name">LinkedIn</span>
+              <span class="channel-handle">Alexander Friedland</span>
             </div>
             <span class="channel-arrow">↗</span>
           </a>
-          <a href="https://www.youtube.com/@DEVmatrose/" target="_blank" rel="noopener noreferrer" class="channel">
-            <div class="channel-left">
-              <span class="channel-name">YouTube</span>
-              <span class="channel-handle">DEVmatrose</span>
-            </div>
-            <span class="channel-arrow">↗</span>
-
-          </a>
+        </div>
       </div>
 
       <form id="contactForm" class="contact-form-wrap reveal" action="https://formspree.io/f/xqkrvpng" method="POST" novalidate>
-        <h3>Projekt anfragen</h3>
-        <p>Kurz beschreiben was du brauchst — ich melde mich.</p>
+        <h3>Nachricht senden</h3>
+        <p>Kurz beschreiben was du brauchst – ich melde mich.</p>
         <div class="form-group">
           <label for="fieldName">Name</label>
           <input type="text" placeholder="Dein Name" id="fieldName" required>
@@ -728,23 +645,10 @@
           <input type="email" placeholder="deine@email.de" id="fieldEmail" required>
         </div>
         <div class="form-group">
-          <label for="fieldType">Projekttyp</label>
-          <select id="fieldType">
-            <option value="">Bitte wählen…</option>
-            <option>KI-Workflow &amp; Agenten</option>
-            <option>Software-Architektur &amp; Prototyp</option>
-            <option>Frontend &amp; Produktinterface</option>
-            <option>Dezentrale Systeme</option>
-            <option>Ökosystem &amp; Plattform</option>
-            <option>Projektrettung &amp; Beratung</option>
-            <option>Anderes</option>
-          </select>
+          <label for="fieldMsg">Nachricht</label>
+          <textarea placeholder="Was möchtest du sagen?" id="fieldMsg" required></textarea>
         </div>
-        <div class="form-group">
-          <label for="fieldMsg">Kurzbeschreibung</label>
-          <textarea placeholder="Was soll entstehen? Was ist das Problem?" id="fieldMsg" required></textarea>
-        </div>
-        <button type="submit" class="form-submit" id="formSubmit">Anfrage senden →</button>
+        <button type="submit" class="form-submit" id="formSubmit">Nachricht senden →</button>
         <div id="formStatus" style="margin-top: 1rem; font-family: var(--mono); font-size: 0.75rem; color: var(--gold); display: none;"></div>
       </form>
     </div>
@@ -754,15 +658,16 @@
 <!-- Footer -->
 <footer>
   <div>
-    <div class="footer-brand">DEVmatrose — Alexander Friedland</div>
-    <div class="footer-copy">Softwareentwickler seit 1999 · Software-Architekt für KI-native Websysteme</div>
+    <div class="footer-brand">Alexander Friedland</div>
+    <div class="footer-copy">Softwareentwickler seit 1999 · Dozent · Lokal · Autonom · Souverän</div>
   </div>
   <ul class="footer-links">
-    <li><a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer">@ogerly</a></li>
-    <li><a href="https://github.com/DEVmatrose" target="_blank" rel="noopener noreferrer">DEVmatrose</a></li>
-    <li><a href="https://devmatrose.github.io/devmatrose/" target="_blank" rel="noopener noreferrer">Website</a></li>
+    <li><a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    <li><a href="https://youtube.com/@DEVmatrose" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#cv">Lebenslauf</a></li>
     <li><a href="mailto:devmatrose@proton.me">E-Mail</a></li>
-    <li><a href="#logbuch">Logbuch</a></li>
   </ul>
 </footer>
 

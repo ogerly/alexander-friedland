@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Agent Manifest Specification | Alexander Friedland</title>
+  <meta name="description" content="Alexander Friedland – KI-Architektur">
+  <link rel="canonical" href="https://ogerly.github.io/alexander-friedland/blog-autonomous-agent-manifest-specification.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Alexander Friedland">
+  <meta property="og:title" content="Autonomous Agent Manifest Specification">
+  <meta property="og:description" content="Ein Erfahrungsbericht aus einem Jahr KI-Architekturarbeit">
+  <meta property="og:image" content="https://ogerly.github.io/alexander-friedland/blog-images/autonomous-agent-manifest-specification.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://ogerly.github.io/alexander-friedland/blog-autonomous-agent-manifest-specification.html">
+  <meta property="article:published_time" content="2026-02-19T00:00:00Z">
+  <meta property="article:author" content="Alexander Friedland">
+  <meta property="article:section" content="KI-Architektur">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Autonomous Agent Manifest Specification">
+  <meta name="twitter:description" content="Ein Erfahrungsbericht aus einem Jahr KI-Architekturarbeit">
+  <meta name="twitter:image" content="https://ogerly.github.io/alexander-friedland/blog-images/autonomous-agent-manifest-specification.png">
+  
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.css" rel="stylesheet" type="text/css" />
+  <style>
+    /* Blog Article Styles */
+    :root {
+      --void: #0a0f14;
+      --void-light: #111927;
+      --off-white: #e0e6ed;
+      --cyber-cyan: #00D9FF;
+      --copper-orange: #FF8C42;
+      --emerald: #10B981;
+      --amber: #F59E0B;
+      --red: #EF4444;
+      --purple: #8B5CF6;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--void);
+      color: var(--off-white);
+      line-height: 1.7;
+    }
+    
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+    
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent, var(--void) 95%);
+    }
+    
+    .hero-section {
+      position: relative;
+      margin-top: -200px;
+      padding: 80px 20px 60px;
+      max-width: 896px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .breadcrumb {
+      font-size: 14px;
+      color: rgba(0, 217, 255, 0.6);
+      margin-bottom: 32px;
+    }
+    
+    .breadcrumb a {
+      color: var(--cyber-cyan);
+      text-decoration: none;
+    }
+    
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    
+    .meta-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: rgba(224, 230, 237, 0.7);
+    }
+    
+    .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border: 1px solid rgba(0, 217, 255, 0.5);
+      border-radius: 9999px;
+      color: var(--cyber-cyan);
+      font-size: 13px;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--copper-orange);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    
+    @media (min-width: 640px) {
+      h1 { font-size: 3rem; }
+    }
+    
+    @media (min-width: 1024px) {
+      h1 { font-size: 3.75rem; }
+    }
+    
+    .subtitle {
+      font-size: 1.25rem;
+      color: rgba(0, 217, 255, 0.9);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    
+    @media (min-width: 640px) {
+      .subtitle { font-size: 1.5rem; }
+    }
+    
+    .article-content {
+      max-width: 896px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+    
+    .article-content h2 {
+      font-size: 1.875rem;
+      font-weight: bold;
+      color: var(--copper-orange);
+      margin-top: 48px;
+      margin-bottom: 24px;
+    }
+    
+    @media (min-width: 640px) {
+      .article-content h2 { font-size: 2.25rem; }
+    }
+    
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+    
+    .article-content h3.cyan { color: var(--cyber-cyan); }
+    .article-content h3.emerald { color: var(--emerald); }
+    
+    .article-content p {
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+    
+    .article-content p.text-xl {
+      font-size: 1.25rem;
+    }
+    
+    .article-content p.text-lg {
+      font-size: 1.125rem;
+    }
+    
+    .article-content strong {
+      color: var(--copper-orange);
+      font-weight: 600;
+    }
+    
+    .article-content em {
+      color: var(--cyber-cyan);
+      font-style: italic;
+    }
+    
+    .article-content a {
+      color: var(--cyber-cyan);
+      text-decoration: none;
+    }
+    
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+    
+    .article-content code {
+      background: rgba(102, 217, 255, 0.1);
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      color: var(--cyber-cyan);
+    }
+    
+    .article-content blockquote {
+      margin-top: 32px;
+      margin-bottom: 32px;
+      padding: 24px;
+      border-left: 4px solid var(--cyber-cyan);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 0.5rem;
+    }
+    
+    .article-content blockquote.cyan {
+      border-left-color: var(--cyber-cyan);
+      color: var(--cyber-cyan);
+    }
+    
+    .article-content blockquote.orange {
+      border-left-color: var(--copper-orange);
+      color: var(--copper-orange);
+    }
+    
+    .article-content ul {
+      margin-top: 16px;
+      margin-bottom: 24px;
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .article-content ul.space-y-2 > li {
+      margin-bottom: 8px;
+    }
+    
+    .article-content ul.space-y-3 > li {
+      margin-bottom: 12px;
+    }
+    
+    .article-content ul.space-y-4 > li {
+      margin-bottom: 16px;
+    }
+    
+    .article-content ol {
+      margin-top: 16px;
+      margin-bottom: 24px;
+      padding-left: 1.5rem;
+    }
+    
+    .article-content ol > li {
+      margin-bottom: 8px;
+    }
+    
+    .article-content figure {
+      margin-top: 48px;
+      margin-bottom: 48px;
+    }
+    
+    .article-content figure img {
+      width: 100%;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(0, 217, 255, 0.3);
+    }
+    
+    .article-content figcaption {
+      text-align: center;
+      font-size: 14px;
+      color: rgba(224, 230, 237, 0.6);
+      margin-top: 16px;
+    }
+    
+    /* Callout boxes */
+    .callout {
+      padding: 24px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      border-radius: 0.5rem;
+    }
+    
+    .callout.red {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      text-align: center;
+    }
+    
+    .callout.red p {
+      margin-bottom: 0;
+    }
+    
+    .callout.cyan {
+      background: rgba(0, 217, 255, 0.1);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      text-align: center;
+    }
+    
+    .callout.cyan p {
+      margin-bottom: 0;
+    }
+    
+    .callout.orange {
+      background: rgba(255, 140, 66, 0.1);
+      border: 1px solid rgba(255, 140, 66, 0.3);
+      text-align: center;
+    }
+    
+    .callout.orange p {
+      margin-bottom: 0;
+    }
+    
+    .callout.emerald {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      text-align: center;
+    }
+    
+    .callout.emerald p {
+      margin-bottom: 0;
+    }
+    
+    .callout-left-cyan {
+      border-left: 4px solid var(--cyber-cyan);
+      background: rgba(0, 217, 255, 0.05);
+      padding: 24px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    
+    .callout-left-orange {
+      border-left: 4px solid var(--copper-orange);
+      background: rgba(255, 140, 66, 0.05);
+      padding: 24px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    
+    .callout-left-red {
+      border-left: 4px solid var(--red);
+      background: rgba(239, 68, 68, 0.05);
+      padding: 24px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    
+    /* Grid layouts — Tailwind/DaisyUI grid-cols-* Klassen werden genutzt */
+    
+    .card {
+      padding: 20px;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(224, 230, 237, 0.15);
+      background: rgba(224, 230, 237, 0.05);
+    }
+    
+    .card.cyan {
+      border-color: rgba(0, 217, 255, 0.3);
+      background: rgba(0, 217, 255, 0.1);
+    }
+    
+    .card.orange {
+      border-color: rgba(255, 140, 66, 0.3);
+      background: rgba(255, 140, 66, 0.1);
+    }
+    
+    .card.emerald {
+      border-color: rgba(16, 185, 129, 0.3);
+      background: rgba(16, 185, 129, 0.1);
+    }
+    
+    .card.amber {
+      border-color: rgba(245, 158, 11, 0.3);
+      background: rgba(245, 158, 11, 0.1);
+    }
+    
+    .card.purple {
+      border-color: rgba(139, 92, 246, 0.3);
+      background: rgba(139, 92, 246, 0.1);
+    }
+    
+    .card.red {
+      border-color: rgba(239, 68, 68, 0.3);
+      background: rgba(239, 68, 68, 0.1);
+    }
+    
+    .card.void {
+      border-color: rgba(224, 230, 237, 0.1);
+      background: rgba(10, 15, 20, 0.5);
+    }
+    
+    /* Gradient cards */
+    .gradient-card {
+      padding: 24px;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(10, 15, 20, 0.5));
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+    
+    .gradient-card-orange {
+      padding: 24px;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 140, 66, 0.3);
+      background: linear-gradient(135deg, rgba(255, 140, 66, 0.1), rgba(10, 15, 20, 0.5));
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+    
+    /* Flex layouts */
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .items-start { align-items: flex-start; }
+    .items-center { align-items: center; }
+    .gap-2 { gap: 8px; }
+    .gap-3 { gap: 12px; }
+    .gap-4 { gap: 16px; }
+    .gap-6 { gap: 24px; }
+    .gap-8 { gap: 32px; }
+    .flex-wrap { flex-wrap: wrap; }
+    .justify-between { justify-content: space-between; }
+    
+    @media (min-width: 768px) {
+      .md\:flex-row { flex-direction: row; }
+    }
+    
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    
+    th {
+      padding: 12px;
+      text-align: left;
+      background: rgba(255, 140, 66, 0.2);
+      color: var(--copper-orange);
+      font-weight: bold;
+      border: 1px solid rgba(224, 230, 237, 0.1);
+    }
+    
+    td {
+      padding: 12px;
+      border: 1px solid rgba(224, 230, 237, 0.1);
+      color: rgba(224, 230, 237, 0.8);
+    }
+    
+    tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Code block */
+    .code-block {
+      background: rgba(10, 15, 20, 0.8);
+      border: 1px solid rgba(0, 217, 255, 0.4);
+      border-radius: 0.5rem;
+      padding: 24px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    .code-block .comment { color: rgba(0, 217, 255, 0.6); }
+    .code-block .code { color: var(--cyber-cyan); }
+    
+    /* Author section */
+    .author-section {
+      padding: 48px 20px;
+      border-top: 1px solid rgba(255, 140, 66, 0.2);
+      max-width: 896px;
+      margin: 0 auto;
+    }
+    
+    .author-info {
+      font-size: 14px;
+      color: rgba(224, 230, 237, 0.6);
+      font-style: italic;
+    }
+    
+    /* Back to blog */
+    .back-link {
+      display: inline-block;
+      padding: 12px 24px;
+      border: 1px solid rgba(0, 217, 255, 0.5);
+      border-radius: 0.5rem;
+      color: var(--cyber-cyan);
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 32px;
+      transition: all 0.3s;
+    }
+    
+    .back-link:hover {
+      background: rgba(0, 217, 255, 0.2);
+      border-color: var(--cyber-cyan);
+    }
+    
+    .section-spacer {
+      height: 96px;
+    }
+    
+    /* Utility classes used in articles */
+    .text-cyber-cyan { color: var(--cyber-cyan); }
+    .text-copper-orange { color: var(--copper-orange); }
+    .text-emerald-400 { color: var(--emerald); }
+    .text-amber-400 { color: var(--amber); }
+    .text-red-400 { color: var(--red); }
+    .text-purple-400 { color: var(--purple); }
+    .text-off-white\/60 { color: rgba(224, 230, 237, 0.6); }
+    .text-off-white\/70 { color: rgba(224, 230, 237, 0.7); }
+    .text-off-white\/80 { color: rgba(224, 230, 237, 0.8); }
+    .text-off-white\/90 { color: rgba(224, 230, 237, 0.9); }
+    .text-off-white\/50 { color: rgba(224, 230, 237, 0.5); }
+    .font-bold { font-weight: bold; }
+    .font-semibold { font-weight: 600; }
+    .italic { font-style: italic; }
+    .text-center { text-align: center; }
+    .text-sm { font-size: 14px; }
+    .text-xs { font-size: 12px; }
+    .text-lg { font-size: 1.125rem; }
+    .text-xl { font-size: 1.25rem; }
+    .text-2xl { font-size: 1.5rem; }
+    .text-3xl { font-size: 1.875rem; }
+    .text-4xl { font-size: 2.25rem; }
+    .mt-1 { margin-top: 4px; }
+    .mt-2 { margin-top: 8px; }
+    .mt-3 { margin-top: 12px; }
+    .mt-4 { margin-top: 16px; }
+    .mt-6 { margin-top: 24px; }
+    .mt-8 { margin-top: 32px; }
+    .mt-10 { margin-top: 40px; }
+    .mt-12 { margin-top: 48px; }
+    .mt-16 { margin-top: 64px; }
+    .mb-1 { margin-bottom: 4px; }
+    .mb-2 { margin-bottom: 8px; }
+    .mb-3 { margin-bottom: 12px; }
+    .mb-4 { margin-bottom: 16px; }
+    .mb-6 { margin-bottom: 24px; }
+    .mb-8 { margin-bottom: 32px; }
+    .mb-12 { margin-bottom: 48px; }
+    .mr-1 { margin-right: 4px; }
+    .mr-3 { margin-right: 12px; }
+    .w-full { width: 100%; }
+    .rounded-lg { border-radius: 0.5rem; }
+    .rounded-r { border-radius: 0 0.5rem 0.5rem 0; }
+    .border-t { border-top: 1px solid rgba(224, 230, 237, 0.1); }
+    .pt-6 { padding-top: 24px; }
+    .pt-8 { padding-top: 32px; }
+    .pb-16 { padding-bottom: 64px; }
+    .pb-12 { padding-bottom: 48px; }
+    .px-4 { padding-left: 16px; padding-right: 16px; }
+    .py-12 { padding-top: 48px; padding-bottom: 48px; }
+  </style>
+</head>
+<body>
+  
+  <div class="hero">
+    <img src="../blog-images/autonomous-agent-manifest-specification.png" alt="Autonomous Agent Manifest Specification">
+    <div class="hero-overlay"></div>
+  </div>
+  
+  <div class="hero-section">
+    <nav class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="mx-2">/</span>
+      <a href="../blog/index.html">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-off-white/90">Autonomous Agent Manifest Specification</span>
+    </nav>
+    <div class="meta-info">
+      <div class="flex flex-wrap gap-4 items-center">
+        <span>📅 19.02.2026 </span>
+        <span>•</span>
+        <span>⏱️ 12 min Lesezeit</span>
+        <span>•</span>
+        <span>📂 KI-Architektur</span>
+      </div>
+      <div class="meta-tags">
+        <span class="tag">KI-Architektur</span><span class="tag">Agenten-Manifest</span><span class="tag">Whitepaper-Workpaper</span><span class="tag">Kontextmanagement</span><span class="tag">Multi-Agent-Systeme</span><span class="tag">Open Source</span>
+      </div>
+    </div>
+    <h1>Autonomous Agent Manifest Specification</h1>
+    
+  </div>
+  
+  <article class="article-content px-4">
+    <div class="min-h-screen bg-void text-off-white">
+    <!-- Hero Image -->
+    <div class="relative w-full h-96 overflow-hidden">
+      <img src="heroImage" 
+        alt="Autonomous Agent Manifest Specification – Ein Erfahrungsbericht aus einem Jahr KI-Architekturarbeit"
+        class="w-full h-full object-cover opacity-60"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-void/50 to-void"></div>
+    </div>
+    
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-b from-void via-void/95 to-void -mt-32">
+      <div class="max-w-4xl mx-auto px-4 py-16 sm:py-20">
+        <!-- Breadcrumb -->
+        <nav class="text-sm text-cyber-cyan/60 mb-8">
+          <button class="hover:text-cyber-cyan transition-colors">Home</button>
+          <span class="mx-2">/</span>
+          <button class="hover:text-cyber-cyan transition-colors">Blog</button>
+          <span class="mx-2">/</span>
+          <span class="text-off-white">Autonomous Agent Manifest Specification</span>
+        </nav>
+
+        <!-- Meta Info & Share -->
+        <div class="flex flex-wrap gap-4 items-center justify-between mb-6 text-sm">
+          <div class="flex flex-wrap gap-4 text-off-white/70">
+            <span>📅 19. Februar 2026</span>
+            <span>•</span>
+            <span>⏱️ 12 min Lesezeit</span>
+            <span>•</span>
+            <span>🤖 KI-Architektur</span>
+          </div>
+          
+          <button 
+           
+            class="btn btn-sm btn-ghost border border-cyber-cyan/30 hover:border-cyber-cyan hover:bg-cyber-cyan/10 transition-all"
+          >
+            <span>🔗 Link kopieren</span>
+            <span v-else class="text-cyber-cyan">✓ Kopiert!</span>
+          </button>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-copper-orange mb-6 glow-pulse leading-tight">
+          Autonomous Agent Manifest Specification
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-xl sm:text-2xl text-cyber-cyan/90 mb-8 leading-relaxed">
+          Ein Erfahrungsbericht aus einem Jahr KI-Architekturarbeit
+        </p>
+
+        <!-- Author Info -->
+        <div class="flex items-center gap-3 mb-8">
+          <div class="text-sm text-off-white/70">
+            <span class="font-semibold text-off-white">Ogerly</span> – Programmierer bei
+            <a href="https://github.com/Alexander Friedland" target="_blank" class="text-cyber-cyan hover:underline">Alexander Friedland</a>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2">
+          <span 
+            :key="tag"
+            class="badge badge-outline border-cyber-cyan/50 text-cyber-cyan"
+          >
+            {{ tag }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <article class="max-w-4xl mx-auto px-4 py-12">
+      <div class="prose prose-invert prose-lg max-w-none">
+        
+        <!-- 1. Ausgangspunkt -->
+        <h2 class="text-3xl font-bold text-copper-orange mt-12 mb-6">
+          🧭 1. Ausgangspunkt: Komplexität jenseits von „nur Code"
+        </h2>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          In den letzten 12–18 Monaten habe ich ein größeres KI-gestütztes Projekt aufgebaut. Kein klassisches Webprojekt, kein isoliertes Backend, sondern ein verteiltes System mit mehreren Modulen, Agenten, Persistenz-Layern und Langzeitgedächtnis-Experimenten.
+        </p>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Was sich in dieser Zeit deutlich gezeigt hat:
+        </p>
+
+        <ul class="space-y-2 my-6 pl-4">
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Tools verändern sich schneller als Architekturen.</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Modelle werden besser, aber nicht stabiler im Kontext.</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Kontextverlust ist kein Randproblem, sondern systemisch.</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Agenten brauchen Struktur – nicht nur Prompts.</li>
+        </ul>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Das Resultat ist ein öffentliches Repository:
+        </p>
+
+        <div class="p-6 bg-copper-orange/10 border-l-4 border-copper-orange rounded-r-lg my-8">
+          <h3 class="text-xl font-bold text-copper-orange mb-2">Autonomous Agent Manifest Specification</h3>
+          <p class="text-off-white/90">
+            👉 <a href="https://github.com/Alexander Friedland/Autonomous-Agent-Manifest-Specification" target="_blank" class="text-cyber-cyan hover:underline">github.com/Alexander Friedland/Autonomous-Agent-Manifest-Specification</a>
+          </p>
+          <p class="text-off-white/70 mt-2">
+            Es ist kein akademisches Paper. Es ist ein aus der Praxis entstandener Ordnungsrahmen.
+          </p>
+        </div>
+
+        <!-- 2. Das Kernproblem -->
+        <h2 class="text-3xl font-bold text-copper-orange mt-12 mb-6">
+          ⚠️ 2. Das Kernproblem: Kontextzerfall in komplexen Projekten
+        </h2>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Bei einfachen Projekten kann ein Entwickler vieles „im Kopf halten". Bei komplexen Ökosystemen funktioniert das nicht mehr.
+        </p>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Ich arbeite nicht an einzelnen Komponenten, sondern an:
+        </p>
+
+        <ul class="space-y-2 my-6 pl-4">
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> Multi-Service-Architekturen</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> Agenten-Workflows</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> Speicher- und Retrieval-Mechanismen</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> API-Orchestrierung</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> Rate-Limit-Handling</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> Kontext-Caching</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> Versions- und Dokumentationssystemen</li>
+        </ul>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Allein intern: <strong class="text-copper-orange">&gt; 50 Whitepapers</strong> und <strong class="text-copper-orange">&gt; 60 Workpapers</strong> (Stand dieses Jahres).
+        </p>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Das ist kein Overhead. Das ist die Voraussetzung für Kontrolle.
+        </p>
+
+        <!-- 3. Whitepaper–Workpaper-System -->
+        <h2 class="text-3xl font-bold text-copper-orange mt-12 mb-6">
+          📄 3. Whitepaper–Workpaper-System
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <!-- Whitepaper -->
+          <div class="p-6 bg-cyber-cyan/10 border border-cyber-cyan/30 rounded-lg">
+            <h3 class="text-xl font-bold text-cyber-cyan mb-4">Whitepaper = Architektur-Ebene</h3>
+            <p class="text-off-white/80 mb-4">Ein Whitepaper beschreibt:</p>
+            <ul class="space-y-2 text-off-white/80">
+              <li>▸ Ziel des Moduls</li>
+              <li>▸ Architekturelle Grundannahmen</li>
+              <li>▸ Schnittstellen</li>
+              <li>▸ Abhängigkeiten</li>
+              <li>▸ Sicherheits- und Strukturprinzipien</li>
+              <li>▸ Langfristige Design-Entscheidungen</li>
+            </ul>
+            <p class="text-cyber-cyan/80 mt-4 font-semibold">Whitepapers sind stabil. Sie ändern sich selten.</p>
+          </div>
+
+          <!-- Workpaper -->
+          <div class="p-6 bg-copper-orange/10 border border-copper-orange/30 rounded-lg">
+            <h3 class="text-xl font-bold text-copper-orange mb-4">Workpaper = operative Ebene</h3>
+            <p class="text-off-white/80 mb-4">Ein Workpaper dokumentiert:</p>
+            <ul class="space-y-2 text-off-white/80">
+              <li>▸ Konkrete Session-Arbeit</li>
+              <li>▸ Implementierungsdetails</li>
+              <li>▸ Tests</li>
+              <li>▸ Fehlerbilder</li>
+              <li>▸ Iterationen</li>
+              <li>▸ Entscheidungen unter Zeitdruck</li>
+            </ul>
+            <p class="text-copper-orange/80 mt-4 font-semibold">Workpapers sind dynamisch. Sie bilden den realen Verlauf ab.</p>
+          </div>
+        </div>
+
+        <div class="p-6 bg-copper-orange/10 border-l-4 border-copper-orange rounded-r-lg my-8">
+          <p class="text-lg text-off-white/90 italic">
+            Mit klassischen Coding-Tools entsteht Code. Mit diesem System entsteht: <strong class="text-copper-orange">Reproduzierbare Architektur.</strong>
+          </p>
+          <p class="text-off-white/70 mt-2">
+            Und genau das ist der Unterschied zwischen „KI benutzt" und „KI strukturell integriert".
+          </p>
+        </div>
+
+        <!-- 4. Agenten-Level -->
+        <h2 class="text-3xl font-bold text-copper-orange mt-12 mb-6">
+          🤖 4. Agenten-Level statt Prompt-Level
+        </h2>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Wenn man mit einzelnen Prompts arbeitet, reicht Kontextfenster. Wenn man mit autonomen Agenten arbeitet, braucht man:
+        </p>
+
+        <ul class="space-y-2 my-6 pl-4">
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Klare Arbeitsstruktur</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Formalisierte Dokumentation</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Maschinenlesbare Ordnungslogik</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Eindeutige Projekt-Normen</li>
+        </ul>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Agenten dürfen nicht raten, wie gearbeitet wird. <strong class="text-copper-orange">Sie müssen es wissen.</strong>
+        </p>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Die Manifest-Spezifikation definiert genau das:
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 my-8">
+          <div class="p-3 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-lg text-center text-sm text-cyber-cyan">Projektstruktur</div>
+          <div class="p-3 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-lg text-center text-sm text-cyber-cyan">Rollen</div>
+          <div class="p-3 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-lg text-center text-sm text-cyber-cyan">Dokumentationsformat</div>
+          <div class="p-3 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-lg text-center text-sm text-cyber-cyan">Persistenz-Logik</div>
+          <div class="p-3 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-lg text-center text-sm text-cyber-cyan">Zustandsdefinitionen</div>
+        </div>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Damit wird ein Projekt für Mensch und Maschine gleichzeitig lesbar.
+        </p>
+
+        <!-- 5. Kontextverlust -->
+        <h2 class="text-3xl font-bold text-copper-orange mt-12 mb-6">
+          🔥 5. Kontextverlust – das unterschätzte Problem
+        </h2>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Selbst mit großen Modellen bleibt ein Problem:
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 my-8">
+          <div class="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-center text-sm text-red-400">Context-Limits</div>
+          <div class="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-center text-sm text-red-400">Token-Limits</div>
+          <div class="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-center text-sm text-red-400">Rate-Limits</div>
+          <div class="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-center text-sm text-red-400">Session-Reset</div>
+          <div class="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-center text-sm text-red-400">API-Instabilität</div>
+        </div>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          In größeren Projekten ist das kein Schönheitsfehler – es ist ein <strong class="text-red-400">Produktivitätskiller</strong>.
+        </p>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Deshalb experimentiere ich mit:
+        </p>
+
+        <ul class="space-y-2 my-6 pl-4">
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> Longtime Memory</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> Zwischenpersistenz</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> Strukturiertem Retrieval</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> Paper-Referenzierung statt Vollkontext</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> Zustandsrekonstruktion aus Metadaten</li>
+        </ul>
+
+        <div class="p-6 bg-cyber-cyan/10 border-l-4 border-cyber-cyan rounded-r-lg my-8">
+          <p class="text-lg text-off-white/90 italic">
+            Kontext darf kein flüchtiger Zustand sein. <strong class="text-cyber-cyan">Er muss rekonstruierbar sein.</strong>
+          </p>
+        </div>
+
+        <!-- 6. Ordnung als Architekturprinzip -->
+        <h2 class="text-3xl font-bold text-copper-orange mt-12 mb-6">
+          🏗️ 6. Ordnung als Architekturprinzip
+        </h2>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Ich sehe das nicht als „Dokumentationsmethode". Ich sehe es als architektonisches Kontrollinstrument.
+        </p>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Ordnung bedeutet:
+        </p>
+
+        <ul class="space-y-2 my-6 pl-4">
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Jeder Agent weiß, wo er steht.</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Jeder Mensch kann querlesen.</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Jede Entscheidung ist nachvollziehbar.</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Jede Iteration ist referenzierbar.</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Jede Architektur bleibt überprüfbar.</li>
+        </ul>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Das verhindert:
+        </p>
+
+        <div class="space-y-3 my-6">
+          <div class="p-4 bg-red-500/10 border-l-4 border-red-500 rounded-r-lg">
+            <p class="text-off-white/90">Schleichende Inkonsistenz</p>
+          </div>
+          <div class="p-4 bg-red-500/10 border-l-4 border-red-500 rounded-r-lg">
+            <p class="text-off-white/90">Implizite Annahmen</p>
+          </div>
+          <div class="p-4 bg-red-500/10 border-l-4 border-red-500 rounded-r-lg">
+            <p class="text-off-white/90">Stillschweigende Architekturbrüche</p>
+          </div>
+        </div>
+
+        <!-- 7. Warum öffentlich -->
+        <h2 class="text-3xl font-bold text-copper-orange mt-12 mb-6">
+          🌐 7. Warum ich das Repository öffentlich gemacht habe
+        </h2>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Viele arbeiten inzwischen mit autonomen Agenten, lokalen LLMs, Multi-Model-Setups und verteilten Workflows. Fast alle stoßen auf dasselbe Problem:
+        </p>
+
+        <div class="p-6 bg-copper-orange/10 border-l-4 border-copper-orange rounded-r-lg my-8">
+          <p class="text-xl text-copper-orange font-bold">
+            Die Struktur fehlt. Nicht die Technologie.
+          </p>
+        </div>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Ich bin kein Wissenschaftler auf diesem Gebiet. Aber ich habe mich selbst durchgearbeitet – aus Notwendigkeit. Dieses Repository ist das Ergebnis dieser Praxis.
+        </p>
+
+        <!-- Erweiterung: Nachrüstbares Ordnungs-Layer -->
+        <h2 class="text-3xl font-bold text-copper-orange mt-12 mb-6">
+          🔧 Erweiterung: Manifest als nachrüstbares Ordnungs-Layer
+        </h2>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Das System ist so gebaut, dass:
+        </p>
+
+        <ul class="space-y-2 my-6 pl-4">
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> es in bestehende Repositories eingefügt werden kann</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> es keine bestehende Code-Struktur zerstört</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> es unabhängig von Sprache oder Stack funktioniert</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> es sowohl für Menschen als auch für Agenten lesbar ist</li>
+          <li class="flex items-start gap-2"><span class="text-cyber-cyan">▸</span> es projektübergreifend standardisiert werden kann</li>
+        </ul>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Das ist architektonisch sauber gedacht. <strong class="text-copper-orange">Kein Framework, kein Tool-Zwang, keine Runtime-Abhängigkeit.</strong>
+        </p>
+
+        <!-- Nachrüstbarkeit -->
+        <h3 class="text-2xl font-bold text-cyber-cyan mt-10 mb-4">
+          Nachrüstbarkeit als Kernprinzip
+        </h3>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Viele arbeiten bereits mit Legacy-Code, gewachsenen Monorepos, Microservice-Landschaften und experimentellen KI-Projekten. Was dort fast immer fehlt:
+        </p>
+
+        <ul class="space-y-2 my-6 pl-4">
+          <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Formalisierte Architekturdokumentation</li>
+          <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Sessionbasierte Entwicklungsprotokolle</li>
+          <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Rekonstruierbare Entscheidungslogik</li>
+          <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Agentenlesbare Struktur</li>
+        </ul>
+
+        <div class="p-6 bg-cyber-cyan/10 border-l-4 border-cyber-cyan rounded-r-lg my-8">
+          <p class="text-lg text-off-white/90 italic">
+            Ein bestehendes Projekt bekommt ein Manifest-Verzeichnis und arbeitet ab diesem Zeitpunkt strukturiert weiter. <strong class="text-cyber-cyan">Ohne Migration. Ohne Rewrite. Ohne Dogma.</strong>
+          </p>
+        </div>
+
+        <!-- Architekturgedanke -->
+        <h3 class="text-2xl font-bold text-cyber-cyan mt-10 mb-4">
+          Architekturgedanke dahinter
+        </h3>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Technisch betrachtet ist das System:
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 my-8">
+          <div class="p-3 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-lg text-center text-sm text-cyber-cyan">metadata-driven</div>
+          <div class="p-3 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-lg text-center text-sm text-cyber-cyan">zustandsorientiert</div>
+          <div class="p-3 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-lg text-center text-sm text-cyber-cyan">dokumentenzentriert</div>
+          <div class="p-3 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-lg text-center text-sm text-cyber-cyan">rekonstruierbar</div>
+          <div class="p-3 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-lg text-center text-sm text-cyber-cyan">entkoppelt vom Code</div>
+        </div>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Der Code bleibt Code. Aber die Ordnungslogik wird explizit. Das ist ein Unterschied, den viele unterschätzen.
+        </p>
+
+        <!-- 8. Fazit -->
+        <h2 class="text-3xl font-bold text-copper-orange mt-12 mb-6">
+          🎯 8. Fazit
+        </h2>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          KI-Modelle werden besser. Agenten werden leistungsfähiger. Tools werden schneller. <strong class="text-copper-orange">Aber ohne Struktur entsteht Chaos.</strong>
+        </p>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">Mein Ansatz:</p>
+
+        <ul class="space-y-2 my-6 pl-4">
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Whitepaper für Architektur</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Workpaper für operative Realität</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Manifest-Spezifikation für Agenten</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Longtime Memory gegen Kontextverlust</li>
+          <li class="flex items-start gap-2"><span class="text-copper-orange">▸</span> Klare Projekt-Ordnungslogik</li>
+        </ul>
+
+        <p class="text-lg text-off-white/90 leading-relaxed mb-6">
+          Nicht als akademische Theorie. Sondern als <strong class="text-copper-orange">überlebensnotwendige Praxis</strong> für komplexe Systeme.
+        </p>
+
+        <!-- Repository Link -->
+        <div class="p-6 bg-copper-orange/10 border border-copper-orange/30 rounded-lg my-8 text-center">
+          <h3 class="text-xl font-bold text-copper-orange mb-3">Repository</h3>
+          <p class="text-lg">
+            <a href="https://github.com/Alexander Friedland/Autonomous-Agent-Manifest-Specification" target="_blank" class="text-cyber-cyan hover:underline font-semibold">
+              github.com/Alexander Friedland/Autonomous-Agent-Manifest-Specification
+            </a>
+          </p>
+        </div>
+
+        <!-- Closing -->
+        <div class="p-6 bg-void border border-cyber-cyan/20 rounded-lg my-8">
+          <p class="text-lg text-off-white/80 italic">
+            Wenn du selbst an größeren KI-Ökosystemen arbeitest, wird dich das Thema früher oder später einholen. Besser, man strukturiert es von Anfang an.
+          </p>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- Back Button -->
+    <div class="max-w-4xl mx-auto px-4 pb-12 flex justify-center">
+      <button 
+       
+        class="btn btn-outline btn-primary terminal-font w-full sm:w-auto"
+      >
+        ← Zurück zum Blog
+      </button>
+    </div>
+
+  </div>
+  </article>
+  
+  <div class="author-section px-4">
+    <p class="author-info">Dieser Artikel wurde von Alexander Friedland (@ogerly) verfasst und erschien am 19.02.2026. Er gehört zur Kategorie KI-Architektur.</p>
+  </div>
+  
+  <div class="max-w-4xl mx-auto px-4 pb-16">
+    <a href="../blog/index.html" class="back-link">← Zurück zum Blog</a>
+  </div>
+  
+  <div class="section-spacer"></div>
+</body>
+</html>

@@ -1,27 +1,100 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "autoupdate": true,
+  "model": "mantis/qwen/qwen3.6-35b-a3b",
   "provider": {
-    "lmstudio": {
+    "mantis": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "LM Studio (local)",
+      "name": "MANTIS LLM Gateway",
       "options": {
-        "baseURL": "http://192.168.0.70:1234/v1/",
-        "apiKey": "{env:LM_API_TOKEN}"
+        "baseURL": "http://172.19.224.1:9876/v1",
+        "apiKey": "mantis-local-proxy"
       },
       "models": {
-        "qwen/qwen3-coder-30b": {
-          "name": "Qwen3 Coder 30B"
-        },
-        "qwen/qwen3-coder-next": {
-        "name": "Qwen3 Coder Next"
-        },
-        "qwen/qwen3.6-27b": {
-          "name": "Qwen3.6 27B"
-        },
         "qwen/qwen3.6-35b-a3b": {
-          "name": "Qwen3.6 35B"
+          "name": "LM Studio: Qwen 3.6 35B A3B (lokal)"
+        },
+        "qwen3.8-27b-aeon-ultimate-uncensored": {
+          "name": "LM Studio: qwen3.8-27b-aeon-ultimate-uncensored (lokal)"
+        },
+        "qwen3.8-27b-nvfp4": {
+          "name": "LM Studio: qwen3.8-27b-nvfp4 (lokal)"
+        },
+        "glm-5.2-cloud": {
+          "name": "Ollama Cloud: GLM 5.2 (Z.ai, Free)"
+        },
+        "minimax-m3-cloud": {
+          "name": "Ollama Cloud: MiniMax M3 (Free)"
+        },
+        "nemotron-3-ultra-cloud": {
+          "name": "Ollama Cloud: Nemotron 3 Ultra 550B (NVIDIA, Free)"
+        },
+        "gpt-oss:20b-cloud": {
+          "name": "Ollama Cloud: gpt-oss 20B (OpenAI, Free)"
+        },
+        "nemotron-3-nano:30b-cloud": {
+          "name": "Ollama Cloud: Nemotron 3 Nano 30B (NVIDIA, Free)"
+        },
+        "gpt-oss:120b-cloud": {
+          "name": "Ollama Cloud: gpt-oss 120B (OpenAI, Free)"
+        },
+        "qwen3.8-max-alibaba": {
+          "name": "Alibaba Cloud: Qwen 3.8 Max (Free)"
+        },
+        "qwen3.7-flash-alibaba": {
+          "name": "Alibaba Cloud: Qwen 3.7 Flash (Free)"
+        },
+        "qwen3.7-plus-alibaba": {
+          "name": "Alibaba Cloud: Qwen 3.7 Plus (Free)"
+        },
+        "qwen3.6-flash-alibaba": {
+          "name": "Alibaba Cloud: Qwen 3.6 Flash (Free)"
+        },
+        "qwen3.6-35b-a3b-alibaba": {
+          "name": "Alibaba Cloud: Qwen 3.6 35B A3B (Free)"
+        },
+        "qwen-flash-alibaba": {
+          "name": "Alibaba Cloud: Qwen Flash (Free)"
+        },
+        "qwen-plus-alibaba": {
+          "name": "Alibaba Cloud: Qwen Plus (Free)"
+        },
+        "qwen-max-alibaba": {
+          "name": "Alibaba Cloud: Qwen Max (Free)"
+        },
+        "deepseek-v4-flash-alibaba": {
+          "name": "Alibaba Cloud: DeepSeek V4 Flash (Free)"
+        },
+        "glm-5.2-alibaba": {
+          "name": "Alibaba Cloud: GLM 5.2 (Free)"
+        },
+        "openrouter/free": {
+          "name": "OpenRouter: Free Models Router (automatisch)"
+        },
+        "openrouter/owl-alpha": {
+          "name": "OpenRouter: Owl Alpha (preferred, Agentic)"
+        },
+        "nvidia/nemotron-3-super-120b-a12b:free": {
+          "name": "OpenRouter: Nemotron 3 Super (preferred, effizient)"
+        },
+        "poolside/laguna-m.1:free": {
+          "name": "OpenRouter: Poolside Laguna M.1 (preferred, Coding)"
+        },
+        "openai/gpt-oss-120b:free": {
+          "name": "OpenRouter: gpt-oss-120b (preferred, Reasoning)"
+        },
+        "z-ai/glm-4.5-air:free": {
+          "name": "OpenRouter: GLM 4.5 Air (preferred, schnell)"
         }
       }
+    }
+  },
+  "permission": {
+    "edit": {
+      ".env": "ask",
+      ".env.*": "ask",
+      ".env.backup": "ask",
+      "*": "allow"
     }
   }
 }

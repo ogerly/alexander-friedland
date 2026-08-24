@@ -18,18 +18,18 @@ export function initGridReveal(containerSelector, staggerDelay = 0.07) {
   const containers = document.querySelectorAll(containerSelector);
 
   containers.forEach(container => {
-    const cards = container.querySelectorAll('.service-card, .project-card, .layer-card, .stat-item, .osarena-feature');
+    const cards = container.querySelectorAll('.project-card, .cv-item, .blog-entry, .channel');
     cards.forEach((card, i) => {
       card.style.opacity = '0';
       card.style.transform = 'translateY(16px)';
-      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease, background 0.3s';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
       card.style.transitionDelay = (i * staggerDelay) + 's';
     });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.service-card, .project-card, .layer-card, .stat-item, .osarena-feature').forEach(card => {
+          entry.target.querySelectorAll('.project-card, .cv-item, .blog-entry, .channel').forEach(card => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
           });

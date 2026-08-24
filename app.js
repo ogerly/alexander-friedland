@@ -9,6 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initHero();
   initReveal();
-  initGridReveal('.services-grid, .projects-grid, .identity-layers, .stat-row, .osarena-grid');
+  initGridReveal('.blog-grid, .video-grid, .cv-timeline, .contact-channels');
   initContact();
 });

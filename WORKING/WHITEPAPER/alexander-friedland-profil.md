@@ -127,3 +127,26 @@ Die Webseite zeigt:
 - Lebenslauf (beruflicher Werdegang)
 - Über mich (Positionierung)
 - Kontakt (Formular)
+
+## Antworttext-Format
+
+Jeder Antworttext beginnt mit einem Betreff:
+
+Betreff: [Betrefftext]
+
+Dann folgt der reine Text — **ohne Markdown-Formatierung**, **ohne HTML**, **ohne Code-Blöcke**.
+
+Beispiel:
+
+Betreff: Bewerbung als Senior Technology Architect (Referenz-Nr.: 12444-563465373262847-DT-S)
+
+Sehr geehrte Frau Kocsis,
+
+vielen Dank für die Vorstellung der Position...
+
+[Reiner Text, keine Formatierung]
+
+Mit freundlichen Grüßen
+Alexander Friedland
+
+Dieses Format ermöglicht einfaches Kopieren ohne Probleme.

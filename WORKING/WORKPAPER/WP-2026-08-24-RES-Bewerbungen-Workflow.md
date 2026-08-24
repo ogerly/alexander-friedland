@@ -23,6 +23,7 @@ Daten nicht nach GitHub.
 3. Profil-Whitepaper enthält alle Daten für Antworttexte
 4. Zwei Bewerbungstypen: passt / passt nicht
 5. Immer auf Webseite referenzieren
+6. Antworttext als reiner Text (ohne Markdown) mit Betreff — einfach kopierbar
 
 ## decisions
 
@@ -30,7 +31,7 @@ Daten nicht nach GitHub.
 2. **Profil-Whitepaper** — alle relevanten Daten lokal
 3. **index.md** — Übersicht über alle Bewerbungen
 4. **Dateinamen-Konvention** — `[Datum]-[stellenname]-[firma].md`
-5. **Antworttexte** direkt im Bewerbungsdokument
+5. **Antworttexte als reiner Text** — ohne Markdown, mit Betreff, einfach kopierbar
 6. **Webseite referenzieren** bei jeder Bewerbung
 
 ## open_questions

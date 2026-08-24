@@ -79,6 +79,7 @@ Dieser Stack funktioniert überall — für jedes Projekt. Keine Cloud, keine Ab
 
 - `blog-artikel-erstellen.md` — Workflow für neue Blog-Artikel (HTML-Template, Checkliste, Farbschema)
 - `Portfolio-Architecture.md` — Architektonische Prinzipien der Portfolio-Seite
+- `alexander-friedland-profil.md` — Profil für Bewerbungen (lokal, nicht nach GitHub)
 
 ### Workpapers (Auswahl)
 
@@ -86,6 +87,7 @@ Dieser Stack funktioniert überall — für jedes Projekt. Keine Cloud, keine Ab
 - `WP-2026-08-24-RES-Dozent-Positionierung.md` — Dozent-Titel entfernt, ehrliche Formulierung
 - `WP-2026-08-24-ARCH-Animierter-Hero-Kompass.md` — Animierter SVG-Kompass
 - `WP-2026-08-24-Formular-Update` — Kontaktformular Formspree-URL aktualisiert
+- `WP-2026-08-24-RES-Bewerbungen-Workflow.md` — Bewerbungsprozess strukturieren
 
 ### Deployment
 

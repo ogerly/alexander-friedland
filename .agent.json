@@ -29,7 +29,8 @@
       "diary":       "./WORKING/DIARY",
       "logs":        "./WORKING/LOGS",
       "guidelines":  "./WORKING/GUIDELINES",
-      "tools":       "./WORKING/TOOLS"
+      "tools":       "./WORKING/TOOLS",
+      "bewerbungen": "./WORKING/WORKPAPER/Bewerbungen"
     },
 
     "documentation_model": {

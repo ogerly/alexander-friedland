@@ -27,6 +27,19 @@ Alexander Friedland
 └── Kontakt: E-Mail, GitHub, YouTube, LinkedIn
 ```
 
+## Bewerbungen
+
+```
+WORKING/WORKPAPER/Bewerbungen/
+├── index.md          — Übersicht aller Bewerbungen
+├── [Datum]-[stelle]-[firma].md — Bewerbungsdokument
+└── ...
+```
+
+Jede Bewerbung als separates Dokument. Antworttext direkt im File.
+Nicht nach GitHub — steht in `.gitignore`.
+Immer auf die Webseite referenzieren.
+
 ## Blog
 
 - **19 fertige Blog-Artikel** in `blog-metadata.json`

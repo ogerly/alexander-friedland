@@ -1,3 +1,7 @@
 
 # Environment variables
 .env
+
+# Sensitive data — Bewerbungen (nur index.md tracked)
+WORKING/WORKPAPER/Bewerbungen/*
+!WORKING/WORKPAPER/Bewerbungen/index.md

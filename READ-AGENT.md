@@ -44,9 +44,10 @@ WORKING/WORKPAPER/Bewerbungen/
 1. Stellenangebot erhalten → prüfen: passt es in den Bereich?
 2. Bewerbungsdokument erstellen: `[Datum]-[stellenname]-[firma].md`
 3. Antworttext im File verfassen (Typ A oder Typ B)
-4. In `index.md` eintragen (Datum, Firma, Position, Status, Typ)
-5. Bewerbung versenden
-6. **Nicht nach GitHub** — steht in `.gitignore`
+4. Nach OK vom User: Bewerbung versenden
+5. **Status aktualisieren** im File: Datum, Plattform, Mail
+6. In `index.md` eintragen (Datum, Firma, Position, Status, Versendet, Typ)
+7. **Nicht nach GitHub** — steht in `.gitignore`
 
 ### Bewerbungstypen
 

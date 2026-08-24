@@ -56,3 +56,4 @@ Daten nicht nach GitHub.
 2. `.agent.json` erweitern
 3. `READ-AGENT.md` erweitern
 4. Erste Bewerbung dokumentieren (Telekom — Typ B)
+5. Status tracking: Datum, Plattform, Mail nach Versand eintragen

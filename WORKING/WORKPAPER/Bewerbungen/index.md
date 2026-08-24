@@ -4,10 +4,12 @@
 
 1. **Stellenangebot erhalten** → prüfen: passt es in den Bereich?
 2. **Neues Bewerbungsdokument erstellen**: `WORKING/WORKPAPER/Bewerbungen/[Datum]-[stellenname]-[firma].md`
-3. **Antworttext** im Bewerbungsdokument verfassen
-4. **Bewerbung versenden**
-5. **In index.md eintragen** (Datum, Firma, Position, Status, Link)
-6. **Bewerbungen-Ordner NICHT nach GitHub** — steht in `.gitignore`
+3. **Antworttext** im Bewerbungsdokument verfassen (reiner Text mit Betreff)
+4. **Status prüfen** — passt es (Typ A) oder nicht (Typ B)?
+5. **Bewerbung versenden** (nach OK vom User)
+6. **Status aktualisieren** im Bewerbungsdokument (Datum, Plattform, Mail)
+7. **In index.md eintragen** (Datum, Firma, Position, Status, Typ, Link)
+8. **Bewerbungen-Ordner NICHT nach GitHub** — steht in `.gitignore`
 
 ## Antworttext-Format
 
@@ -42,6 +44,6 @@ Alexander Friedland
 
 ## Bewerbungen
 
-| Datum | Firma | Position | Status | Typ | Link | Antwort-Text |
-|-------|-------|----------|--------|-----|------|-------------|
-| 2026-08-24 | Deutsche Telekom AG | Senior Technology Architect | Antwort verfasst | B | [Quelle](https://web.arbeitsagentur.de/jobboerse/vv-ui/pd/stellenempfehlungen?id=10000-100472483543-SE) | [lesen](./2026-08-24-senior-technology-architect-deutsche-telekom.md) |
+| Datum | Firma | Position | Status | Versendet | Plattform | Typ | Link |
+|-------|-------|----------|--------|-----------|-----------|-----|------|
+| 2026-08-24 | Deutsche Telekom AG | Senior Technology Architect | Versendet | 2026-08-24 | Arbeitsamt | B | [lesen](./2026-08-24-senior-technology-architect-deutsche-telekom.md) |

@@ -44,9 +44,10 @@
         "1. Job offer received → check if it fits the profile",
         "2. Create document: [DATE]-[position]-[company].md",
         "3. Write response text (Type A: fits / Type B: does not fit)",
-        "4. Add to index.md (date, company, position, status, type)",
-        "5. Send application",
-        "6. NEVER commit to GitHub — in .gitignore"
+        "4. After user OK: send application",
+        "5. Update status in document (date, platform, mail)",
+        "6. Add to index.md (date, company, position, status, sent date, type)",
+        "7. NEVER commit to GitHub — in .gitignore"
       ],
       "profil_whitepaper": "./WORKING/WHITEPAPER/alexander-friedland-profil.md",
       "profil_note": "Contains all personal data for applications — local only, not for GitHub"

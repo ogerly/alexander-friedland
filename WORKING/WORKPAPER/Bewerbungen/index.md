@@ -48,3 +48,4 @@ Alexander Friedland
 |-------|-------|----------|--------|-----------|-----------|-----|------|
 | 2026-08-24 | Deutsche Telekom AG | Senior Technology Architect | Versendet | 2026-08-24 | Arbeitsamt | B | [lesen](./2026-08-24-senior-technology-architect-deutsche-telekom.md) |
 | 2026-08-24 | CANCOM SE | IT Architect | Versendet | 2026-08-24 | Arbeitsamt | B | [lesen](./2026-08-24-it-architect-cancom.md) |
+| 2026-08-24 | Vodafone GmbH | Senior Expert Site Rental Management | Versendet | 2026-08-24 | Arbeitsamt | B | [lesen](./2026-08-24-senior-expert-site-rental-management-vodafone.md) |

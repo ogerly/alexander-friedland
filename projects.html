@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projekte — Alexander Friedland</title>
+<meta name="description" content="Alexander Friedland — Projekte und Arbeiten. KI & Agenten-Architektur, Webentwicklung, dezentrale Systeme, Datenvisualisierung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-brand">Alexander<span> Friedland</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="index.html#videos">Videos</a></li>
+    <li><a href="index.html#about">Über</a></li>
+    <li><a href="index.html#cv">Lebenslauf</a></li>
+    <li><a href="projects.html" style="color: var(--gold);">Projekte</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+    </a>
+    <a href="https://youtube.com/@DEVmatrose" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+  </div>
+  <a href="index.html#contact" class="nav-cta">Kontakt</a>
+  <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="Menü schließen">✕</button>
+  <a href="index.html#hero">Start</a>
+  <a href="index.html#blog">Blog</a>
+  <a href="index.html#videos">Videos</a>
+  <a href="index.html#about">Über</a>
+  <a href="index.html#cv">Lebenslauf</a>
+  <div class="mobile-nav-social">
+    <a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+    </a>
+    <a href="https://youtube.com/@DEVmatrose" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+  </div>
+  <a href="index.html#contact">Kontakt</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" style="min-height: 50vh;">
+  <div class="hero-content">
+    <div class="hero-tag">Projekte & Arbeiten</div>
+    <h1 class="hero-name">Meine<br><em>Arbeit</em></h1>
+    <p class="hero-sub">Offene Projekte, Experimente und Werkzeuge — sortiert nach Bereichen.</p>
+    <div class="hero-actions">
+      <a href="#ki" class="btn-primary">KI & Agenten</a>
+      <a href="#frontend" class="btn-secondary">Webentwicklung</a>
+      <a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer" class="btn-secondary">Alle auf GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- KI & Agenten -->
+<section id="ki" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="01">KI & Agenten-Architektur</div>
+    <h2 class="section-title">Autonome Systeme & <em>KI-Infrastruktur</em></h2>
+    <p class="section-body" style="margin-bottom: 3rem;">
+      Mein aktueller Fokus. AAMS als Standard für Agenten-Manifeste, MantisClaw als Agent-Loop-Framework,
+      lokale KI-Workflows mit WebGPU-beschleunigten Modellen — alles ohne Cloud-Zwang.
+    </p>
+
+    <div class="project-grid">
+      <a href="https://github.com/ogerly/AAMS" target="_blank" rel="noopener noreferrer" class="project-card featured">
+        <div class="project-badge">⭐ Wichtigstes Projekt</div>
+        <div class="project-info">
+          <h4>AAMS</h4>
+          <p>Autonomous Agent Manifest Specification — Standard für Agenten-Manifeste, Kontextmanagement und das Whitepaper-Workpaper-System. Python.</p>
+          <div class="project-meta">Python · 5⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/MantisClaw" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>MantisClaw</h4>
+          <p>Agent-Loop-Framework — Ausführungsrunde für KI-Agenten mit persistentem Kontext.</p>
+          <div class="project-meta">Python</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/Lokaler-Voice-Agent-" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>Lokaler Voice Agent</h4>
+          <p>Lokaler Voice Agent auf Basis von MantisClaw — Spracherkennung und -ausgabe ohne Cloud.</p>
+          <div class="project-meta">Python</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/ImprintGuard" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>ImprintGuard</h4>
+          <p>Kontrollierte Wirkung und Imprint-Protection für KI-generierte Inhalte.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/agent-sapiens" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>agent-sapiens</h4>
+          <p>KI-Agenten-Projekt — Erfahrungsbericht aus einem Jahr KI-Architekturarbeit.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/LTX-2" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>LTX-2</h4>
+          <p>Audio–Video generative model inference & LoRA trainer package.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/All-Assistant" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>All-Assistant</h4>
+          <p>KI-Assistent-System — JavaScript-basierte Assistenzarchitektur.</p>
+          <div class="project-meta">JavaScript</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/CofifoAIWO" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>CofifoAIWO</h4>
+          <p>Combine Files for AI Workflows — Dateien und Verzeichnisse zu einer einzelnen Textdatei kombinieren.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/DataRefiner" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>DataRefiner</h4>
+          <p>Data Refining Prototype — On-Premise Data Labeling und Smart Editor für Fachexperten.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/skizzenOCR-prototype" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>skizzenOCR-Prototype</h4>
+          <p>OCR-Prototyp für spezialisierte Dokumentenanalyse.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Frontend -->
+<section id="frontend" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="02">Frontend & Webentwicklung</div>
+    <h2 class="section-title">Vue.js, Nuxt & <em>moderne Webarchitektur</em></h2>
+    <p class="section-body" style="margin-bottom: 3rem;">
+      Über 12 Jahre Frontend-Erfahrung. Vue.js, Nuxt 3, Vuetify, TypeScript — von Portfolio-Seiten
+      bis zu komplexen Datenvisualisierungen und Component Libraries.
+    </p>
+
+    <div class="project-grid">
+      <a href="https://github.com/ogerly/alexander-friedland" target="_blank" rel="noopener noreferrer" class="project-card featured">
+        <div class="project-badge">Eigene Website</div>
+        <div class="project-info">
+          <h4>alexander-friedland</h4>
+          <p>Diese Website — Blog, Videos, CV. Statisch deployed auf GitHub Pages.</p>
+          <div class="project-meta">HTML/CSS/JS</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/devmatrose" target="_blank" rel="noopener noreferrer" class="project-card featured">
+        <div class="project-badge">Portfolio</div>
+        <div class="project-info">
+          <h4>devmatrose</h4>
+          <p>devmatrose Website — Portfolio und Markenpräsenz.</p>
+          <div class="project-meta">Vue.js</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/webgpu-arena" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>webgpu-arena</h4>
+          <p>WebGPU-Benchmarking-Arena — Lokale LLM-Leistung im Browser testen.</p>
+          <div class="project-meta">Vue.js · 2⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/os-arena" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>os-arena</h4>
+          <p>Lokale LLMs direkt im Browser nutzen — WebGPU-beschleunigt.</p>
+          <div class="project-meta">Vue.js</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/xp-collector" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>xp-collector</h4>
+          <p>Vue-Frontend für Neo4j-Dateninput mit neovis.js-Graphvisualisierung.</p>
+          <div class="project-meta">Vue.js · 4⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/nuxt-vuetify-storybook" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>nuxt-vuetify-storybook</h4>
+          <p>Nuxt 3 + Storybook + Vuetify Template — Framework für professionelle Frontend-Entwicklung.</p>
+          <div class="project-meta">Vue.js · 2⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/global-future-compass" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>global-future-compass</h4>
+          <p>Globale Zukunfts-Kompass Visualisierung — Interaktive Datenmapping-Anwendung.</p>
+          <div class="project-meta">Vue.js · 2⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/druid" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>druid</h4>
+          <p>Community Map Beispiel — Interaktive Kartenanwendung mit Vue.js.</p>
+          <div class="project-meta">Vue.js</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/alpine-nuxt-studio" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>alpine-nuxt-studio</h4>
+          <p>Minimalistisches Blog-Theme, powered by Nuxt.</p>
+          <div class="project-meta">TypeScript / Nuxt</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/livepeer-api-example-vue" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>livepeer-api-example-vue</h4>
+          <p>LivePeer API Beispiel mit Vue.js — Video-Streaming-Integration.</p>
+          <div class="project-meta">Vue.js · 2⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/ai-project-navigator" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>ai-project-navigator</h4>
+          <p>KI-Projekt-Navigationstool — Übersicht und Strukturierung von KI-Projekten.</p>
+          <div class="project-meta">Vue.js</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/ogerly-website" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>ogerly-website</h4>
+          <p>Ogerlys Website — Ältere Version, TypeScript-basiert.</p>
+          <div class="project-meta">TypeScript</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Dezentrale Systeme -->
+<section id="decentralized" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="03">Dezentrale Systeme</div>
+    <h2 class="section-title">Nostr, P2P & <em>Sovereign Tech</em></h2>
+    <p class="section-body" style="margin-bottom: 3rem;">
+      Dezentrale Kommunikationsprotokolle und souveräne Infrastruktur. Nostr-Experimente, IPFS-Anwendungen,
+      persistenzfreie Messaging-Systeme — seit 2019.
+    </p>
+
+    <div class="project-grid">
+      <a href="https://github.com/ogerly/ZPMS---Zero-Persistence-Messaging-System" target="_blank" rel="noopener noreferrer" class="project-card featured">
+        <div class="project-badge">Sovereign Tech</div>
+        <div class="project-info">
+          <h4>ZPMS</h4>
+          <p>Zero-Persistence-Messaging-System — Persistenzfreie, zustandslose 1:1-Kommunikationsinfrastruktur.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/nostr-client-console" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>nostr-client-console</h4>
+          <p>Feature-reicher Nostr Client Console mit Terminal-Oberfläche für die Nostr-Protokoll-Interaktion.</p>
+          <div class="project-meta">Python</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/p2p-chat" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>p2p-chat</h4>
+          <p>Peer-to-Peer Chat — Dezentrale Kommunikation ohne Server.</p>
+          <div class="project-meta">JavaScript</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/nostrnews" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>nostrnews</h4>
+          <p>Nostr RSS News Aggregator — Nachrichten aus dem Nostr-Netzwerk aggregieren.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/PetalSwarm" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>PetalSwarm</h4>
+          <p>Global Decentralized LLM Inference Swarm — Dezentrales KI-Inferenz-Netzwerk.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/datadler-gateway" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>datadler-gateway</h4>
+          <p>Datadler Gateway — Dezentrale Datenzugriffsschicht.</p>
+          <div class="project-meta">JavaScript</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/dezentral-link-list" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>dezentral-link-list</h4>
+          <p>Dezentrale Link-Sammlung — Kuratierte Ressourcen für Sovereign Tech.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/mesh-net-bluetooth" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>mesh-net-bluetooth</h4>
+          <p>MeshNet Connect — Bluetooth-Mesh-Netzwerk für dezentrale Kommunikation.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Datenvisualisierung -->
+<section id="visualization" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="04">Datenvisualisierung & Interaktive UI</div>
+    <h2 class="section-title">Canvas, SVG & <em>interaktive Effekte</em></h2>
+    <p class="section-body" style="margin-bottom: 3rem;">
+      Interaktive Datenvisualisierungen, Parallax-Effekte und Canvas-basierte Animationen.
+      Von Galaxy-Visualisierungen bis zu Sternbild-Generatoren.
+    </p>
+
+    <div class="project-grid">
+      <a href="https://github.com/ogerly/cluster-galaxy" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>cluster-galaxy</h4>
+          <p>Datenclusters als Galaxy-Visualisierung mit interaktivem Sternenhimmel-Hintergrund.</p>
+          <div class="project-meta">JavaScript / Canvas</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/ClusterGalaxyVisualizer" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>ClusterGalaxyVisualizer</h4>
+          <p>Interaktive Sternenkarten-Visualisierung — Cluster von Sternen auf einer Karte darstellen.</p>
+          <div class="project-meta">JavaScript / Canvas</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/ClusterVisualizer" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>ClusterVisualizer</h4>
+          <p>Webbasierte Cluster-Visualisierung im quadratischen Grid-Muster.</p>
+          <div class="project-meta">JavaScript / Canvas</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/zufaellige-strichzeichnungen" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>Zufällige Strichzeichnungen</h4>
+          <p>Generiert zufällige Strichzeichnungen, die an Sternbilder erinnern (SVG, Canvas).</p>
+          <div class="project-meta">JavaScript / SVG</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/parallax-starry-sky" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>Parallax Starry Sky</h4>
+          <p>Parallax-Scrolling mit Sternenhimmel-Hintergrund, interaktive Elemente und Zoom.</p>
+          <div class="project-meta">JavaScript / CSS</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/MBB-ParallaxStepper" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>MBB ParallaxStepper</h4>
+          <p>Schritt-für-Schritt-Formularassistent mit Parallax-Effekt für Terminbuchung.</p>
+          <div class="project-meta">JavaScript / CSS</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/interactive-map" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>interactive-map</h4>
+          <p>Wirkungsbereich mit Filter und Suche — Interaktive Kartenanwendung.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/Datenbank-Deutschland" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-badge">Beliebtestes Repo (14⭐)</div>
+        <div class="project-info">
+          <h4>Datenbank-Deutschland</h4>
+          <p>Orte, Kreis, Bundesland, PLZ, GeoCode von Orten in Deutschland — Komplette Geo-Datenbank.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Audio -->
+<section id="audio" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="05">Audio & Transkription</div>
+    <h2 class="section-title">Whisper, WhisperX & <em>lokale Audio-Pipelines</em></h2>
+    <p class="section-body" style="margin-bottom: 3rem;">
+      Lokale Audio-Transkription mit Whisper und WhisperX. PyAnnote für Speaker-Diarisierung.
+      Alles On-Premise — keine Cloud, keine Datenabgabe.
+    </p>
+
+    <div class="project-grid">
+      <a href="https://github.com/ogerly/audio-optimization-pipeline" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>audio-optimization-pipeline</h4>
+          <p>Audiodatei-Analyse und Bereinigung, Optimierung — Automatische Audio-Pipeline.</p>
+          <div class="project-meta">Python</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/pyannote-whisper-integration" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>pyannote-whisper-integration</h4>
+          <p>PyAnnote + Whisper Integration — Speaker-Diarisierung mit lokaler Transkription.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/whisper_audio_transcripter" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>whisper_audio_transcripter</h4>
+          <p>Whisper Audio Transcripter — Lokale Audio-zu-Text Transkription.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/video-to-ascii-converter" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>video-to-ascii-converter</h4>
+          <p>Video zu ASCII Art mit Streamlit Web App — Experimentelle Videoverarbeitung.</p>
+          <div class="project-meta">Python / Streamlit</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Webdesign -->
+<section id="webdesign" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="06">Webdesign & HTML/CSS</div>
+    <h2 class="section-title">Über 25 Jahre <em>Web-Erfahrung</em></h2>
+    <p class="section-body" style="margin-bottom: 3rem;">
+      Seit 1999 dabei. Von statischen HTML-Seiten bis zu modernen Vue.js-Anwendungen.
+      Responsive Design, Figma-to-CSS, NodeBB-Plugins und mehr.
+    </p>
+
+    <div class="project-grid">
+      <a href="https://github.com/ogerly/Distelkind" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>Distelkind</h4>
+          <p>Web-Präsenz Distelkind — CSS-basiertes Webdesign.</p>
+          <div class="project-meta">CSS</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/nodebb-plugin-prezi" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>nodebb-plugin-prezi</h4>
+          <p>NodeBB Plugin — Prezi-Integration in Foren.</p>
+          <div class="project-meta">JavaScript</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/nodebb-plugin-audioplayer" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>nodebb-plugin-audioplayer</h4>
+          <p>NodeBB Plugin — Audio Player für Foren.</p>
+          <div class="project-meta">JavaScript · 1⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/nodebb-plugin-embed-videos" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>nodebb-plugin-embed-videos</h4>
+          <p>NodeBB Plugin — Video-Einbettung in Foren.</p>
+          <div class="project-meta">JavaScript · 5⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/nodebb-plugin-videoplayer" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>nodebb-plugin-videoplayer</h4>
+          <p>NodeBB Plugin — Video Player für Foren.</p>
+          <div class="project-meta">JavaScript · 3⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/ratsinfobot" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>ratsinfobot</h4>
+          <p>Ratsinfo Bot — PHP-basierter Informationsbot.</p>
+          <div class="project-meta">PHP</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/dsnippet" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>dsnippet</h4>
+          <p>CSS Snippets — Wiederverwendbare CSS-Komponenten.</p>
+          <div class="project-meta">CSS · 1⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/dm-custom-css" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>dm-custom-css</h4>
+          <p>CSS from Figma — Design-to-Code CSS-Implementierung.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/Shu" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>Shu</h4>
+          <p>Webprojekt — Statische HTML-Seite.</p>
+          <div class="project-meta">HTML · 3⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/aventura" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>aventura</h4>
+          <p>Pen and Paper im KI-Zeitalter — Webprojekt.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/d20" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>d20</h4>
+          <p>D20 Würfelsystem — Pen & Paper Utility.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/ddgram" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>ddgram</h4>
+          <p>Webprojekt — Statische HTML-Seite.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/airtime-sendeplan" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>airtime-sendeplan</h4>
+          <p>Sendeplan-Webseite — Programmübersicht.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/humagramm" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>humagramm</h4>
+          <p>CSS-Projekt — Experimentelles Design.</p>
+          <div class="project-meta">CSS</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/funky-prints-store" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>funky-prints-store</h4>
+          <p>Example Store — Vue.js E-Commerce Beispiel.</p>
+          <div class="project-meta">Vue.js</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/decay-calculator" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>decay-calculator</h4>
+          <p>Gradido GDD Decay Calculation — Berechnungstool.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/sd-commandline-arguments" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>sd-commandline-arguments</h4>
+          <p>Stable Diffusion Command Line Arguments — Deutsche Dokumentation.</p>
+          <div class="project-meta">1⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/GPTAssistent" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>GPTAssistent</h4>
+          <p>GPT-Assistent-Tool — Spezialisiertes KI-Tooling.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Tools & Utilities -->
+<section id="tools" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="07">DevTools & Utilities</div>
+    <h2 class="section-title">Werkzeuge & <em>Hilfsprogramme</em></h2>
+    <p class="section-body" style="margin-bottom: 3rem;">
+      Kleine Tools und Utilities für den Entwicklungsalltag. Von Vue.js-Dateianalyse bis Podcast-Download.
+    </p>
+
+    <div class="project-grid">
+      <a href="https://github.com/ogerly/vue-find-unused" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>vue-find-unused</h4>
+          <p>Analyse ungenutzter Dateien in Vue.js-Projekten — DevTool für die Wartung.</p>
+          <div class="project-meta">JavaScript</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/podigee-downloader" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>podigee-downloader</h4>
+          <p>MP3-Extraktion aus Podigee URLs — Podcast-Download-Tool.</p>
+          <div class="project-meta">Python</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/playstuff" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>playstuff</h4>
+          <p>Beispielcode und Snippets — Sammlung nützlicher Codesegmente.</p>
+          <div class="project-meta">JavaScript</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/hc-install-docker" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>hc-install-docker</h4>
+          <p>Docker-Installationshelper — Automatisierte Setup-Skripte.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/HC_postman_collection" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>HC_postman_collection</h4>
+          <p>Postman API Collection — Gespeicherte API-Requests.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/trading-simulation" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>trading-simulation</h4>
+          <p>Trading-Simulation — Backtesting und Simulationstools.</p>
+          <div class="project-meta">Python</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/MarketWave_Analyzer" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>MarketWave Analyzer</h4>
+          <p>Bitcoin-Zeitreihenanalyse mit Moving Averages — Mustererkennung und Signale.</p>
+          <div class="project-meta">Python</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/chartanalysen" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>chartanalysen</h4>
+          <p>Chart-Analyse-Tools — Technische Analyse.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/BotPrivateer" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>BotPrivateer</h4>
+          <p>BTC-Bot / Krypto-Trading-Bot — Automatisierter Trading-Assistent.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/entropy-zero" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>entropy-zero</h4>
+          <p>Experimentelles KI-Projekt — Forschung und Exploration.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/awesom-claw" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>awesom-claw</h4>
+          <p>United Claws — KI-Projekt-Experiment.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/lucide" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>lucide</h4>
+          <p>Licude Icon Toolkit — Open-Source Icon-Sammlung (Fork von Feather Icons).</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/leonleon" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>leonleon</h4>
+          <p>Experimentelles Projekt — Exploration und Forschung.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/diestelkind_datenbank" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>diestelkind_datenbank</h4>
+          <p>Distelkind Datenbank — Datenverwaltung.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/minX" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>minX</h4>
+          <p>Experimentelles Projekt.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/BasisConsilium" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>BasisConsilium</h4>
+          <p>JavaScript-Projekt — Grundlagenarbeit.</p>
+          <div class="project-meta">JavaScript</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/nodebb-plugin-prezi" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>nodebb-plugin-audioplayer</h4>
+          <p>NodeBB Plugin — Audio Player für Foren.</p>
+          <div class="project-meta">JavaScript · 1⭐</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/hc_neo4j_commands" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>hc_neo4j_commands</h4>
+          <p>Neo4j Command Collection — Häufig genutzte GraphDB-Abfragen.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/ocelot-nuxt-apollo-starter" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>ocelot-nuxt-apollo-starter</h4>
+          <p>Nuxt + Apollo GraphQL Starter — Projekttemplate.</p>
+          <div class="project-meta">TypeScript</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/ogerly.github.io" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>ogerly.github.io</h4>
+          <p>Devmatrose aka @ogerly — Ältere Portfolio-Seite.</p>
+          <div class="project-meta">Vue.js</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/nostr-mania" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-info">
+          <h4>nostr-mania</h4>
+          <p>Nostr-Experimente und -Anwendungen.</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/ogerly/ogerly" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-badge">README</div>
+        <div class="project-info">
+          <h4>ogerly</h4>
+          <p>Hauptprofil-Repo — Alexander Friedland — GitHub README.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Zusammenfassung -->
+<section id="summary" class="section-pad">
+  <div class="container">
+    <div class="section-label" data-num="08">Zusammenfassung</div>
+    <h2 class="section-title">Technischer <em>Überblick</em></h2>
+
+    <div style="margin-block: 3rem;">
+      <h4 style="color: var(--gold); margin-block-end: 1.5rem;">Sprachen & Technologien</h4>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-block-end: 3rem;">
+        <span class="tag">Python</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Vue.js</span>
+        <span class="tag">Nuxt 3</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">Vuetify</span>
+        <span class="tag">Storybook</span>
+        <span class="tag">GraphQL / Apollo</span>
+        <span class="tag">REST APIs</span>
+        <span class="tag">Neo4j / GraphDB</span>
+        <span class="tag">Whisper / WhisperX</span>
+        <span class="tag">WebGPU LLM</span>
+        <span class="tag">AAMS</span>
+        <span class="tag">Nostr</span>
+        <span class="tag">IPFS</span>
+        <span class="tag">P2P</span>
+        <span class="tag">Canvas API</span>
+        <span class="tag">SVG</span>
+        <span class="tag">Streamlit</span>
+      </div>
+
+      <h4 style="color: var(--gold); margin-block-end: 1.5rem;">Erfahrungslevel</h4>
+      <div style="display: grid; gap: 1.5rem;">
+        <div class="expertise-level">
+          <strong style="color: var(--gold);">Experte (tägliche Anwendung)</strong>
+          <ul style="margin-block-start: 0.5rem;">
+            <li>KI & Agenten-Architektur — AAMS, MantisClaw, lokale KI-Workflows</li>
+            <li>Frontend / Webentwicklung — Vue.js, Nuxt, TypeScript, 12+ Jahre</li>
+            <li>Dezentrale Systeme — Nostr, IPFS, P2P, Sovereign Tech</li>
+            <li>Webdesign / HTML/CSS — 25+ Jahre Web-Erfahrung</li>
+          </ul>
+        </div>
+        <div class="expertise-level">
+          <strong style="color: var(--text-secondary);">Fortgeschritten (regelmäßige Anwendung)</strong>
+          <ul style="margin-block-start: 0.5rem;">
+            <li>Datenvisualisierung — Canvas, SVG, Parallax-Effekte</li>
+            <li>Audio / Transkription — Whisper, WhisperX, PyAnnote</li>
+            <li>KI-Tooling / Data Labeling — On-Premise LLM-Tools, Smart Editor</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-block-start: 3rem;">
+      <a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer" class="btn-primary">Alle Projekte auf GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div>
+    <div class="footer-brand">Alexander Friedland</div>
+    <div class="footer-copy">Softwareentwickler seit 1999 · Lokal · Autonom · Souverän</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="https://github.com/ogerly" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    <li><a href="https://youtube.com/@DEVmatrose" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="index.html#videos">Videos</a></li>
+    <li><a href="index.html#cv">Lebenslauf</a></li>
+    <li><a href="mailto:devmatrose@proton.me">E-Mail</a></li>
+  </ul>
+</footer>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

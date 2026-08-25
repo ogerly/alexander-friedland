@@ -97,3 +97,6 @@ Dieser Stack funktioniert überall — für jedes Projekt. Keine Cloud, keine Ab
 ## Live-URL
 
 https://ogerly.github.io/alexander-friedland/
+
+### 2026-08-25
+| WP: `WP-2026-08-25-ARCH-Projektdetailseite-AAMS-Setup` | projects.html — Projektdetailseite mit allen 100 GitHub-Repos (keine Forks), 8 Kategorien, Project Cards, Featured-Badges | AAMS v2.0 → v2.4.0 upgedatet (.agent.json merged mit bewerbungen-Sektionen, .aams-version aktualisiert, READ-AGENT.md erweitert) | Navigation in index.html ("Projekte"-Link), style.css +40 Zeilen (Project Grid, Cards, Badges, Expertise-Level) | WHITEPAPER: GITHUB-Repos-Analyse, README-Leitfaden, README-GITHUB-Ogerly, projects-html-dokumentation |

@@ -2,7 +2,7 @@
 
 ## Status
 
-AAMS/2.0 bootstrap completed. WORKING-Struktur aktiv.
+AAMS/2.4.0 bootstrap completed (upgraded from 2.0 → 2.4.0 am 25.08.2026). WORKING-Struktur aktiv.
 
 ## Repository-Contents
 
@@ -97,6 +97,22 @@ WORKING/WORKPAPER/Bewerbungen/
 - GitHub: @ogerly
 - YouTube: @DEVmatrose
 - Website: ogerly.github.io/alexander-friedland/
+
+## AAMS 2.x — Tool Detection & Skills
+
+### Passive Tool Detection (AAMS 2.3+)
+AAMS erkennt das aufrufende Agent/Coding-Tool PASSIV zur Laufzeit:
+- **opencode:** `OPCODE_SESSION_ID` vorhanden oder `.opencode/` Verzeichnis existiert
+- **Cursor:** `.cursor/rules/` vorhanden + `CLAUDE.md`
+- **Claude Code:** `CLAUDE.md` im Root
+- **LM Studio:** Läuft auf localhost (Standardport 1234), OpenAI-kompatibles Endpoint
+- **Ollama:** `ollama serve` läuft auf localhost (Standardport 11434)
+
+Unser Setup: LM Studio + qwen/qwen3.6-35b-a3b → opencode ↔ VS Code → AAMS
+
+### Skills (AAMS 2.3+)
+Skills sind kristallisiertes Gemeinschaftswissen. Lokale Anpassungen in `WORKING/TOOLS/skills/<tool-name>/`.
+Absolute Neutralität: AAMS beschreibt WAS ein Skill KANN, nicht WIE er implementiert wird.
 
 ## Migration von DEVmatrose
 

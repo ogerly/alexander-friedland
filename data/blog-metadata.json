@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "id": "die-besten-coder-gehen-lokal",
+      "title": "Die besten Coder gehen lokal",
+      "slug": "die-besten-coder-gehen-lokal",
+      "date": "2026-09-08",
+      "author": "Alexander Friedland (@ogerly)",
+      "excerpt": "Wir haben der Cloud beigebracht, wie man programmiert. Jetzt gehen wir. Die stille Wende zur lokalen KI.",
+      "category": "KI-Architektur & Strategie",
+      "tags": ["Lokale KI", "Souveräne KI", "Dezentralisierung", "Coding-Modelle", "Open Source", "KI-Strategie"],
+      "readTime": "13 min",
+      "featured": true,
+      "image": "/blog-images/wenn-die-besten-coder-die-claude-verlassen.jpg",
+      "imageAlt": "Die besten Coder gehen lokal – Lokale KI und souveräne Infrastruktur",
+      "metaDescription": "Wir haben der Cloud beigebracht, wie man programmiert. Jetzt gehen wir. Lokale KI, souveräne Infrastruktur – und was das für große Modelle bedeutet.",
+      "url": "/blog/blog-die-besten-coder-gehen-lokal.html"
+    },
+    {
       "id": "agenten-architektur-jenseits-des-kindergartens",
       "title": "Agenten-Architektur jenseits des Kindergartens: Warum eine soul.md ohne Rückgrat wertlos ist",
       "slug": "agenten-architektur-jenseits-des-kindergartens",
@@ -50,11 +66,11 @@
     },
     {
       "id": "blut-am-silizium",
-      "title": "Blut am Silizium: Das schmutzige Geheimnis hinter deiner „sauberen" KI",
+      "title": "Blut am Silizium: Das schmutzige Geheimnis hinter deiner „sauberen\" KI",
       "slug": "blut-am-silizium",
       "date": "2026-02-28",
       "author": "Alexander Friedland (@ogerly)",
-      "excerpt": "Deine „magische" KI ist kein technologisches Wunder. Sie ist das Ergebnis digitaler Fließbandarbeit zu Hungerlöhnen im Globalen Süden.",
+      "excerpt": "Deine „magische\" KI ist kein technologisches Wunder. Sie ist das Ergebnis digitaler Fließbandarbeit zu Hungerlöhnen im Globalen Süden.",
       "category": "Ethik & Gesellschaft",
       "tags": ["KI-Ethik", "Ausbeutung", "Datenlabel", "Fair Trade", "Digitaler Kolonialismus", "Responsible AI"],
       "readTime": "10 min",
@@ -70,14 +86,14 @@
       "slug": "ki-datenschutz-schwindel-2026",
       "date": "2026-02-28",
       "author": "Alexander Friedland (@ogerly)",
-      "excerpt": "„Kein Training mit Ihren Daten" – der dümmste Weihnachtsmann-Glaube der Dekade. Warum die Versprechen der KI-Anbieter Schlangenöl sind.",
+      "excerpt": "„Kein Training mit Ihren Daten\" – der dümmste Weihnachtsmann-Glaube der Dekade. Warum die Versprechen der KI-Anbieter Schlangenöl sind.",
       "category": "Datenschutz & Polemik",
       "tags": ["Datenschutz", "DSGVO", "KI-Sicherheit", "Cloud", "Polemik", "Self-Hosting"],
       "readTime": "10 min",
       "featured": true,
       "image": "/blog-images/datenschutz-schwindel.png",
       "imageAlt": "Der große KI-Datenschutz-Schwindel 2026",
-      "metaDescription": "„Kein Training mit Ihren Daten" – der dümmste Weihnachtsmann-Glaube der Dekade. Warum die Versprechen der KI-Anbieter Schlangenöl sind und was wirklich hilft.",
+      "metaDescription": "„Kein Training mit Ihren Daten\" – der dümmste Weihnachtsmann-Glaube der Dekade. Warum die Versprechen der KI-Anbieter Schlangenöl sind und was wirklich hilft.",
       "url": "/blog/blog-ki-datenschutz-schwindel-2026.html"
     },
     {

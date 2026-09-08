@@ -205,7 +205,11 @@ typografisch vereinheitlicht). Keine inhaltliche Zuspitzung, keine Ergänzungen.
 
 **4. Durchgang (08.09.2026):** Back-Link am Artikelende von `../blog/index.html` auf `/`
 korrigiert (Blog-Index existiert nicht, Startseite ist das korrekte Ziel). Social-Media-
-Texte für Twitter, LinkedIn, Telegram/WhatsApp angelegt (siehe § 7).
+Texte für Twitter, LinkedIn, Telegram/WhatsApp angelegt (siehe § 7). `README.md` zeigt
+nun „Blog — Neuester Artikel" oben (Titel, Datum, Lead, Link, Inhalt in Kürze, Link auf
+alle Artikel). Regel im Whitepaper `WORKING/WHITEPAPER/blog-artikel-erstellen.md`
+verankert: README-Update ist **Pflicht und genauso wichtig wie die Meta-Tags** —
+Workflows, neue Sektion mit Vorlage, Checkliste und Pfade-Tabelle ergänzt.
 
 ---
 

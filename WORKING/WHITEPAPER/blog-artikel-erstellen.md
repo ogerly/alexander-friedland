@@ -25,8 +25,13 @@ Daraus entsteht:
 ```
 blog/blog-SLUG.html
 blog-images/SLUG.png (optional)
-Eintrag in data/blog-metadata.json
+Eintrag in data/blog-metadata.json (erstes Element)
+Eintrag in index.html (Blog-Grid, erste Position)
+README.md — „Blog — Neuester Artikel" auf dem aktuellsten Stand
 ```
+
+**Wichtig:** Meta-Tags, `blog-metadata.json`, `index.html` und `README.md` sind ein
+zusammengehöriges Publikationspaket. Fehlt einer der vier, ist der Artikel **nicht fertig**.
 
 ---
 
@@ -393,6 +398,42 @@ Du lieferst den Text in beliebiger Form. Ich konvertiere:
 
 ---
 
+## README.md — Neuester Blog-Artikel (Pflicht)
+
+**Genauso wichtig wie die Meta-Tags.** Die `README.md` ist das Gesicht des Repos auf
+GitHub (https://github.com/ogerly/alexander-friedland) und zeigt immer **oben** den
+neuesten Blog-Artikel in kurzer Form.
+
+Regeln:
+
+1. **Titel** (fett) + Datum + Lesezeit + Kategorie
+2. **Lead-Zeile** (die Subtitle des Artikels)
+3. **Link** zum Artikel — live-URL, nicht Repo-Pfad
+4. **Inhalt in Kürze:** 2–3 Sätze, worum es im Artikel geht
+5. **Link auf alle Artikel** („Schreibwerk & Logbuch" auf der Website)
+
+Beim nächsten Artikel wird der Block einfach **ersetzt** — es bleibt immer exakt
+ein „Neuester Artikel"-Block, keine Liste.
+
+### README-Vorlage
+
+```markdown
+## Blog — Neuester Artikel
+
+> **TITEL**
+> DD.MM.YYYY · X min Lesezeit · KATEGORIE
+>
+> LEAD-ZEILE / SUBTITLE
+>
+> [Artikel lesen →](https://ogerly.github.io/alexander-friedland/blog/blog-SLUG.html)
+
+**Inhalt in Kürze:** 2–3 SÄTZE ZUM INHALT DES ARTIKELS.
+
+**Alle Artikel:** [Schreibwerk & Logbuch](https://ogerly.github.io/alexander-friedland/)
+```
+
+---
+
 ## Checkliste
 
 - [ ] Titel, Slug, Datum, Kategorie, Tags, Lesezeit festgelegt
@@ -406,7 +447,10 @@ Du lieferst den Text in beliebiger Form. Ich konvertiere:
 - [ ] Bild in `blog-images/` hochgeladen
 - [ ] OG-Image-URL als absolute URL
 - [ ] `blog-metadata.json` aktualisiert (erstes Element!)
+- [ ] `index.html`: Blog-Grid, neuer Eintrag an erster Position
+- [ ] **`README.md`: „Blog — Neuester Artikel" oben aktualisiert (Pflicht — wie die Meta-Tags)**
 - [ ] Social-Media-Preview geprüft: https://www.opengraph.xyz/
+- [ ] Repo-Seite geprüft: https://github.com/ogerly/alexander-friedland (README zeigt Neuesten Artikel oben)
 
 ---
 
@@ -428,6 +472,8 @@ Du lieferst den Text in beliebiger Form. Ich konvertiere:
 | HTML-Artikel | `blog/blog-SLUG.html` |
 | Hero-Bild | `blog-images/SLUG.png` |
 | Metadaten | `data/blog-metadata.json` |
+| Blog-Grid (alle Artikel) | `index.html` → Abschnitt „Schreibwerk & Logbuch" |
+| README (neuester Artikel) | `README.md` |
 | Hauptseite | `index.html` |
 | Haupt-CSS | `style.css` |
 | Tailwind CDN | `https://cdn.tailwindcss.com` |

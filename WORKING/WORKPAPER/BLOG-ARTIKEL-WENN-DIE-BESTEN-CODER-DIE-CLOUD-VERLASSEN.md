@@ -162,6 +162,7 @@ typografisch vereinheitlicht). Keine inhaltliche Zuspitzung, keine Ergänzungen.
   `WORKING/WORKPAPER/Bewerbungen/index.md` (sensible Bewerbungen), `AAMS/` (lokales
   Arbeitsverzeichnis)
 - `.env` ist gitignored ✅ — Tokens nie im Repo
+- Commit: `0d82724` auf `main` (ogerly/alexander-friedland), Push erfolgreich ✅
 
 ### 08.09.2026 — 2. Durchgang: Headliner finalisiert
 
@@ -201,3 +202,84 @@ typografisch vereinheitlicht). Keine inhaltliche Zuspitzung, keine Ergänzungen.
 - **Nebenfix:** `data/blog-metadata.json` enthielt 4× ungefluchtete Straight-Quotes
   („Blut am Silizium", „Kein Training mit Ihren Daten") → JSON war ungültig; escapes
   repariert, Datei seitdem valide.
+
+**4. Durchgang (08.09.2026):** Back-Link am Artikelende von `../blog/index.html` auf `/`
+korrigiert (Blog-Index existiert nicht, Startseite ist das korrekte Ziel). Social-Media-
+Texte für Twitter, LinkedIn, Telegram/WhatsApp angelegt (siehe § 7).
+
+---
+
+## 7. Social-Media-Veröffentlichung
+
+**Artikel-URL (88 Zeichen):**
+`https://ogerly.github.io/alexander-friedland/blog/blog-die-besten-coder-gehen-lokal.html`
+
+**Hashtags (kommagetrennt, # am Anfang, max. 10):**
+`#LokaleKI, #SouveräneKI, #KI, #Coding, #OpenSource, #OpenWeight, #Dezentralisierung, #NVIDIA, #HuggingFace, #SoftwareEntwicklung`
+
+---
+
+### Twitter / X (Limit 280 Zeichen)
+
+> **Zählweise:** Twitter zählt Links als 23 Zeichen (t.co-Wrapper). Der Text unten ist so
+> bemessen, dass er mit der **vollen 88-Zeichen-URL** UND den Hashtags bei 275 Zeichen
+> liegt — also in beiden Zählweisen sicher unter 280.
+
+**Text (275 Zeichen inkl. URL + 5 Hashtags):**
+
+```
+Wir haben der Cloud beigebracht, wie man programmiert. Jetzt gehen wir.
+
+Lokale KI, Open Weights & die stille Wende der Early Adopter:
+https://ogerly.github.io/alexander-friedland/blog/blog-die-besten-coder-gehen-lokal.html
+
+#LokaleKI, #SouveräneKI, #KI, #Coding, #OpenSource
+```
+
+*Falls Twitter die t.co-Kürzung anwendet: sogar 65 Zeichen Spielraum. Bei Bedarf können
+die übrigen 5 Hashtags (#OpenWeight, #Dezentralisierung, #NVIDIA, #HuggingFace,
+#SoftwareEntwicklung) ergänzend in den Folge-Tweet — nicht in den Erst-Tweet, der
+sonst über 280 springt.*
+
+---
+
+### LinkedIn (keine harte Grenze, ~3000 Zeichen; Hook zählt)
+
+> **Zählweise:** LinkedIn bricht die Vorschau nach ~210 Zeichen ab („…mehr"). Die ersten
+> zwei Sätze sind daher der Hook. Der Text ist auf 416 Zeichen gehalten — kompakt,
+> aber vollständig.
+
+**Text (416 Zeichen inkl. URL, ohne Hashtags):**
+
+```
+Wir haben der Cloud beigebracht, wie man programmiert. Jetzt gehen wir.
+
+NVIDIA kauft Hugging Face für 12,93 Mrd. $. Ein Zeichen, dass die Zukunft der KI nicht nur in zentralen Rechenzentren entschieden wird – sondern auch auf den Schreibtischen der Entwickler.
+
+Lokale KI ist keine Gegenbewegung. Sie ist der nächste Schritt.
+
+https://ogerly.github.io/alexander-friedland/blog/blog-die-besten-coder-gehen-lokal.html
+```
+
+**Hashtags (LinkedIn, 5–8 ideal, am Ende anhängen):**
+`#LokaleKI #SouveräneKI #KI #Coding #OpenSource #OpenWeight #Dezentralisierung #NVIDIA`
+
+---
+
+### Telegram / WhatsApp (kurz, persönlich, kein Hashtag-Zwang)
+
+> **Zählweise:** Beide Kanäle haben keine praktische Zeichen-Grenze. Der Text ist auf
+> 302 Zeichen inkl. URL gehalten — mobil in zwei Blicken lesbar.
+
+**Text (302 Zeichen inkl. URL):**
+
+```
+Wir haben der Cloud beigebracht, wie man programmiert. Jetzt gehen wir.
+
+Neuer Blog-Artikel: Die besten Coder gehen lokal – über lokale KI, NVIDIA & Hugging Face und die stille Wende zur souveränen Infrastruktur.
+
+https://ogerly.github.io/alexander-friedland/blog/blog-die-besten-coder-gehen-lokal.html
+```
+
+**Hashtags (optional, 3–5):**
+`#LokaleKI #SouveräneKI #KI #Coding #OpenSource`

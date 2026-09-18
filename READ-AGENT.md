@@ -20,7 +20,7 @@ AAMS/2.4.0 bootstrap completed (upgraded from 2.0 → 2.4.0 am 25.08.2026). WORK
 ```
 Alexander Friedland
 ├── Hero: "Lokal · Autonom · Souverän"
-├── Blog (Hauptfokus): 19 Artikel
+├── Blog (Hauptfokus): 21 Artikel + Blog-Übersicht `blog/index.html`
 ├── Video-Blog: YouTube, Dozent-Werkkasten
 ├── Über mich: Coder, Bastler, Dozent
 ├── Lebenslauf (öffentlich)
@@ -70,11 +70,13 @@ WORKING/WORKPAPER/Bewerbungen/
 
 ## Blog
 
-- **19 fertige Blog-Artikel** in `blog-metadata.json`
-- Alle als statische HTML-Dateien in `blog/` (noch zu migrieren)
+- **21 fertige Blog-Artikel** in `data/blog-metadata.json` (erstes Element = neuester)
+- Alle als statische HTML-Dateien in `blog/` — Migration DEVmatrose→Friedland **abgeschlossen** (24.08.2026)
+- **Blog-Übersicht: `blog/index.html`** (statisch, alle Artikel, seit 18.09.2026)
 - OG-Tags für Social Media pro Artikel
+- **URL-Regel:** absolute Artikel-URLs immer `…/alexander-friedland/blog/blog-<slug>.html` (Segment `/blog/` Pflicht)
+- Workflow/Template/Checkliste: `WORKING/WHITEPAPER/blog-artikel-erstellen.md`
 - RSS-Feed geplant (Workpaper existiert)
-- Alle URLs zeigen auf `ogerly.github.io/alexander-friedland/blog/`
 
 ## Video-Blog
 
@@ -114,9 +116,9 @@ Unser Setup: LM Studio + qwen/qwen3.6-35b-a3b → opencode ↔ VS Code → AAMS
 Skills sind kristallisiertes Gemeinschaftswissen. Lokale Anpassungen in `WORKING/TOOLS/skills/<tool-name>/`.
 Absolute Neutralität: AAMS beschreibt WAS ein Skill KANN, nicht WIE er implementiert wird.
 
-## Migration von DEVmatrose
+## Migration von DEVmatrose — ABGESCHLOSSEN (24.08.2026)
 
-- Blog-Artikel müssen nach `blog/` konvertiert werden (Vue → statisch HTML)
-- OG-Tags müssen auf neue Domain zeigen
+- Blog-Artikel nach `blog/` konvertiert (Vue → statisch HTML) ✅
+- OG-Tags zeigen auf `ogerly.github.io/alexander-friedland/…` ✅
 - Autoren-Namen: "Alexander Friedland (@ogerly)"
-- Blog-Workflow: Pro Artikel eine HTML-Datei mit OG-Tags
+- Blog-Workflow: Pro Artikel eine HTML-Datei mit OG-Tags (Whitepaper `blog-artikel-erstellen.md`)

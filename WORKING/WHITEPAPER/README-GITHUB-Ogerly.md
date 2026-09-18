@@ -14,12 +14,12 @@ Digitales Arbeiten — Lokal, Autonom, Souverän.
 
 Technische Überlegungen, Architekturentscheidungen und Beobachtungen aus der Entwicklungsarbeit. Keine Marketingparolen — echte Gedanken.
 
-[Alle 19 Artikel →](https://ogerly.github.io/alexander-friedland/#blog)
+[Alle 21 Artikel →](https://ogerly.github.io/alexander-friedland/blog/)
 
 **Aktuell:**
+- [Die Börsen gehen. Die EU bleibt. Und wir stehen im Regen.](https://ogerly.github.io/alexander-friedland/blog/blog-borsen-exodus-eu.html) — 18.09.2026
+- [Die besten Coder gehen lokal](https://ogerly.github.io/alexander-friedland/blog/blog-die-besten-coder-gehen-lokal.html) — 08.09.2026
 - [Agenten-Architektur jenseits des Kindergartens](https://ogerly.github.io/alexander-friedland/blog/blog-agenten-architektur-jenseits-des-kindergartens.html) — 01.04.2026
-- [Du brauchst kein Framework](https://ogerly.github.io/alexander-friedland/blog/blog-du-brauchst-kein-framework.html) — 26.03.2026
-- [Das Agent-OS](https://ogerly.github.io/alexander-friedland/blog/blog-das-agent-os.html) — 01.03.2026
 
 ---
 

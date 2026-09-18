@@ -99,7 +99,7 @@ DEVmatrose existiert nicht mehr. Firma gelöscht, keine Referenzen mehr.
 
 ## Blog
 
-- **19 Artikel** auf ogerly.github.io/alexander-friedland/blog/
+- **21 Artikel** auf ogerly.github.io/alexander-friedland/blog/
 - Themen: KI, dezentrale Systeme, Coding, Agenten-Architektur
 - Alle als statische HTML mit OG-Tags
 

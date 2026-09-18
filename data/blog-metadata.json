@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "id": "borsen-exodus-eu",
+      "title": "Die Börsen gehen. Die EU bleibt. Und wir stehen im Regen.",
+      "slug": "borsen-exodus-eu",
+      "date": "2026-09-18",
+      "author": "Alexander Friedland (@ogerly)",
+      "excerpt": "MiCA-Übergangsfrist abgelaufen. Von über 1.200 registrierten Anbietern schaffen nur rund 250 die volle Autorisierung — die Tür geht zu. Für EU-Bürger.",
+      "category": "Regulierung & Realität",
+      "tags": ["MiCA", "Börsen-Exodus", "EU-Restriktionen", "Crypto-Compliance", "Selbstbeschränkung"],
+      "readTime": "11 min",
+      "featured": true,
+      "image": "/blog-images/borsen-exodus-eu.jpg",
+      "imageAlt": "Die Börsen gehen. Die EU bleibt. Und wir stehen im Regen. — MiCA und der Exodus der Krypto-Börsen aus der EU",
+      "metaDescription": "MiCA-Übergangsfrist abgelaufen. Von über 1.200 registrierten Anbietern schaffen nur rund 250 die volle Autorisierung — die Tür geht zu. Für EU-Bürger.",
+      "url": "/blog/blog-borsen-exodus-eu.html"
+    },
+    {
       "id": "die-besten-coder-gehen-lokal",
       "title": "Die besten Coder gehen lokal",
       "slug": "die-besten-coder-gehen-lokal",

@@ -10,7 +10,7 @@ Ich (Alexander Friedland) liefere:
 
 - Titel
 - Text (beliebig — Markdown, roher Text, HTML)
-- Hero-Bild (optional, 1200x630px PNG)
+- Hero-Bild (optional, 1200x630px, PNG oder JPG)
 
 Ich (der Agent) ermittele:
 
@@ -27,11 +27,28 @@ blog/blog-SLUG.html
 blog-images/SLUG.png (optional)
 Eintrag in data/blog-metadata.json (erstes Element)
 Eintrag in index.html (Blog-Grid, erste Position)
+Eintrag in blog/index.html (Blog-Übersicht, erste Position)
 README.md — „Blog — Neuester Artikel" auf dem aktuellsten Stand
 ```
 
-**Wichtig:** Meta-Tags, `blog-metadata.json`, `index.html` und `README.md` sind ein
-zusammengehöriges Publikationspaket. Fehlt einer der vier, ist der Artikel **nicht fertig**.
+**Wichtig:** Meta-Tags, `blog-metadata.json`, `index.html`, `blog/index.html` und
+`README.md` sind ein zusammengehöriges Publikationspaket. Fehlt einer der fünf,
+ist der Artikel **nicht fertig**.
+
+### URL-Regel (Pflicht)
+
+Die Site ist eine GitHub-Pages-**Projektsite**: `https://ogerly.github.io/alexander-friedland/`.
+Artikel-Dateien liegen in `blog/`. **Jede** absolute URL — canonical, `og:url`, Share-Links
+in README/Whitepaper — muss daher das `/blog/`-Segment enthalten:
+
+```
+✅ https://ogerly.github.io/alexander-friedland/blog/blog-SLUG.html
+❌ https://ogerly.github.io/alexander-friedland/blog-SLUG.html
+```
+
+Stand 18.09.2026: Alle 20 Bestandsartikel + Whitepaper-Template + README-Links
+entsprechen dieser Regel. (`blog/index.html` als Blog-Übersichtsseite existiert
+seitdem — Back-Links `../blog/index.html` in allen Artikeln sind damit valide.)
 
 ---
 
@@ -55,7 +72,7 @@ zusammengehöriges Publikationspaket. Fehlt einer der vier, ist der Artikel **ni
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TITEL | Alexander Friedland</title>
   <meta name="description" content="Beschreibung (max 160 Zeichen)">
-  <link rel="canonical" href="https://ogerly.github.io/alexander-friedland/blog-SLUG.html">
+  <link rel="canonical" href="https://ogerly.github.io/alexander-friedland/blog/blog-SLUG.html">
 
   <!-- Open Graph -->
   <meta property="og:type" content="article">
@@ -65,7 +82,7 @@ zusammengehöriges Publikationspaket. Fehlt einer der vier, ist der Artikel **ni
   <meta property="og:image" content="https://ogerly.github.io/alexander-friedland/blog-images/SLUG.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://ogerly.github.io/alexander-friedland/blog-SLUG.html">
+  <meta property="og:url" content="https://ogerly.github.io/alexander-friedland/blog/blog-SLUG.html">
   <meta property="article:published_time" content="YYYY-MM-DDT00:00:00Z">
   <meta property="article:author" content="Alexander Friedland">
   <meta property="article:section" content="KATEGORIE">
@@ -230,6 +247,7 @@ zusammengehöriges Publikationspaket. Fehlt einer der vier, ist der Artikel **ni
       </div>
     </div>
     <h1>TITEL</h1>
+    <p class="subtitle">LEAD-ZEILE / SUBTITLE (max 200 Zeichen)</p>
   </div>
 
   <!-- Article Content -->
@@ -262,6 +280,7 @@ Du lieferst den Text in beliebiger Form. Ich konvertiere:
 
 | Element | HTML |
 |---|---|
+| **Subtitle** | `<p class="subtitle">` (unter der H1 im Hero, max 200 Zeichen) |
 | **Hook/Lead** | `<div class="callout orange">` mit italic p |
 | **Absatz** | `<p class="text-lg text-off-white/90 leading-relaxed mb-6">` |
 | **Überschrift H2** | `<h2 class="text-3xl font-bold text-copper-orange mt-12 mb-6">` |
@@ -363,7 +382,7 @@ Du lieferst den Text in beliebiger Form. Ich konvertiere:
 
 | Typ | Datei | Größe | Format |
 |---|---|---|---|
-| **Hero** | `blog-images/SLUG.png` | 1200x630px | PNG |
+| **Hero** | `blog-images/SLUG.png` (bzw. `.jpg`) | 1200x630px | PNG oder JPG (akt. Artikel: `.jpg`) |
 | **Zusätzlich** | `blog-images/SLUG-BESCHREIBUNG.png` | max 1920px Breite | PNG oder JPG |
 
 ---
@@ -429,7 +448,7 @@ ein „Neuester Artikel"-Block, keine Liste.
 
 **Inhalt in Kürze:** 2–3 SÄTZE ZUM INHALT DES ARTIKELS.
 
-**Alle Artikel:** [Schreibwerk & Logbuch](https://ogerly.github.io/alexander-friedland/)
+**Alle Artikel:** [Schreibwerk & Logbuch](https://ogerly.github.io/alexander-friedland/blog/)
 ```
 
 ---
@@ -437,7 +456,7 @@ ein „Neuester Artikel"-Block, keine Liste.
 ## Checkliste
 
 - [ ] Titel, Slug, Datum, Kategorie, Tags, Lesezeit festgelegt
-- [ ] Hero-Bild erstellt (1200x630px PNG) — optional
+- [ ] Hero-Bild erstellt (1200x630px, PNG oder JPG) — optional
 - [ ] Text geliefert
 - [ ] HTML-Datei: `blog/blog-SLUG.html`
 - [ ] OG-Tags vollständig (Titel, Beschreibung, Bild, URL)
@@ -448,6 +467,7 @@ ein „Neuester Artikel"-Block, keine Liste.
 - [ ] OG-Image-URL als absolute URL
 - [ ] `blog-metadata.json` aktualisiert (erstes Element!)
 - [ ] `index.html`: Blog-Grid, neuer Eintrag an erster Position
+- [ ] `blog/index.html`: Blog-Übersicht, neuer Eintrag an erster Position
 - [ ] **`README.md`: „Blog — Neuester Artikel" oben aktualisiert (Pflicht — wie die Meta-Tags)**
 - [ ] Social-Media-Preview geprüft: https://www.opengraph.xyz/
 - [ ] Repo-Seite geprüft: https://github.com/ogerly/alexander-friedland (README zeigt Neuesten Artikel oben)
@@ -473,6 +493,7 @@ ein „Neuester Artikel"-Block, keine Liste.
 | Hero-Bild | `blog-images/SLUG.png` |
 | Metadaten | `data/blog-metadata.json` |
 | Blog-Grid (alle Artikel) | `index.html` → Abschnitt „Schreibwerk & Logbuch" |
+| Blog-Übersicht (alle Artikel) | `blog/index.html` |
 | README (neuester Artikel) | `README.md` |
 | Hauptseite | `index.html` |
 | Haupt-CSS | `style.css` |

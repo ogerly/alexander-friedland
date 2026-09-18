@@ -181,6 +181,9 @@ Statische Seiten bis dynamische Web-Applikationen.
 **1999 — 2005** · Start als Softwareentwickler
 Einstieg mit HTML und Web-Technologien.
 
+**Schlüsselprojekte 2024 — 2026:**
+AAMS (Agent Manifest, v2.4.0) · Aletheia Labeling Studio · PAX Weltfriedensfestival 2026 · Lokale KI-Stack (Qwen → LM Studio → opencode → AAMS) · Mantis-Agenten-Stack (Claw/Nostr/OS) · Ocelot
+
 [Full CV auf der Website →](https://ogerly.github.io/alexander-friedland/#cv)
 ```
 
@@ -188,6 +191,8 @@ Einstieg mit HTML und Web-Technologien.
 - Zeitstrahl umgekehrt (neueste zuerst), wie auf der Website
 - Kurze Beschreibungen, max. 1-2 Sätze pro Periode
 - Link zur Website für den vollständigen Lebenslauf
+- `Schlüsselprojekte`-Block unter der Timeline (Klasse `.cv-subhead` + `.cv-item` + `.cv-link`) — nur öffentliche Projekte mit GitHub/Website-Link
+- Keine privaten Daten (Adresse, Geburtsdatum, Insolvenz) auf der Website — nur im privaten Lebenslauf (Bewerbung-2026-Repo)
 
 ---
 

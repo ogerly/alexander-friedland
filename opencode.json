@@ -1,7 +1,7 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": true,
-  "model": "mantis/qwen/qwen3.6-35b-a3b",
+  "model": "mantis/qwen/qwen3.8-27b",
   "provider": {
     "mantis": {
       "npm": "@ai-sdk/openai-compatible",
@@ -12,31 +12,56 @@
       },
       "models": {
         "qwen/qwen3.6-35b-a3b": {
-          "name": "LM Studio: Qwen 3.6 35B A3B (lokal)"
+          "name": "LM Studio: Qwen 3.6 35B A3B (lokal)",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
         },
-        "qwen3.8-27b-aeon-ultimate-uncensored": {
-          "name": "LM Studio: qwen3.8-27b-aeon-ultimate-uncensored (lokal)"
-        },
-        "qwen3.8-27b-nvfp4": {
-          "name": "LM Studio: qwen3.8-27b-nvfp4 (lokal)"
+        "qwen/qwen3.8-27b": {
+          "name": "LM Studio: Qwen 3.8 27B (lokal)",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
         },
         "glm-5.2-cloud": {
-          "name": "Ollama Cloud: GLM 5.2 (Z.ai, Free)"
+          "name": "Ollama Cloud: GLM 5.2 (Z.ai, Free)",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
         },
         "minimax-m3-cloud": {
-          "name": "Ollama Cloud: MiniMax M3 (Free)"
+          "name": "Ollama Cloud: MiniMax M3 (Free)",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          }
         },
         "nemotron-3-ultra-cloud": {
-          "name": "Ollama Cloud: Nemotron 3 Ultra 550B (NVIDIA, Free)"
+          "name": "Ollama Cloud: Nemotron 3 Ultra 550B (NVIDIA, Free)",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          }
         },
         "gpt-oss:20b-cloud": {
-          "name": "Ollama Cloud: gpt-oss 20B (OpenAI, Free)"
+          "name": "Ollama Cloud: gpt-oss 20B (OpenAI, Free)",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          }
         },
         "nemotron-3-nano:30b-cloud": {
           "name": "Ollama Cloud: Nemotron 3 Nano 30B (NVIDIA, Free)"
         },
         "gpt-oss:120b-cloud": {
-          "name": "Ollama Cloud: gpt-oss 120B (OpenAI, Free)"
+          "name": "Ollama Cloud: gpt-oss 120B (OpenAI, Free)",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          }
         },
         "qwen3.8-max-alibaba": {
           "name": "Alibaba Cloud: Qwen 3.8 Max (Free)"
@@ -51,7 +76,11 @@
           "name": "Alibaba Cloud: Qwen 3.6 Flash (Free)"
         },
         "qwen3.6-35b-a3b-alibaba": {
-          "name": "Alibaba Cloud: Qwen 3.6 35B A3B (Free)"
+          "name": "Alibaba Cloud: Qwen 3.6 35B A3B (Free)",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
         },
         "qwen-flash-alibaba": {
           "name": "Alibaba Cloud: Qwen Flash (Free)"
@@ -71,20 +100,57 @@
         "openrouter/free": {
           "name": "OpenRouter: Free Models Router (automatisch)"
         },
-        "openrouter/owl-alpha": {
-          "name": "OpenRouter: Owl Alpha (preferred, Agentic)"
-        },
         "nvidia/nemotron-3-super-120b-a12b:free": {
-          "name": "OpenRouter: Nemotron 3 Super (preferred, effizient)"
+          "name": "OpenRouter: Nemotron 3 Super (preferred, effizient)",
+          "limit": {
+            "context": 262144,
+            "output": 65536
+          }
         },
-        "poolside/laguna-m.1:free": {
-          "name": "OpenRouter: Poolside Laguna M.1 (preferred, Coding)"
+        "gemma4:31b-cloud": {
+          "name": "Ollama Cloud: gemma4:31b-cloud",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          }
         },
-        "openai/gpt-oss-120b:free": {
-          "name": "OpenRouter: gpt-oss-120b (preferred, Reasoning)"
+        "minimax/minimax-m3:free": {
+          "name": "OpenRouter: minimax/minimax-m3:free",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          }
         },
-        "z-ai/glm-4.5-air:free": {
-          "name": "OpenRouter: GLM 4.5 Air (preferred, schnell)"
+        "nvidia/nemotron-3-ultra-550b-a55b:free": {
+          "name": "OpenRouter: nvidia/nemotron-3-ultra-550b-a55b:free",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          }
+        },
+        "poolside/laguna-s-2.1:free": {
+          "name": "OpenRouter: poolside/laguna-s-2.1:free"
+        },
+        "thinkingmachines/inkling:free": {
+          "name": "OpenRouter: thinkingmachines/inkling:free",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          }
+        },
+        "z-ai/glm-5.2:free": {
+          "name": "OpenRouter: z-ai/glm-5.2:free",
+          "limit": {
+            "context": 262144,
+            "output": 65536
+          }
+        },
+        "google/gemma-4-12b": {
+          "name": "LM Studio: google/gemma-4-12b",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          }
         }
       }
     }

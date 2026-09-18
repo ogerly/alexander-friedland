@@ -49,3 +49,11 @@ Alexander Friedland
 | 2026-08-24 | Deutsche Telekom AG | Senior Technology Architect | Versendet | 2026-08-24 | Arbeitsamt | B | [lesen](./2026-08-24-senior-technology-architect-deutsche-telekom.md) |
 | 2026-08-24 | CANCOM SE | IT Architect | Versendet | 2026-08-24 | Arbeitsamt | B | [lesen](./2026-08-24-it-architect-cancom.md) |
 | 2026-08-24 | Vodafone GmbH | Senior Expert Site Rental Management | Versendet | 2026-08-24 | Arbeitsamt | B | [lesen](./2026-08-24-senior-expert-site-rental-management-vodafone.md) |
+| 2026-08-24 | secunet Security Networks AG | Software Developer Rust | Versendet | 2026-08-24 | Arbeitsamt | A | [lesen](./2026-08-24-software-developer-rust-secunet.md) |
+| 2026-08-24 | secunet Security Networks AG | Embedded Software / Firmware Developer | Versendet | 2026-08-24 | Arbeitsamt | A | [lesen](./2026-08-24-embedded-software-firmware-developer-secunet.md) |
+| 2026-08-24 | Deutsche Telekom AG | Senior SAP Software Architect | Versendet | 2026-08-24 | Arbeitsamt | B | [lesen](./2026-08-24-senior-sap-software-architect-telekom.md) |
+| 2026-08-24 | Deutsche Telekom AG | Site Reliability Engineer (SRE) | Versendet | 2026-08-24 | Arbeitsamt | A | [lesen](./2026-08-24-site-reliability-engineer-telekom.md) |
+| 2026-08-24 | PALIGO GmbH | DevOps / Plattform Engineer (Senior) | Versendet | 2026-08-24 | Arbeitsamt | A | [lesen](./2026-08-24-devops-plattform-engineer-paligo.md) |
+| 2026-08-24 | WAIYS GmbH | AI Engineer | Versendet | 2026-08-24 | Arbeitsamt | A | [lesen](./2026-08-24-ai-engineer-waiys.md) |
+| 2026-08-24 | Robotron | Dozenten-Stelle | Versendet | 2026-08-24 | E-Mail direkt | — | [lesen](./2026-08-24-dozenten-stelle-robotron.md) |
+| 2026-06-18 | IBB Dresden | Dozenten-Stelle | In Bearbeitung | — | E-Mail direkt | — | [lesen](./2026-06-18-dozenten-stelle-ibb-dresden.md) |

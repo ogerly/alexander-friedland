@@ -179,6 +179,16 @@ https://ogerly.github.io/alexander-friedland/blog/blog-borsen-exodus-eu.html
 
 ## deploy (2026-09-18)
 
-- Commit + Push auf `main` (Details unten in der Session-Nachverfolgung)
-- Live-URL: https://ogerly.github.io/alexander-friedland/blog/blog-borsen-exodus-eu.html
-- Blog-Übersicht: https://ogerly.github.io/alexander-friedland/blog/
+- **Commits:**
+  - `b3ca548` — „CV + Doku: ausstehende Änderungen — WP-2026-09-16 Schlüsselprojekte, AAMS 2.4.0, opencode.json-Modelle, Bewerbungen-Index“
+  - `c9f2a57` — „Blog: Die Börsen gehen. Die EU bleibt. — MiCA-Artikel, blog/index.html, 40 URL-Fixes, Social-Media-Texte“
+- **Push:** `a6339db..c9f2a57 main → main` (SSH-Key nicht bei GitHub → einmaliger HTTPS-Push
+  mit `GITHUB_API_TOKEN` aus `.env`, Token nirgendwo persistiert/commitet)
+- **Live-Verifikation (HTTP 200):**
+  - https://ogerly.github.io/alexander-friedland/blog/blog-borsen-exodus-eu.html
+  - https://ogerly.github.io/alexander-friedland/blog/index.html
+  - https://ogerly.github.io/alexander-friedland/blog-images/borsen-exodus-eu.jpg
+  - canonical (neu + alt, z. B. `keine-angst-vor-ki`) zeigen korrekt auf `…/blog/…`
+  - og:image + twitter:image → `.jpg`
+- **Nächste Schritte für Alexander:** Social-Preview (opengraph.xyz / cards-dev.twitter.com)
+  + Posts aus `## social-media` veröffentlichen

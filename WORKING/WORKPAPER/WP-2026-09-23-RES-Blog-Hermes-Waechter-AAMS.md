@@ -84,7 +84,7 @@ Publikationspaket veröffentlichen:
 - [x] Blog-Repo: Commit + Push (inkl. 19.09-Artikel)
 - [x] Live-Verifikation (HTTP 200) + Workpaper `## deploy` + `## abschuss`
 - [ ] Social-Preview prüfen (opengraph.xyz / cards-dev.twitter.com) — Alexander
-- [ ] Optional: Social-Media-Post aus dem Artikel
+- [ ] Social-Media-Posts aus `## social-media` posten (X, Telegram, LinkedIn)
 
 ## deploy (2026-09-23)
 
@@ -114,3 +114,62 @@ Alle Punkte erledigt und verifiziert:
 - AAMS-Repo: SHOWCASE-Eintrag pushed; Blog-Repo: pushed (inkl. 19.09-Artikel)
 - AAMS-Ritual: Workpaper (diese Datei), DIARY 2026-09, LTM-Index (23 Artikel, 25 Bilder)
 - Git-Hygiene: `AAMS/`-Clone in `.gitignore` (verschachteltes Repo bleibt lokal)
+
+## social-media (Posting-Texte)
+
+**Artikel-Link (kanalübergreifend, klickbar):**
+`https://ogerly.github.io/alexander-friedland/blog/blog-hermes-waechter-aams.html`
+
+### X (≤ 280 Zeichen, ~264 gezählt)
+
+```
+Das Kontextfenster ist voll. Dann beginnt das Vergessen.
+
+Hermes beobachtet: 70 % SOFT, 85 % HARD, 90 % HANDOFF. Entscheidungen landen dokumentiert, bevor sie verschwinden.
+
+Ganz lokal. Ohne Cloud.
+
+https://ogerly.github.io/alexander-friedland/blog/blog-hermes-waechter-aams.html
+
+#AAMS #LokaleKI #OpenCode #Kontextmanagement
+```
+
+### Telegram
+
+```
+Hermes — der Wächter über meinen Kontext.
+
+Wer mit lokalen LLMs und Coding-Agenten arbeitet, kennt das Problem: Die Session läuft, der Agent arbeitet — und irgendwann ist das Kontextfenster voll. Eine Entscheidung aus Turn 3 ist in Turn 40 schlicht verschwunden. Compaction hilft — aber eine Zusammenfassung ist immer eine Zusammenfassung.
+
+Meine Antwort: ein kleines OpenCode-Plugin (~250 Zeilen), das die Füllung des Fensters beobachtet und Checkpoints auslöst — 70 % SOFT (Dateiprotokoll + offene Entscheidungen ins Workpaper), 85 % HARD (Whitepaper, Langzeit-Memory, Diary), 90 % HANDOFF (exakter Resume-Punkt, dann Stopp).
+
+Die Idee dahinter: Session = Kontext-Fenster. Workpaper = Task.
+
+Darunter liegt AAMS — die Spezifikation für den dauerhaften Zustand eines Agentenprojekts. Noch kein Standard. Zum Standard wird sie, wenn Teams sie in echter Projektentwicklung zuverlässig einsetzen.
+
+Der Artikel:
+https://ogerly.github.io/alexander-friedland/blog/blog-hermes-waechter-aams.html
+
+#AAMS #LokaleKI #OpenCode #Kontextmanagement #KI #Agenten
+```
+
+### LinkedIn
+
+```
+Kontext ist kein Gedächtnis.
+
+Wer mit lokalen LLMs und Coding-Agenten arbeitet, kennt das Risiko: Wichtige Entscheidungen existieren nur im Kontextfenster — und verschwinden mit der Compaction. Eine neue Session kann dann eine bewusst getroffene Entscheidung infrage stellen, ohne zu wissen, dass sie je existiert hat.
+
+Hermes — ein kleines, lokales OpenCode-Plugin — beobachtet die Füllung des Fensters und löst ein Checkpoint-Ritual aus: 70 % SOFT (Workpaper), 85 % HARD (Whitepaper, Langzeit-Memory, Diary), 90 % HANDOFF (dokumentierter Resume-Punkt). Entscheidungen werden vorher dokumentiert — nicht hinterher aus einer Zusammenfassung rekonstruiert.
+
+Dran angebunden: AAMS, eine Spezifikation für den dauerhaften Zustand von Agenten-Projekten — Workpaper, Whitepaper, Diary, Memory. Ganz ohne Cloud: LM Studio, ein OpenAI-kompatibles Gateway, OpenCode.
+
+Gedanken zu Kontext, Checkpoints und warum das Kontextfenster flüchtig ist — der Task nicht:
+https://ogerly.github.io/alexander-friedland/blog/blog-hermes-waechter-aams.html
+
+#AAMS #LokaleKI #KI #Kontextmanagement #Agenten #OpenSource
+```
+
+**Hashtag-Basis-Set (alle Kanäle):** #AAMS #LokaleKI #OpenCode #Kontextmanagement
+**Erweitert:** Telegram + #KI #Agenten · LinkedIn + #KI #Agenten #OpenSource
+**Vorschau-Bild:** `https://ogerly.github.io/alexander-friedland/blog-images/hermes-waechter-aams.png` (wird über og:image automatisch geladen)

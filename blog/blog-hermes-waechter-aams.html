@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermes — der Wächter über meinen Kontext | Alexander Friedland</title>
+  <meta name="description" content="Wer mit lokalen LLMs und Coding-Agenten arbeitet, kennt das volle Kontextfenster. Hermes überwacht die Session und dokumentiert, bevor Wissen verloren geht.">
+  <link rel="canonical" href="https://ogerly.github.io/alexander-friedland/blog/blog-hermes-waechter-aams.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Alexander Friedland">
+  <meta property="og:title" content="Hermes — der Wächter über meinen Kontext">
+  <meta property="og:description" content="Wer mit lokalen LLMs und Coding-Agenten arbeitet, kennt das volle Kontextfenster. Hermes überwacht die Session und dokumentiert, bevor Wissen verloren geht.">
+  <meta property="og:image" content="https://ogerly.github.io/alexander-friedland/blog-images/hermes-waechter-aams.png">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:url" content="https://ogerly.github.io/alexander-friedland/blog/blog-hermes-waechter-aams.html">
+  <meta property="article:published_time" content="2026-09-23T00:00:00Z">
+  <meta property="article:author" content="Alexander Friedland">
+  <meta property="article:section" content="KI-Architektur &amp; Praxis">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hermes — der Wächter über meinen Kontext">
+  <meta name="twitter:description" content="Wer mit lokalen LLMs und Coding-Agenten arbeitet, kennt das volle Kontextfenster. Hermes überwacht die Session und dokumentiert, bevor Wissen verloren geht.">
+  <meta name="twitter:image" content="https://ogerly.github.io/alexander-friedland/blog-images/hermes-waechter-aams.png">
+  
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.css" rel="stylesheet" type="text/css" />
+    <style>
+    /* Blog Article Styles */
+    :root {
+      --void: #0a0f14;
+      --void-light: #111927;
+      --off-white: #e0e6ed;
+      --cyber-cyan: #00D9FF;
+      --copper-orange: #FF8C42;
+      --emerald: #10B981;
+      --amber: #F59E0B;
+      --red: #EF4444;
+      --purple: #8B5CF6;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--void);
+      color: var(--off-white);
+      line-height: 1.7;
+    }
+    
+    .hero {
+      position: relative;
+      width: 100%;
+      height: clamp(300px, 45vh, 640px);
+      overflow: hidden;
+    }
+    
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent, var(--void) 95%);
+    }
+    
+    .hero-section {
+      position: relative;
+      margin-top: -200px;
+      padding: 80px 20px 60px;
+      max-width: 896px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .breadcrumb {
+      font-size: 14px;
+      color: rgba(0, 217, 255, 0.6);
+      margin-bottom: 32px;
+    }
+    
+    .breadcrumb a {
+      color: var(--cyber-cyan);
+      text-decoration: none;
+    }
+    
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    
+    .meta-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: rgba(224, 230, 237, 0.7);
+    }
+    
+    .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border: 1px solid rgba(0, 217, 255, 0.5);
+      border-radius: 9999px;
+      color: var(--cyber-cyan);
+      font-size: 13px;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--copper-orange);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    
+    @media (min-width: 640px) {
+      h1 { font-size: 3rem; }
+    }
+    
+    @media (min-width: 1024px) {
+      h1 { font-size: 3.75rem; }
+    }
+    
+    .subtitle {
+      font-size: 1.25rem;
+      color: rgba(0, 217, 255, 0.9);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    
+    @media (min-width: 640px) {
+      .subtitle { font-size: 1.5rem; }
+    }
+    
+    .article-content {
+      max-width: 896px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+    
+    .article-content h2 {
+      font-size: 1.875rem;
+      font-weight: bold;
+      color: var(--copper-orange);
+      margin-top: 48px;
+      margin-bottom: 24px;
+    }
+    
+    @media (min-width: 640px) {
+      .article-content h2 { font-size: 2.25rem; }
+    }
+    
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+    
+    .article-content h3.cyan { color: var(--cyber-cyan); }
+    .article-content h3.emerald { color: var(--emerald); }
+    
+    .article-content p {
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+    
+    .article-content p.text-xl {
+      font-size: 1.25rem;
+    }
+    
+    .article-content p.text-lg {
+      font-size: 1.125rem;
+    }
+    
+    .article-content strong {
+      color: var(--copper-orange);
+      font-weight: 600;
+    }
+    
+    .article-content em {
+      color: var(--cyber-cyan);
+      font-style: italic;
+    }
+    
+    .article-content a {
+      color: var(--cyber-cyan);
+      text-decoration: none;
+    }
+    
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+    
+    .article-content code {
+      background: rgba(102, 217, 255, 0.1);
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      color: var(--cyber-cyan);
+    }
+    
+    .article-content blockquote {
+      margin-top: 32px;
+      margin-bottom: 32px;
+      padding: 24px;
+      border-left: 4px solid var(--cyber-cyan);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 0.5rem;
+    }
+    
+    .article-content blockquote.cyan {
+      border-left-color: var(--cyber-cyan);
+      color: var(--cyber-cyan);
+    }
+    
+    .article-content blockquote.orange {
+      border-left-color: var(--copper-orange);
+      color: var(--copper-orange);
+    }
+    
+    .article-content ul {
+      margin-top: 16px;
+      margin-bottom: 24px;
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .article-content ul.space-y-2 > li {
+      margin-bottom: 8px;
+    }
+    
+    .article-content ul.space-y-3 > li {
+      margin-bottom: 12px;
+    }
+    
+    .article-content ul.space-y-4 > li {
+      margin-bottom: 16px;
+    }
+    
+    .article-content ol {
+      margin-top: 16px;
+      margin-bottom: 24px;
+      padding-left: 1.5rem;
+    }
+    
+    .article-content ol > li {
+      margin-bottom: 8px;
+    }
+    
+    .article-content figure {
+      margin-top: 48px;
+      margin-bottom: 48px;
+    }
+    
+    .article-content figure img {
+      width: 100%;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(0, 217, 255, 0.3);
+    }
+    
+    .article-content figcaption {
+      text-align: center;
+      font-size: 14px;
+      color: rgba(224, 230, 237, 0.6);
+      margin-top: 16px;
+    }
+    
+    /* Callout boxes */
+    .callout {
+      padding: 24px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      border-radius: 0.5rem;
+    }
+    
+    .callout.red {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      text-align: center;
+    }
+    
+    .callout.red p {
+      margin-bottom: 0;
+    }
+    
+    .callout.cyan {
+      background: rgba(0, 217, 255, 0.1);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      text-align: center;
+    }
+    
+    .callout.cyan p {
+      margin-bottom: 0;
+    }
+    
+    .callout.orange {
+      background: rgba(255, 140, 66, 0.1);
+      border: 1px solid rgba(255, 140, 66, 0.3);
+      text-align: center;
+    }
+    
+    .callout.orange p {
+      margin-bottom: 0;
+    }
+    
+    .callout.emerald {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      text-align: center;
+    }
+    
+    .callout.emerald p {
+      margin-bottom: 0;
+    }
+    
+    .callout-left-cyan {
+      border-left: 4px solid var(--cyber-cyan);
+      background: rgba(0, 217, 255, 0.05);
+      padding: 24px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    
+    .callout-left-orange {
+      border-left: 4px solid var(--copper-orange);
+      background: rgba(255, 140, 66, 0.05);
+      padding: 24px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    
+    .callout-left-red {
+      border-left: 4px solid var(--red);
+      background: rgba(239, 68, 68, 0.05);
+      padding: 24px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    
+    /* Grid layouts — Tailwind/DaisyUI grid-cols-* Klassen werden genutzt */
+    
+    .card {
+      padding: 20px;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(224, 230, 237, 0.15);
+      background: rgba(224, 230, 237, 0.05);
+    }
+    
+    .card.cyan {
+      border-color: rgba(0, 217, 255, 0.3);
+      background: rgba(0, 217, 255, 0.1);
+    }
+    
+    .card.orange {
+      border-color: rgba(255, 140, 66, 0.3);
+      background: rgba(255, 140, 66, 0.1);
+    }
+    
+    .card.emerald {
+      border-color: rgba(16, 185, 129, 0.3);
+      background: rgba(16, 185, 129, 0.1);
+    }
+    
+    .card.amber {
+      border-color: rgba(245, 158, 11, 0.3);
+      background: rgba(245, 158, 11, 0.1);
+    }
+    
+    .card.purple {
+      border-color: rgba(139, 92, 246, 0.3);
+      background: rgba(139, 92, 246, 0.1);
+    }
+    
+    .card.red {
+      border-color: rgba(239, 68, 68, 0.3);
+      background: rgba(239, 68, 68, 0.1);
+    }
+    
+    .card.void {
+      border-color: rgba(224, 230, 237, 0.1);
+      background: rgba(10, 15, 20, 0.5);
+    }
+    
+    /* Gradient cards */
+    .gradient-card {
+      padding: 24px;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(10, 15, 20, 0.5));
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+    
+    .gradient-card-orange {
+      padding: 24px;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 140, 66, 0.3);
+      background: linear-gradient(135deg, rgba(255, 140, 66, 0.1), rgba(10, 15, 20, 0.5));
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+    
+    /* Flex layouts */
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .items-start { align-items: flex-start; }
+    .items-center { align-items: center; }
+    .gap-2 { gap: 8px; }
+    .gap-3 { gap: 12px; }
+    .gap-4 { gap: 16px; }
+    .gap-6 { gap: 24px; }
+    .gap-8 { gap: 32px; }
+    .flex-wrap { flex-wrap: wrap; }
+    .justify-between { justify-content: space-between; }
+    
+    @media (min-width: 768px) {
+      .md\:flex-row { flex-direction: row; }
+    }
+    
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    
+    th {
+      padding: 12px;
+      text-align: left;
+      background: rgba(255, 140, 66, 0.2);
+      color: var(--copper-orange);
+      font-weight: bold;
+      border: 1px solid rgba(224, 230, 237, 0.1);
+    }
+    
+    td {
+      padding: 12px;
+      border: 1px solid rgba(224, 230, 237, 0.1);
+      color: rgba(224, 230, 237, 0.8);
+    }
+    
+    tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Code block */
+    .code-block {
+      background: rgba(10, 15, 20, 0.8);
+      border: 1px solid rgba(0, 217, 255, 0.4);
+      border-radius: 0.5rem;
+      padding: 24px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    .code-block .comment { color: rgba(0, 217, 255, 0.6); }
+    .code-block .code { color: var(--cyber-cyan); }
+    
+    /* Author section */
+    .author-section {
+      padding: 48px 20px;
+      border-top: 1px solid rgba(255, 140, 66, 0.2);
+      max-width: 896px;
+      margin: 0 auto;
+    }
+    
+    .author-info {
+      font-size: 14px;
+      color: rgba(224, 230, 237, 0.6);
+      font-style: italic;
+    }
+    
+    /* Back to blog */
+    .back-link {
+      display: inline-block;
+      padding: 12px 24px;
+      border: 1px solid rgba(0, 217, 255, 0.5);
+      border-radius: 0.5rem;
+      color: var(--cyber-cyan);
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 32px;
+      transition: all 0.3s;
+    }
+    
+    .back-link:hover {
+      background: rgba(0, 217, 255, 0.2);
+      border-color: var(--cyber-cyan);
+    }
+    
+    .section-spacer {
+      height: 96px;
+    }
+    
+    /* Utility classes used in articles */
+    .text-cyber-cyan { color: var(--cyber-cyan); }
+    .text-copper-orange { color: var(--copper-orange); }
+    .text-emerald-400 { color: var(--emerald); }
+    .text-amber-400 { color: var(--amber); }
+    .text-red-400 { color: var(--red); }
+    .text-purple-400 { color: var(--purple); }
+    .text-off-white\/60 { color: rgba(224, 230, 237, 0.6); }
+    .text-off-white\/70 { color: rgba(224, 230, 237, 0.7); }
+    .text-off-white\/80 { color: rgba(224, 230, 237, 0.8); }
+    .text-off-white\/90 { color: rgba(224, 230, 237, 0.9); }
+    .text-off-white\/50 { color: rgba(224, 230, 237, 0.5); }
+    .font-bold { font-weight: bold; }
+    .font-semibold { font-weight: 600; }
+    .italic { font-style: italic; }
+    .text-center { text-align: center; }
+    .text-sm { font-size: 14px; }
+    .text-xs { font-size: 12px; }
+    .text-lg { font-size: 1.125rem; }
+    .text-xl { font-size: 1.25rem; }
+    .text-2xl { font-size: 1.5rem; }
+    .text-3xl { font-size: 1.875rem; }
+    .text-4xl { font-size: 2.25rem; }
+    .mt-1 { margin-top: 4px; }
+    .mt-2 { margin-top: 8px; }
+    .mt-3 { margin-top: 12px; }
+    .mt-4 { margin-top: 16px; }
+    .mt-6 { margin-top: 24px; }
+    .mt-8 { margin-top: 32px; }
+    .mt-10 { margin-top: 40px; }
+    .mt-12 { margin-top: 48px; }
+    .mt-16 { margin-top: 64px; }
+    .mb-1 { margin-bottom: 4px; }
+    .mb-2 { margin-bottom: 8px; }
+    .mb-3 { margin-bottom: 12px; }
+    .mb-4 { margin-bottom: 16px; }
+    .mb-6 { margin-bottom: 24px; }
+    .mb-8 { margin-bottom: 32px; }
+    .mb-12 { margin-bottom: 48px; }
+    .mr-1 { margin-right: 4px; }
+    .mr-3 { margin-right: 12px; }
+    .w-full { width: 100%; }
+    .rounded-lg { border-radius: 0.5rem; }
+    .rounded-r { border-radius: 0 0.5rem 0.5rem 0; }
+    .border-t { border-top: 1px solid rgba(224, 230, 237, 0.1); }
+    .pt-6 { padding-top: 24px; }
+    .pt-8 { padding-top: 32px; }
+    .pb-16 { padding-bottom: 64px; }
+    .pb-12 { padding-bottom: 48px; }
+    .px-4 { padding-left: 16px; padding-right: 16px; }
+    .py-12 { padding-top: 48px; padding-bottom: 48px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="../blog-images/hermes-waechter-aams.png" alt="Hermes — der Wächter über meinen Kontext — Checkpoints statt Amnesie">
+    <div class="hero-overlay"></div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="hero-section">
+    <nav class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="mx-2">/</span>
+      <a href="../blog/index.html">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-off-white/90">Hermes — der Wächter über meinen Kontext</span>
+    </nav>
+    <div class="meta-info">
+      <div class="flex flex-wrap gap-4 items-center">
+        <span>📅 23.09.2026</span>
+        <span>•</span>
+        <span>⏱️ 11 min Lesezeit</span>
+        <span>•</span>
+        <span>📂 KI-Architektur &amp; Praxis</span>
+      </div>
+      <div class="meta-tags">
+        <span class="tag">Lokale KI</span><span class="tag">Hermes</span><span class="tag">AAMS</span><span class="tag">Kontextmanagement</span><span class="tag">OpenCode</span><span class="tag">Agenten-Architektur</span>
+      </div>
+    </div>
+    <h1>Hermes — der Wächter über meinen Kontext</h1>
+    <p class="subtitle">Wer mit lokalen LLMs und Coding-Agenten arbeitet, kennt das volle Kontextfenster. Hermes überwacht die Session und dokumentiert, bevor Wissen verloren geht.</p>
+  </div>
+
+  <!-- Article Content -->
+  <article class="article-content px-4">
+
+    <!-- Intro -->
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Wer mit lokalen LLMs und Coding-Agenten arbeitet, kennt irgendwann dieses Problem: Die Session läuft. Der Agent arbeitet. Es werden Dateien geändert, Entscheidungen getroffen, Fehler analysiert und wieder behoben. Und irgendwann ist das Kontextfenster voll.</p>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Dann beginnt das Vergessen.</p>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Eine Entscheidung, die in Turn 3 getroffen wurde, kann in Turn 40 schlicht verschwunden sein. Compaction hilft dabei, die Session weiterzuführen. Aber eine Zusammenfassung ist immer eine Zusammenfassung. Irgendetwas geht verloren.</p>
+
+    <div class="callout orange">
+      <p class="italic text-lg m-0">Für mich war irgendwann klar: <strong>Der Kontext darf nicht der Ort sein, an dem Wissen dauerhaft lebt.</strong></p>
+    </div>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Genau hier kommt Hermes ins Spiel.</p>
+
+    <!-- Mein Stack -->
+    <h2>Mein Stack — ganz lokal</h2>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Ich arbeite dabei komplett lokal. <strong>LM Studio</strong> stellt meine Modelle bereit. Mein Standardmodell ist aktuell <code>qwen3.8-27b</code>, dazu kommen kleinere Modelle für andere Aufgaben.</p>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Dazwischen sitzt mein <strong>MANTIS-LLM-Gateway</strong>. Ein kleiner OpenAI-kompatibler Proxy auf FastAPI-Basis. Er vereinheitlicht die Provider-Endpunkte, übernimmt Key-Rotation und hält die Modellliste synchron.</p>
+
+    <div class="callout-left-cyan">
+      <p class="text-lg text-off-white/90 m-0">Für den Client gibt es dadurch genau einen stabilen Endpoint.</p>
+    </div>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Als Client läuft <strong>OpenCode in VS Code</strong>. In meiner <code>opencode.json</code> ist für jedes Modell die jeweilige Kontextgröße definiert. Genau diese Information braucht Hermes, um abschätzen zu können, wie weit die aktuelle Session bereits fortgeschritten ist.</p>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Pro Projekt starte ich einen neuen OpenCode-Chat. Dadurch entsteht in LM Studio eine neue Chat-ID. Saubere Trennung. Keine alten Gesprächsreste. Keine Session, die über Wochen immer weiter wächst.</p>
+
+    <!-- Das eigentliche Problem -->
+    <h2>Das eigentliche Problem</h2>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Das Problem ist nicht einmal unbedingt, dass ein LLM Dinge vergisst. Das Problem ist, dass wichtige Entscheidungen häufig <strong>nur im Kontext existieren</strong>.</p>
+
+    <div class="callout orange">
+      <p class="italic text-lg m-0">„Warum haben wir das eigentlich so gebaut?“</p>
+    </div>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Wenn die Antwort darauf irgendwo 30.000 Tokens weiter oben steht, ist sie irgendwann nicht mehr zuverlässig verfügbar. Genau das habe ich bei einem fremden Repository erlebt: Ein offenes Issue beschäftigte sich mit einem „Decision-Leck“. Eine wichtige Entscheidung war im Verlauf getroffen worden, aber nie dauerhaft dokumentiert worden.</p>
+
+    <div class="callout-left-red">
+      <p class="text-lg text-off-white/90 m-0">Der Kontext wusste es einmal. <strong>Das Repository wusste es nicht.</strong></p>
+    </div>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Für einen Coding-Agenten ist das gefährlich. Denn eine neue Session kann dann durchaus wieder eine alte Entscheidung infrage stellen, obwohl diese bereits bewusst getroffen wurde.</p>
+
+    <!-- Hermes -->
+    <h2>Hermes: Checkpoints statt Amnesie</h2>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Hermes ist meine kleine <strong>OpenCode-Pluginschicht</strong>, die genau dieses Problem adressiert. Das Plugin ist bewusst klein gehalten. Rund 250 Zeilen TypeScript reichen aus, um die Session zu überwachen und bei definierten Schwellenwerten ein AAMS-Checkpoint-Ritual auszulösen.</p>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Die aktuelle Kontextfüllung wird dabei gegen die für das Modell konfigurierte Fenstergröße gesetzt:</p>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Füllung</th>
+            <th>Checkpoint</th>
+            <th>Was passiert</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>≥ 70 %</td>
+            <td><strong>SOFT</strong></td>
+            <td>Dateiprotokoll und offene Entscheidungen ins Workpaper</td>
+          </tr>
+          <tr>
+            <td>≥ 85 %</td>
+            <td><strong>HARD</strong></td>
+            <td>Whitepaper aktualisieren, Langzeit-Memory pflegen, Diary-Eintrag schreiben</td>
+          </tr>
+          <tr>
+            <td>≥ 90 %</td>
+            <td><strong>HANDOFF</strong></td>
+            <td>Exakten Resume-Punkt dokumentieren und Session beenden</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Die entscheidende Idee dahinter ist eigentlich ganz einfach:</p>
+
+    <div class="callout cyan">
+      <p class="font-bold text-xl m-0">Session = Kontext-Fenster. Workpaper = Task.</p>
+      <p class="text-off-white/70 text-sm mt-2 m-0">Das Kontextfenster ist flüchtig. Das Workpaper lebt weiter.</p>
+    </div>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Wenn Hermes bei 90 Prozent einen Handoff schreibt, beginnt die nächste Session nicht wieder bei null. Sie beginnt mit dem dokumentierten Zustand der vorherigen Session.</p>
+
+    <!-- Compaction -->
+    <h2>Und dann kommt Compaction</h2>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">OpenCode selbst besitzt inzwischen einen Hook für den Compaction-Prozess. Damit kann ein Plugin zusätzlichen Kontext in die Compaction einbringen, bevor OpenCode daraus die Fortsetzung der Session erzeugt.</p>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Hermes sitzt genau an dieser Stelle nicht als Ersatz, sondern als zusätzliche Sicherung. Bevor der Kontext komprimiert wird, soll das wichtige Wissen bereits außerhalb des flüchtigen Gesprächsverlaufs stehen.</p>
+
+    <div class="callout-left-orange">
+      <p class="text-lg text-off-white/90 m-0">Ich möchte nicht darauf vertrauen, dass eine spätere Zusammenfassung die richtige Entscheidung rekonstruiert. Ich möchte, dass die Entscheidung <strong>vorher dokumentiert wurde</strong>.</p>
+    </div>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Dazu kommen Anti-Loop-Schutz und ein State-File. Ein Schwellwert wird pro Session nur einmal ausgelöst. Die Zustände landen in <code>WORKING/LOGS/</code> und bleiben damit nachvollziehbar.</p>
+
+    <!-- AAMS -->
+    <h2>AAMS: der Vertrag darüber</h2>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Hermes funktioniert nicht isoliert. Darunter liegt <strong><a href="https://github.com/ogerly/AAMS">AAMS</a></strong> — eine Spezifikation für den dauerhaften Zustand eines Agentenprojekts. Sie definiert die Struktur, in der ein Projekt seinen Zustand ablegt:</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+      <div class="card cyan">
+        <h4 class="text-lg font-bold text-cyber-cyan mb-2">Workpaper</h4>
+        <p class="text-sm text-off-white/80 m-0">Aktueller Task und Arbeitszustand.</p>
+      </div>
+      <div class="card orange">
+        <h4 class="text-lg font-bold text-copper-orange mb-2">Whitepaper</h4>
+        <p class="text-sm text-off-white/80 m-0">Stabile Architektur- und Projektwahrheit.</p>
+      </div>
+      <div class="card emerald">
+        <h4 class="text-lg font-bold text-emerald-400 mb-2">Diary</h4>
+        <p class="text-sm text-off-white/80 m-0">Chronologisches Entscheidungstagebuch.</p>
+      </div>
+      <div class="card purple">
+        <h4 class="text-lg font-bold text-purple-400 mb-2">Memory</h4>
+        <p class="text-sm text-off-white/80 m-0">Langfristig relevantes Wissen.</p>
+      </div>
+    </div>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Damit entsteht eine klare Trennung:</p>
+
+    <div class="callout cyan">
+      <p class="font-bold text-xl m-0">Der Chat ist nicht das Gedächtnis.</p>
+      <p class="text-off-white/70 text-sm mt-2 m-0">Der Chat ist der Arbeitsraum. AAMS ist der dauerhafte Zustand. Hermes ist die Brücke zwischen beiden.</p>
+    </div>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Wichtig ist dabei auch die Abgrenzung: <strong>Hermes ist keine Erweiterung der AAMS-Spezifikation selbst.</strong> Es ist meine lokale Anpassung für OpenCode.</p>
+
+    <div class="callout-left-cyan">
+      <p class="text-lg text-off-white/90 m-0">Einordnung, die mir wichtig ist: AAMS ist heute eine <strong>Spezifikation</strong> — kein etablierter Standard. Zum Standard wird sie, wenn Teams sie in echter Projektentwicklung zuverlässig einsetzen — oder wenn Unternehmen sie für ihre Agenten-Projekte verlangen. Bis dahin soll sie leicht einsetzbar und offen bleiben.</p>
+    </div>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Die Sidecar-Variante habe ich beim AAMS-Upstream bewusst zur Diskussion gestellt: <a href="https://github.com/ogerly/AAMS/issues/53">Issue ogerly/AAMS#53</a> beschreibt genau diesen Ansatz. Die Idee ist dort als optionales, beschreibendes Pattern interessant — nicht als verpflichtender Bestandteil der Spezifikation. Das finde ich richtig.</p>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Diskutieren, Fragen und Updates laufen über die <a href="https://github.com/ogerly/AAMS/discussions">Discussions</a> im AAMS-Repo. AAMS soll offen bleiben. Hermes darf dagegen genau auf meinen lokalen Workflow zugeschnitten sein.</p>
+
+    <!-- Was sich dadurch verändert -->
+    <h2>Was sich dadurch verändert</h2>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Seit Hermes läuft, sehe ich den Kontext nicht mehr als etwas, das ich möglichst groß machen muss. Selbst ein riesiges Kontextfenster löst das grundsätzliche Problem nicht. Denn irgendwann ist auch dieses Fenster voll.</p>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Entscheidend ist deshalb nicht nur, wie viel das Modell gleichzeitig sehen kann. Sondern:</p>
+
+    <div class="callout orange">
+      <p class="font-bold text-xl m-0">Was bleibt erhalten, wenn es das nicht mehr sehen kann?</p>
+    </div>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Mit Hermes landen Entscheidungen nicht mehr nur im Gespräch. Sie landen dort, wo die nächste Session sie wiederfinden kann.</p>
+
+    <p class="text-lg text-off-white/90 leading-relaxed mb-6">Und genau deshalb gefällt mir dieser kleine Satz inzwischen ziemlich gut:</p>
+
+    <div class="callout cyan">
+      <p class="font-bold text-xl m-0">Das Kontextfenster ist flüchtig. Der Task nicht.</p>
+    </div>
+
+  </article>
+
+  <!-- Author -->
+  <div class="author-section px-4">
+    <p class="author-info">Dieser Artikel wurde von Alexander Friedland (@ogerly) verfasst und erschien am 23.09.2026. Er gehört zur Kategorie KI-Architektur &amp; Praxis.</p>
+  </div>
+
+  <!-- Back -->
+  <div class="max-w-4xl mx-auto px-4 pb-16">
+    <a href="../blog/index.html" class="back-link">← Zurück zum Blog</a>
+  </div>
+
+  <div class="section-spacer"></div>
+</body>
+</html>

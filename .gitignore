@@ -5,3 +5,6 @@
 # Sensitive data — Bewerbungen (nur index.md tracked)
 WORKING/WORKPAPER/Bewerbungen/*
 !WORKING/WORKPAPER/Bewerbungen/index.md
+
+# Lokaler AAMS-Clone (aams-check) — eigenes Repo, nicht committen
+AAMS/

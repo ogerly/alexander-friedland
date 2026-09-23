@@ -29,15 +29,21 @@
 |------|-----------|-------|-------------|
 | 2026-09-18 | WP-2026-09-18-RES-Blog-MICA-Borsen-Exodus.md | RES | Neuer Blog-Artikel „Die Börsen gehen. Die EU bleibt. Und wir stehen im Regen.“ (18.09.2026, 11 min, „Regulierung & Realität“) — volles Publikationspaket: HTML + Hero/Vorschau (`blog-images/borsen-exodus-eu.jpg`) + metadata (erstes Element) + index.html-Grid + README + **neue Seite `blog/index.html`** (Blog-Übersicht, alle 21 Artikel, statisch). Fixes: 40 Canonical/og:URLs in 20 Bestandsartikeln (Segment `/blog/` fehlte), Back-Link `"/"` → `../blog/index.html`. Whitepaper `blog-artikel-erstellen.md`: URL-Regel, Subtitle, blog/index.html-Schritt. AAMS-Check: 2.4.0 = Remote, aktuell. |
 
+### 2026-09-23 
+
+| Date | Workpaper | Topic | Description |
+|------|-----------|-------|-------------|
+| 2026-09-23 | WP-2026-09-23-RES-Blog-Hermes-Waechter-AAMS.md | RES | Neuer Blog-Artikel „Hermes — der Wächter über meinen Kontext" (23.09.2026, 11 min, „KI-Architektur & Praxis", ~853 W — 2. Fassung aus NEUER-ARTIKEL-TEXT.md) — volles Publikationspaket: HTML + Hero (`blog-images/hermes-waechter-aams.png`, 1536×1024) + metadata (erstes Element, 23 posts) + index.html-Grid + blog/index.html + README. **AAMS-Positionierung (bindend): Spezifikation, kein Standard** (wird Standard durch zuverlässigen Einsatz/Firmen-Verlangen) — Artikel fixiert + Callout. AAMS-Verweise: github.com/ogerly/AAMS + Issue #53 + Discussions. Hero dynamisch: `clamp(300px, 45vh, 640px)` (Artikel + Whitepaper-Template). AAMS-Repo: SHOWCASE.md + Eintrag (pushed 1bd92ef; alter PAT verfallen → Push mit .env-Token). Git: `AAMS/`-Clone in .gitignore; Push enthält auch nie committeden 19.09-Artikel. |
+
 ## Key Artifacts
 
 - `index.html` — Portfolio-Seite (Hero, Blog, Videos, Über, CV, Kontakt)
 - `style.css` — Styles (Reset, Base, Components, Utilities)
 - `app.js` — Entry Point (nav, hero, reveal, contact, compass)
 - `components/` — nav.js, hero.js, reveal.js, contact.js, compass.js
-- `blog/` — 21 statische Blog-Artikel (HTML mit OG-Tags) + `blog/index.html` (Blog-Übersicht, statisch)
-- `blog-images/` — 23 Blog-Bilder
-- `data/blog-metadata.json` — Metadaten aller 21 Artikel
+- `blog/` — 23 statische Blog-Artikel (HTML mit OG-Tags) + `blog/index.html` (Blog-Übersicht, statisch)
+- `blog-images/` — 25 Blog-Bilder
+- `data/blog-metadata.json` — Metadaten aller 23 Artikel
 - `WORKING/WHITEPAPER/` — Stable architecture docs
 - `WORKING/WORKPAPER/` — Session workpapers
 - `.agent.json` — AAMS/2.0 manifest
@@ -67,7 +73,7 @@ Dieser Stack funktioniert überall — für jedes Projekt. Keine Cloud, keine Ab
 ### Hauptplattformen
 
 1. **AAMS** — Agent Manifest. Every Agent. One File. → github.com/ogerly/AAMS
-2. **Blog** — 21 Artikel als statische HTML. Tailwind + DaisyUI per CDN. → ogerly.github.io/alexander-friedland/blog/
+2. **Blog** — 23 Artikel als statische HTML. Tailwind + DaisyUI per CDN. → ogerly.github.io/alexander-friedland/blog/
 3. **YouTube** — @DEVmatrose (Videos über KI, Coding, dezentrale Systeme)
 4. **GitHub** — @ogerly (Open Source, 12+ Jahre)
 

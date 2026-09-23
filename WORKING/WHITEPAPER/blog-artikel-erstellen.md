@@ -118,7 +118,7 @@ seitdem — Back-Links `../blog/index.html` in allen Artikeln sind damit valide.
       color: var(--off-white);
       line-height: 1.7;
     }
-    .hero { position: relative; width: 100%; height: 400px; overflow: hidden; }
+    .hero { position: relative; width: 100%; height: clamp(300px, 45vh, 640px); overflow: hidden; }
     .hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, var(--void) 95%); }
     .hero-section { position: relative; margin-top: -200px; padding: 80px 20px 60px; max-width: 896px; margin-left: auto; margin-right: auto; }

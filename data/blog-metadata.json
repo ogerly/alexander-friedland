@@ -1,6 +1,38 @@
 {
   "posts": [
     {
+      "id": "hermes-waechter-aams",
+      "title": "Hermes — der Wächter über meinen Kontext",
+      "slug": "hermes-waechter-aams",
+      "date": "2026-09-23",
+      "author": "Alexander Friedland (@ogerly)",
+      "excerpt": "Wer mit lokalen LLMs und Coding-Agenten arbeitet, kennt das volle Kontextfenster. Hermes überwacht die Session und dokumentiert, bevor Wissen verloren geht.",
+      "category": "KI-Architektur & Praxis",
+      "tags": ["Lokale KI", "Hermes", "AAMS", "Kontextmanagement", "OpenCode", "Agenten-Architektur"],
+      "readTime": "11 min",
+      "featured": true,
+      "image": "/blog-images/hermes-waechter-aams.png",
+      "imageAlt": "Hermes — der Wächter über meinen Kontext — Checkpoints statt Amnesie",
+      "metaDescription": "Wer mit lokalen LLMs und Coding-Agenten arbeitet, kennt das volle Kontextfenster. Hermes überwacht die Session und dokumentiert, bevor Wissen verloren geht.",
+      "url": "/blog/blog-hermes-waechter-aams.html"
+    },
+    {
+      "id": "deruebersehene-teil-des-marktes",
+      "title": "Der übersehene Teil des Marktes: Zwei Strategien, die niemand zusammen denkt",
+      "slug": "deruebersehene-teil-des-marktes",
+      "date": "2026-09-19",
+      "author": "Alexander Friedland (@ogerly)",
+      "excerpt": "Ein Winkel des Marktes, über den kaum jemand schreibt: Zwei Strategien, die niemand zusammen denkt — das Antizyklen-Signal und das Fischen im Trüben.",
+      "category": "Trading & Marktstrategie",
+      "tags": ["Krypto-Trading", "Antizyklen-Signal", "Fischen im Trüben", "Alt/BTC-Rotation", "Nischenmärkte", "Risiko"],
+      "readTime": "13 min",
+      "featured": true,
+      "image": "/blog-images/deruebersehene-teil-des-marktes-finance.png",
+      "imageAlt": "Der übersehene Teil des Marktes — Zwei Strategien, die niemand zusammen denkt",
+      "metaDescription": "Ein Winkel des Marktes, über den kaum jemand schreibt: Zwei Strategien, die niemand zusammen denkt — das Antizyklen-Signal und das Fischen im Trüben.",
+      "url": "/blog/blog-deruebersehene-teil-des-marktes.html"
+    },
+    {
       "id": "borsen-exodus-eu",
       "title": "Die Börsen gehen. Die EU bleibt. Und wir stehen im Regen.",
       "slug": "borsen-exodus-eu",

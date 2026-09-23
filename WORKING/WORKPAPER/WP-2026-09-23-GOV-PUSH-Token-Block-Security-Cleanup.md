@@ -1,6 +1,6 @@
 # WP-2026-09-23-GOV-PUSH-Token-Block-Security-Cleanup
 
-**Status:** open — blockiert auf neuen Token (2026-09-23)
+**Status:** complete (2026-09-23) — Push durch, Cleanup done
 **Datum:** 2026-09-23
 **TOPIC:** GOV (Security/Push)
 
@@ -52,13 +52,24 @@
 
 ## next_steps
 
-- [ ] **Neuen PAT anlegen** (classic, Scope `repo`, Expiry bewusst wählen) → in `.env`
-- [ ] Push `865ac69` (+ Folge-Commits) nach GitHub
-- [ ] Live-Verifikation Märchen-Artikel (HTTP 200) + `## deploy`/`## abschuss`
-      in `WP-2026-09-23-RES-Blog-Maerchen-Digitale-Souveraenitaet.md`
+- [x] **Neuen PAT anlegen** → in `.env` (ausgegeben: Classic PAT, 40 Zeichen;
+      davor Fine-grained nur mit Read → 403/404, Classic PAT push-tauglich)
+- [x] Push `865ac69` + `83c5d84` → `1f316b3..83c5d84 main → main` (~17:00)
+- [x] Live-Verifikation Märchen-Artikel (HTTP 200) + `## deploy`/`## abschuss`
+      im Märchen-WP
 - [ ] AAMS-Repo-Diary-Zeile (2026-09-23) mit der 09-22-Sitzung dort committen
       (Session-Close gehört dort hin)
 - [ ] Optional: GitHub-Token-Expiry im Blick behalten (github.com/settings/tokens)
+
+## resolution (2026-09-23)
+
+- Fine-grained-Token: Repo-Read ja, Repo-Write nein (API: GET 200 / PUT 404, Push 403)
+  → Permissions-Änderung hatte nicht gegriffen (Repo-Ebene „Contents" nicht auf
+  Read+Write).
+- **Lösung:** frischer **Classic-PAT** in `.env` (Scope `repo`) → API-/user OK,
+  Push OK. Token-Regel (D1) bleibt unverändert: Token nur in `.env`, Pushes als
+  einmalige URL, nichts persistiert.
+- Alle Token-Reste aus Remotes/Configs/Workpapers bereinigt (siehe file_protocol).
 
 ## file_protocol
 

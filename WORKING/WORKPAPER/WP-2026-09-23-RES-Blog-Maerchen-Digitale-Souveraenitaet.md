@@ -1,6 +1,6 @@
 # WP-2026-09-23-RES-Blog-Maerchen-Digitale-Souveraenitaet
 
-**Status:** in progress (2026-09-23)
+**Status:** complete (2026-09-23)
 **Datum:** 2026-09-23
 **TOPIC:** RES (Blog)
 
@@ -46,20 +46,36 @@ veröffentlichen: HTML + metadata + Grids + README, Workpaper, AAMS-Ritual
 
 ## next_steps
 
-- [x] Blog-Repo: Commit (`865ac69`) — **Push BLOCKIERT:** Token wird von GitHub
-      abgelehnt (401) → siehe `WP-2026-09-23-GOV-PUSH-Token-Block-Security-Cleanup.md`
-- [ ] Neuer PAT in `.env` → Push `865ac69`
-- [ ] Live-Verifikation (HTTP 200) + `## deploy` + `## abschuss`
+- [x] Blog-Repo: Commit (`865ac69`) — Push war BLOCKIERT (Token-Vorfall, GOV-WP)
+- [x] Neuer Token in `.env` (Classic PAT) → Push `865ac69` + `83c5d84` erfolgreich
+- [x] Live-Verifikation (HTTP 200) + `## deploy` + `## abschuss`
 - [ ] Social-Preview prüfen (opengraph.xyz) — Alexander
 - [ ] Social-Media-Posts aus `## social-media` posten (X, Telegram, LinkedIn)
 
-## deploy (pending)
+## deploy (2026-09-23)
 
-(nach Push ausfüllen)
+- **Commits:** `865ac69` (Artikel + Paket) + `83c5d84` (GOV-Doku) →
+  `1f316b3..83c5d84 main → main` (Push mit neuem Classic-PAT aus `.env`)
+- **Live-Verifikation (alle HTTP 200, 23.09.2026 ~17:10):**
+  - https://ogerly.github.io/alexander-friedland/blog/blog-maerchen-von-der-digitalen-souveraenitaet.html
+  - https://ogerly.github.io/alexander-friedland/blog-images/maerchen-von-der-digitalen-souveraenitaet.jpg
+  - https://ogerly.github.io/alexander-friedland/ (Grid zeigt Artikel an erster Position)
+  - https://ogerly.github.io/alexander-friedland/blog/ (Übersicht zeigt Artikel)
+- **Inhalts-Verifikation (Live-HTML):** Kategorie „Datenschutz & Polemik", 10 min,
+  dynamischer Hero (`clamp(300px, 45vh, 640px)`), AAMS-Link, Hero-`.jpg`-Referenzen — alles da
+- **Nächste Schritte für Alexander:** Social-Preview (opengraph.xyz) + Posts aus `## social-media`
 
-## abschuss (pending)
+## abschuss (2026-09-23)
 
-(nach Verifikation ausfüllen)
+Alle Punkte erledigt und verifiziert:
+
+- Publikationspaket komplett (5/5): HTML + metadata (erstes Element, 24 posts, JSON valid)
+  + index.html-Grid + blog/index.html + README — neue Position jeweils erste
+- Text 1:1 aus der Quelle; Anreicherung: 3 Callouts (orange/red) + 2-Karten-Grid
+  (Hardware-Schranke / Know-how-Monopol) + AAMS-Link (Spezifikation)
+- Tag-Balance OK, canonical/og:url mit `/blog/`-Segment
+- AAMS-Ritual: Workpaper (diese Datei), DIARY, LTM (24 Artikel, 26 Bilder)
+- Push + Live-Verifikation OK (Details in `## deploy`)
 
 ## social-media (Posting-Texte)
 

@@ -1,6 +1,6 @@
 # WP-2026-09-23-RES-Blog-Hermes-Waechter-AAMS
 
-**Status:** in progress (2026-09-23)
+**Status:** complete (2026-09-23)
 **Datum:** 2026-09-23
 **TOPIC:** RES (Blog)
 
@@ -80,16 +80,37 @@ Publikationspaket veröffentlichen:
 ## next_steps
 
 - [x] AAMS-Repo: SHOWCASE.md + Push
-- [ ] DIARY + LTM Ingest
-- [ ] Blog-Repo: Commit + Push (inkl. 19.09-Artikel)
-- [ ] Live-Verifikation (HTTP 200) + Workpaper `## deploy` + `## abschuss`
+- [x] DIARY + LTM Ingest
+- [x] Blog-Repo: Commit + Push (inkl. 19.09-Artikel)
+- [x] Live-Verifikation (HTTP 200) + Workpaper `## deploy` + `## abschuss`
 - [ ] Social-Preview prüfen (opengraph.xyz / cards-dev.twitter.com) — Alexander
 - [ ] Optional: Social-Media-Post aus dem Artikel
 
-## deploy (pending)
+## deploy (2026-09-23)
 
-(nach Push ausfüllen: Commits, Push-Ref, Live-URLs, Verifikation)
+- **AAMS-Repo:** Commit `1bd92ef` („feat: SHOWCASE — Hermes-Artikel …“) → `31a2975..1bd92ef main → main`
+  (alter PAT im Remote verfallen → einmaliger HTTPS-Push mit `.env`-Token, nicht persistiert)
+- **Blog-Repo:** Commit `8dcd0d5` („Blog: Hermes — der Wächter über meinen Kontext …“, 14 Dateien)
+  → `c9f2a57..8dcd0d5 main → main` (ebenfalls `.env`-Token-Push, Remote bleibt SSH)
+- **Live-Verifikation (alle HTTP 200, 23.09.2026):**
+  - https://ogerly.github.io/alexander-friedland/blog/blog-hermes-waechter-aams.html
+  - https://ogerly.github.io/alexander-friedland/blog/blog-deruebersehene-teil-des-marktes.html (19.09, nachgeliefert)
+  - https://ogerly.github.io/alexander-friedland/blog-images/hermes-waechter-aams.png
+  - https://ogerly.github.io/alexander-friedland/ + /blog/ (Grids zeigen neuen Artikel oben)
+- **Inhalts-Verifikation (Live-HTML):** AAMS-Repo-Link, Issue #53-Link, Discussions-Link,
+  „AAMS-Spezifikation“ + „kein etablierter Standard“ + `clamp(300px, 45vh, 640px)` vorhanden
+- **AAMS-Showcase live:** `raw.githubusercontent.com/ogerly/AAMS/main/SHOWCASE.md` enthält den Eintrag
+- **Nächste Schritte für Alexander:** Social-Preview (opengraph.xyz / cards-dev.twitter.com) + ggf. Posten
 
-## abschuss (pending)
+## abschuss (2026-09-23)
 
-(nach Verifikation ausfüllen)
+Alle Punkte erledigt und verifiziert:
+
+- Publikationspaket komplett (5/5): HTML + metadata (erstes Element, 23 posts, JSON valid)
+  + index.html-Grid + blog/index.html + README — neue Position jeweils erste
+- AAMS im Artikel: Repo-Link + Issue #53 + Discussions; **Spezifikation-Positionierung**
+  (User-Decision) als eigener Callout; „Standards“→„Spezifikation“ durchgängig
+- Hero-Bild dynamisch (`clamp(300px, 45vh, 640px)`) — Artikel + Whitepaper-Template
+- AAMS-Repo: SHOWCASE-Eintrag pushed; Blog-Repo: pushed (inkl. 19.09-Artikel)
+- AAMS-Ritual: Workpaper (diese Datei), DIARY 2026-09, LTM-Index (23 Artikel, 25 Bilder)
+- Git-Hygiene: `AAMS/`-Clone in `.gitignore` (verschachteltes Repo bleibt lokal)

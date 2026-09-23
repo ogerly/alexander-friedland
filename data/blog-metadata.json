@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "id": "maerchen-von-der-digitalen-souveraenitaet",
+      "title": "Das Märchen von der digitalen Souveränität: Wenn Corporate Cloud auf Kontrollwahn trifft",
+      "slug": "maerchen-von-der-digitalen-souveraenitaet",
+      "date": "2026-09-23",
+      "author": "Alexander Friedland (@ogerly)",
+      "excerpt": "Digitale Souveränität klingt nach Freiheit. Dahinter verbirgt sich ein abgekartetes Geschäft: Monopol-Cloud, Kontrolle und Cashflow.",
+      "category": "Datenschutz & Polemik",
+      "tags": ["Digitale Souveränität", "Cloud-Kritik", "Lokale KI", "Self-Hosting", "Monopol", "Polemik"],
+      "readTime": "10 min",
+      "featured": true,
+      "image": "/blog-images/maerchen-von-der-digitalen-souveraenitaet.jpg",
+      "imageAlt": "Das Märchen von der digitalen Souveränität — Wenn Corporate Cloud auf Kontrollwahn trifft",
+      "metaDescription": "Digitale Souveränität klingt nach Freiheit. Dahinter verbirgt sich ein abgekartetes Geschäft: Monopol-Cloud, Kontrolle und Cashflow.",
+      "url": "/blog/blog-maerchen-von-der-digitalen-souveraenitaet.html"
+    },
+    {
       "id": "hermes-waechter-aams",
       "title": "Hermes — der Wächter über meinen Kontext",
       "slug": "hermes-waechter-aams",

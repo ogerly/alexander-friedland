@@ -8,18 +8,18 @@ Persönliche Website — Softwareentwickler seit 1999.
 
 ## Blog — Neuester Artikel
 
-> **Hermes — der Wächter über meinen Kontext**
-> 23.09.2026 · 11 min Lesezeit · KI-Architektur & Praxis
+> **Das Märchen von der digitalen Souveränität: Wenn Corporate Cloud auf Kontrollwahn trifft**
+> 23.09.2026 · 10 min Lesezeit · Datenschutz & Polemik
 >
-> Wer mit lokalen LLMs und Coding-Agenten arbeitet, kennt das volle Kontextfenster. Hermes überwacht die Session und dokumentiert, bevor Wissen verloren geht.
+> Ein charmantes Wort, ein abgekartetes Geschäft: Wie „digitale Souveränität“ zum Code-Wort für Monopol-Cloud, Kontrolle und Cashflow geworden ist.
 >
-> [Artikel lesen →](https://ogerly.github.io/alexander-friedland/blog/blog-hermes-waechter-aams.html)
+> [Artikel lesen →](https://ogerly.github.io/alexander-friedland/blog/blog-maerchen-von-der-digitalen-souveraenitaet.html)
 
-**Inhalt in Kürze:** Ganz lokal, ohne Cloud: Wie mein kleines OpenCode-Plugin
-Hermes das Kontextfenster beobachtet und bei 70, 85 und 90 Prozent Checkpoint-
-Rituale (SOFT, HARD, HANDOFF) auslöst — damit Entscheidungen nicht in der
-Compaction verloren gehen, sondern dokumentiert im AAMS-Workpaper landen.
-Denn das Kontextfenster ist flüchtig. Der Task nicht.
+**Inhalt in Kürze:** Eine Polemik gegen das Schönredewort „digitale Souveränität“:
+Warum hinter PR und geopolitischer Paranoia im Kern Marktanteile für Konzern-Clouds,
+Kontrolle und Cashflow stehen — und warum Hardware-Schranke plus Know-how-Monopol
+der Filter sind, der den lokalen Mittelstand fernhält. Echte Souveränität fängt da
+an, wo das Monopol aufhört.
 
 **Alle Artikel:** [Schreibwerk & Logbuch](https://ogerly.github.io/alexander-friedland/blog/)
 

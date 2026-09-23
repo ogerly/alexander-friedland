@@ -75,6 +75,7 @@
 
 | Datei | Aktion | Status |
 |---|---|---|
+| `WORKING/WHITEPAPER/security-token-regeln.md` | **neu — Decision-Promotion D1** (Token nur in `.env`, Push-Strategie, Token-Hygiene, Leak-Check) | ✅ |
 | `WORKING/WORKPAPER/WP-2026-09-23-GOV-PUSH-Token-Block-Security-Cleanup.md` | anlegen (diese Datei) | ✅ |
 | AAMS-Clone `.git/config` | alter PAT aus `origin` entfernt (`git remote set-url`) | ✅ |
 | `WORKING/WORKPAPER/WP-2026-09-23-RES-Blog-Hermes-Waechter-AAMS.md` | Token-Präfix-Referenz entfernt | ✅ |

@@ -11,6 +11,15 @@ Cloud auf Kontrollwahn trifft"** (Polemik) als vollständiges Publikationspaket
 veröffentlichen: HTML + metadata + Grids + README, Workpaper, AAMS-Ritual
 (DIARY/LTM), Commit + Push.
 
+## aams-check (2026-09-23)
+
+| Prüfpunkt | Wert |
+|---|---|
+| Lokale `.aams-version` | AAMS/2.4.0 (installiert 2026-08-25) |
+| Lokale `.agent.json` | `_contract: AAMS/2.4.0`, `_version_date: 2026-07-08` |
+| Remote `ogerly/AAMS` main | `_contract: AAMS/2.4.0`, `_version_date: 2026-07-08` |
+| Ergebnis | **Aktuell — kein on_update nötig** |
+
 ## context
 
 - Quelle-Text: `WORKING/WORKPAPER/NEUER-ARTIKEL-TEXT.md` (eine Version, ~778 Wörter, Polemik)

@@ -54,8 +54,9 @@ Publikationspaket veröffentlichen:
 - **AAMS-Showcase:** `SHOWCASE.md` (AAMS-Repo) + Zeile „Alexander-Friedland (Blog)" mit
   Artikel-Link; Statement: *„Das Kontextfenster ist flüchtig. Der Task nicht."*
   (Showcase-Voraussetzung `.agent.json` im Repo-Root: vorhanden, AAMS/2.4.0)
-- **Push AAMS-Repo:** alter PAT im Remote (ghp_Yc1k…) verfallen → **einmaliger Push mit
-  `.env`-Token** (Token nicht persistiert/commitet; Remote-URL unverändert gelassen)
+- **Push AAMS-Repo:** alter PAT im Remote verfallen → **einmaliger Push mit
+  `.env`-Token** (Token nirgendwo persistiert/commitet; Remote-URL danach bereinigt —
+  kein Token mehr in `.git/config` oder Remote)
 - **Git-Hygiene Blog-Repo:** lokaler AAMS-Clone `AAMS/` in `.gitignore` aufgenommen
   (verschachteltes Repo — darf nie committet werden)
 - **Push Blog-Repo:** enthält **auch** den untrackeden 19.09-Artikel

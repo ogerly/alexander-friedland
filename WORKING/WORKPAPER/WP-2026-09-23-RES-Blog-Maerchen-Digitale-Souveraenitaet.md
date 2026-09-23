@@ -46,7 +46,9 @@ veröffentlichen: HTML + metadata + Grids + README, Workpaper, AAMS-Ritual
 
 ## next_steps
 
-- [ ] Blog-Repo: Commit + Push
+- [x] Blog-Repo: Commit (`865ac69`) — **Push BLOCKIERT:** Token wird von GitHub
+      abgelehnt (401) → siehe `WP-2026-09-23-GOV-PUSH-Token-Block-Security-Cleanup.md`
+- [ ] Neuer PAT in `.env` → Push `865ac69`
 - [ ] Live-Verifikation (HTTP 200) + `## deploy` + `## abschuss`
 - [ ] Social-Preview prüfen (opengraph.xyz) — Alexander
 - [ ] Social-Media-Posts aus `## social-media` posten (X, Telegram, LinkedIn)

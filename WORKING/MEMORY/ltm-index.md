@@ -37,15 +37,21 @@
 | 2026-09-23 | WP-2026-09-23-RES-Blog-Maerchen-Digitale-Souveraenitaet.md | RES | Neuer Blog-Artikel „Das Märchen von der digitalen Souveränität: Wenn Corporate Cloud auf Kontrollwahn trifft" (23.09.2026, 10 min, „Datenschutz & Polemik", ~778 W) — Polemik gegen das Schönredewort „digitale Souveränität" (Monopol-Cloud, Hardware-Schranke, Know-how-Monopol). Volles Publikationspaket: HTML + Hero (`blog-images/maerchen-von-der-digitalen-souveraenitaet.jpg`, 1584×672) + metadata (erstes Element, 24 posts) + Grids + README (ersetzt Hermes-Block). Anreicherung: Callouts + 2-Karten-Grid + AAMS-Link (Spezifikation). Social-Media-Texte im WP. **Push blockiert (Token-Vorfall, siehe nächste Zeile).** |
 | 2026-09-23 | WP-2026-09-23-GOV-PUSH-Token-Block-Security-Cleanup.md | GOV | **Token-Vorfall (RESOLVED):** `.env`-Token (Fine-grained) ab ~13:20 abgelehnt (401/403/404), war 07:40 + 13:00 noch OK → Expiry bzw. fehlende Write-Berechtigung auf Repo-Ebene. Lösung: frischer **Classic-PAT (Scope `repo`)** in `.env` → Pushes `865ac69` + `83c5d84` + `1d19ab3` erfolgreich, Märchen-Artikel live (HTTP 200). **User-Regel (bindend, D1): Token nur in `.env`** — AAMS-Clone origin-Remote bereinigt (alter PAT entfernt), Token-Präfix aus Workpaper entfernt; False-Positives: `.agent.json` = mask_patterns, WP-2026-09-16 = maskierter Verweis. **Decision-Promotion: D1 → Whitepaper `security-token-regeln.md`.** AAMS-Repo-Diary-Zeile liegt lokal (Session-Close dort = 09-22-Sitzung). |
 
+### 2026-10-06 
+
+| Date | Workpaper | Topic | Description |
+|------|-----------|-------|-------------|
+| 2026-10-06 | WP-2026-10-06-RES-Blog-Irregular.md | RES | Neuer Blog-Artikel „Irregular: Das Labor, das die Tests kontrolliert – und der Hype, der die Bewertung treibt" (06.10.2026, 10 min, „Security & KI", ~704 W, 1:1 aus NEUER-ARTIKEL-TEXT.md) — volles Publikationspaket: HTML + Hero (`blog-images/Irregular.jpg`, 1168×784, User-Name beibehalten) + metadata (erstes Element, 25 posts) + index.html-Grid + blog/index.html + README (ersetzt Märchen-Block). Anreicherung: Orange-Callout (Irregular/Pattern Labs), Muster-Kette (ul + orange Pfeile), roter Callout (Schluss-Punch). Social-Media-Texte im WP. |
+
 ## Key Artifacts
 
 - `index.html` — Portfolio-Seite (Hero, Blog, Videos, Über, CV, Kontakt)
 - `style.css` — Styles (Reset, Base, Components, Utilities)
 - `app.js` — Entry Point (nav, hero, reveal, contact, compass)
 - `components/` — nav.js, hero.js, reveal.js, contact.js, compass.js
-- `blog/` — 24 statische Blog-Artikel (HTML mit OG-Tags) + `blog/index.html` (Blog-Übersicht, statisch)
-- `blog-images/` — 26 Blog-Bilder
-- `data/blog-metadata.json` — Metadaten aller 24 Artikel
+- `blog/` — 25 statische Blog-Artikel (HTML mit OG-Tags) + `blog/index.html` (Blog-Übersicht, statisch)
+- `blog-images/` — 27 Blog-Bilder
+- `data/blog-metadata.json` — Metadaten aller 25 Artikel
 - `WORKING/WHITEPAPER/` — Stable architecture docs
 - `WORKING/WORKPAPER/` — Session workpapers
 - `.agent.json` — AAMS/2.0 manifest
@@ -75,7 +81,7 @@ Dieser Stack funktioniert überall — für jedes Projekt. Keine Cloud, keine Ab
 ### Hauptplattformen
 
 1. **AAMS** — Agent Manifest. Every Agent. One File. → github.com/ogerly/AAMS
-2. **Blog** — 24 Artikel als statische HTML. Tailwind + DaisyUI per CDN. → ogerly.github.io/alexander-friedland/blog/
+2. **Blog** — 25 Artikel als statische HTML. Tailwind + DaisyUI per CDN. → ogerly.github.io/alexander-friedland/blog/
 3. **YouTube** — @DEVmatrose (Videos über KI, Coding, dezentrale Systeme)
 4. **GitHub** — @ogerly (Open Source, 12+ Jahre)
 

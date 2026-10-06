@@ -8,18 +8,18 @@ Persönliche Website — Softwareentwickler seit 1999.
 
 ## Blog — Neuester Artikel
 
-> **Das Märchen von der digitalen Souveränität: Wenn Corporate Cloud auf Kontrollwahn trifft**
-> 23.09.2026 · 10 min Lesezeit · Datenschutz & Polemik
+> **Irregular: Das Labor, das die Tests kontrolliert – und der Hype, der die Bewertung treibt**
+> 06.10.2026 · 10 min Lesezeit · Security & KI
 >
-> Ein charmantes Wort, ein abgekartetes Geschäft: Wie „digitale Souveränität“ zum Code-Wort für Monopol-Cloud, Kontrolle und Cashflow geworden ist.
+> Wer die Tests kontrolliert, prägt die Standards. Wer die Standards prägt, steuert den Zugang.
 >
-> [Artikel lesen →](https://ogerly.github.io/alexander-friedland/blog/blog-maerchen-von-der-digitalen-souveraenitaet.html)
+> [Artikel lesen →](https://ogerly.github.io/alexander-friedland/blog/blog-irregular-labor-kontrolliert-tests.html)
 
-**Inhalt in Kürze:** Eine Polemik gegen das Schönredewort „digitale Souveränität“:
-Warum hinter PR und geopolitischer Paranoia im Kern Marktanteile für Konzern-Clouds,
-Kontrolle und Cashflow stehen — und warum Hardware-Schranke plus Know-how-Monopol
-der Filter sind, der den lokalen Mittelstand fernhält. Echte Souveränität fängt da
-an, wo das Monopol aufhört.
+**Inhalt in Kürze:** Hinter den „ausgebrochenen“ Frontier-Modellen steht ein gemeinsamer
+Nenner: dasselbe Labor — Irregular (früher Pattern Labs) — betrieb die Testumgebungen.
+Vom AI-Safety-Seed über die Verknüpfung mit staatlichen Instituten bis zum Bewertungssprung:
+Wie ein geschlossener Kreislauf aus Tests, Regulierungsdruck und Kapital funktioniert —
+und wer am Ende draußen bleibt, wenn dezentrale und lokale Modelle nicht zertifizierbar sind.
 
 **Alle Artikel:** [Schreibwerk & Logbuch](https://ogerly.github.io/alexander-friedland/blog/)
 

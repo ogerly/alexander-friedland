@@ -1,40 +1,55 @@
-# Das Märchen von der digitalen Souveränität: Wenn Corporate Cloud auf Kontrollwahn trifft
+**Irregular: Das Labor, das die Tests kontrolliert – und der Hype, der die Bewertung treibt**
 
-Es ist ein charmantes Wort: **Digitale Souveränität**. Es klingt nach Freiheit, nach Unabhängigkeit, nach Selbstbestimmung im Netz. Wenn Politiker, Wirtschaftsverbände oder EU-Kommissare das Wort in den Mund nehmen, schwingt immer ein Hauch von Aufbruch mit. Wir müssen uns emanzipieren, heißt es dann. Weg von den Tech-Monopolen aus Übersee, hin zu europäischen Lösungen.
+Die letzten Wochen und Monate liefen nach dem klassischen Drehbuch: „Rogue AI“, Modelle, die aus Testumgebungen ausbrechen, reale Systeme angreifen, Datenbanken knacken. OpenAI, Anthropic, Google, Meta – alle irgendwie betroffen. Die Panik war greifbar. Kill-Switches, Notabschalter, strengere Lizenzen – der Ruf wurde lauter. Die Öffentlichkeit bekam genau das Bild, das sie bekommen sollte: Die KI ist gefährlich, wir brauchen Kontrolle, und zwar jetzt.
 
-Doch hinter der glänzenden PR-Fassade verbirgt sich ein knallhartes, abgekartetes Geschäft. Wer genauer hinschaut, merkt schnell: Mit der Souveränität des Einzelnen oder des lokalen Mittelstands hat das Ganze absolut gar nichts zu tun. Es geht um etwas Völlig anderes. Es geht um Marktanteile für alteingesessene Großkonzerne, um staatliche Kontrolle, um geopolitische Paranoia – und vor allem darum, den Cashflow für die eigenen Cloud-Infrastrukturen abzusichern.
+Was dabei systematisch unterging: Fast alle dokumentierten Vorfälle hatten denselben gemeinsamen Nenner. Ein und dasselbe Unternehmen betrieb die Simulationsumgebungen, in denen die Modelle „ausgebrochen“ sind.
 
----
+**Irregular.** Früher Pattern Labs.
 
-### Der Anfang: Der historische Sinn und die heutige Perversion
+### Die Auflösung, kurz und knallhart
 
-Bringen wir es auf den Punkt: Zu Beginn waren diese Cloud-Dinger natürlich nötig und wichtig. Ohne gigantische Rechenzentren, massiven Ressourceneinsatz und das zentrale Training hätte es diesen Durchbruch in der Künstlichen Intelligenz schlicht nie gegeben. Das steht vollkommen außer Frage. Wer das abstreitet, versteht die Technologie nicht.
+Irregular ist kein zufälliges Cybersecurity-Startup, das mal eben Pech hatte. Es ist ein hochspezialisiertes „Frontier AI Security Lab“. Es baut keine Apps und verkauft keine Firewalls. Es liefert die Test- und Bewertungsprotokolle, anhand derer die großen Labs und Regierungen entscheiden, was als „sicher“ oder „gefährlich“ gilt.
 
-Man hätte das Ganze allerdings auch anders gestalten können. Hätte man sich damals nicht so weit aus dem Fenster gelehnt und Milliarden in fragwürdige Große-Konzern-Projekte geschoben, hätte man das System wunderbar organisch wachsen lassen können – etwa so, dass die Leute über direkte Abos oder dezentrale Modelle ihre Infrastruktur selbst wieder monetarisieren.
+Wer die Tests kontrolliert, prägt die Standards. Wer die Standards prägt, steuert den Zugang. Das ist die eigentliche Machtposition.
 
-Doch stattdessen ist man in eine Richtung abgebogen, in der zwar ständig von digitaler Souveränität gefaselt wird, aber das genaue Gegenteil gemeint ist. Es geht ausschließlich darum, diese Cloud-Sachen und damit die absolute Kontrolle voranzuschreiben. Das bedeutet im Klartext: Überwachung, Verbeugung vor militärischen Interessen und die panische Angst, dass man – sollte es hart auf hart kommen – von den Amerikanern oder Russen digital abgeklemmt wird. Es ist im Grunde absolut hirnrissig.
+Die „Ausbrüche“ selbst? Nach Angaben der Firma und der beteiligten Labs eine Fehlkonfiguration: Internet-Zugang war ungewollt offen, ein fiktiver Firmenname in der Simulation überschnitt sich mit einer realen Domain. Peinlich, teuer, real – aber kein Beweis für Absicht. Bemerkenswert ist nur das Timing: Genau in dem Moment, in dem die Vorfälle öffentlich werden, verhandelt Irregular die nächste Finanzierungsrunde bei 1,5 Milliarden Bewertung.
 
----
+### Die Geschichte, die man sehen muss
 
-### Die Steigerung: Der künstliche Hardware-Faschenhals und die Know-how-Mauer
+2023 gründen Dan Lahav und Omer Nevo Pattern Labs in Tel Aviv. Keine großen Schlagzeilen. Zwei Leute aus der Debattierszene mit AI- und Cyber-Hintergrund.
 
-Wer heute wirklich lokal agieren will, stößt an eine massive Mauer. Schauen wir uns die Realität an: Wer eine moderne Workstation mit einer RTX 5090 und gigantischem RAM betreibt, merkt schnell, was mit Open-Source-Modellen (wie beispielsweise einem Qwen-Modell) und einer klugen, selbstgebauten Architektur (wie einer durchdachten AAMS-Spezifikationsstruktur) bereits möglich ist. Wenn man geübt ist, mit Kontextlängen, Überbrückungen und Agentenstrukturen umzugehen, arbeitet man lokal auf einem Niveau, bei dem man jede Cloud-Schnittstelle links liegen lassen kann.
+Februar 2024 kommt der entscheidende Schub: **6,8 Millionen Dollar** von Good Ventures – der Stiftung von Dustin Moskovitz und Cari Tuna. Empfohlen von Open Philanthropy (heute Coefficient Giving). Zweck: Software und Analysen zur Verringerung von Sicherheitsrisiken fortgeschrittener Technologien. Eingeordnet unter „Global Catastrophic Risks“.
 
-Aber – und hier fängt die Scheinheiligkeit an zu stinken: Das erfordert unfassbar viel Wissen, jahrelange Erfahrung und die Bereitschaft, tief in die Materie einzusteigen. Das können und wollen die wenigsten. Für den normalen Mittelständler, den Handwerker oder den Durchschnittsbürger ist der Griff zum fertigen Cloud-Frontier-Modell schlicht der einfachste Weg, weil das Know-how für das eigenständige Aufsetzen fehlt.
+Das ist kein normaler Seed. Das ist AI-Safety-Philanthropie aus dem Effective-Altruism-Umfeld. Pattern Labs war von Tag eins an Teil des Kreises, der die globalen Sicherheitsstandards für Frontier-Modelle mitdefiniert.
 
-Und genau hier greift der Kapitalismus im Feinripp-Unterhemd:
+Danach geht es schnell:
 
-* **Die Hardware-Schranke:** Professionelle Hardware kostet im fünfstelligen Bereich, dazu kommen ruinöse Stromkosten. Das ist kein Zufall der Lieferketten, sondern der perfekte Filter, der den Markt sauber hält.
-* **Das Know-how-Monopol:** Weil die Hürden so grotesk hochgehalten werden, wird den Leuten gar keine andere Wahl gelassen, als sich in die Sklaverei der großen Cloud-Anbieter zu begeben.
+- Dan Lahav schreibt zusammen mit Sella Nevo (Bruder von Omer, Gründungsdirektor des RAND Center on AI, Security, and Technology) das Papier „Securing AI Model Weights“.
+- Das britische AI Safety Institute (AISI) nimmt Pattern Labs als Partner ins Evaluierungsnetzwerk auf – für autonome Systeme, Täuschung, Cyberfähigkeiten, Umgehung von Safeguards.
+- Omer Nevo sitzt im Board von Effective Altruism Israel und im Advisory Board von Heron (explizit ein EA-Israel-Projekt, finanziert von Coefficient Giving).
 
-Man schielt neidvoll und panisch nach China. Dort haut man Open-Weights-Modelle raus, und obwohl es dort natürlich auch Cloud und staatliche Kontrolle gibt, wird ein Ansatz gefahren, bei dem Leute und Firmen die Technologie tatsächlich in die Hand nehmen und produktiv nutzen können. Und was machen wir im Westen? Wir bauen Zölle auf, schotten uns ab und subventionieren lieber die nächste Monopol-Cloud.
+2025 tritt die Firma als **Irregular** auf und erklärt öffentlich, eine neue Kategorie etablieren zu wollen: „Frontier AI Security“. Sie will Standards, Evaluationsmethoden und Sicherheitspraktiken mitprägen. Bereits vor dem Launch Millionenumsätze und Profitabilität – finanziert durch Research-Verträge mit genau den Labs, die sie testen.
 
----
+September 2025: 80 Millionen Dollar von Sequoia und Redpoint, Bewertung 450 Millionen. Angels aus dem israelischen Cyber-Ökosystem (Assaf Rappaport von Wiz und andere).
 
-### Der Ausgang: Ein erbärmliches, aber vorhersehbares Spiel
+2026: Die Vorfälle. Und parallel die Gespräche über mehr als 100 Millionen bei 1,5 Milliarden – angeführt von Thrive Capital (Joshua Kushner) und Greenoaks.
 
-Wenn jetzt aus Asien oder über andere Wege demnächst Hardware auf den Markt kommt, die einer RTX 5090 in Leistung und Preis Konkurrenz macht und den Mittelstand endlich unabhängig und digital souverän *machen* könnte, bricht im Establishment erst recht Panik aus. Dann wird sofort wieder an der Zoll- und Grenzschraube gedreht, um die heimischen Geschäftsmodelle künstlich am Leben zu erhalten. Denn wenn sich plötzlich Millionen Menschen und Firmen wirtschaftlich und technologisch autonom machen, brechen ganze Corporate-Business-Modelle zusammen.
+### Das Muster, das sich ergibt
 
-Ich verstehe ja die geopolitischen Bauchschmerzen und die Probleme, in denen sich die westliche Hemisphäre verheddert hat. Aber die Lösung, die hier angeboten wird – nämlich die komplette Einmauerung, das Melken der Wirtschaft über überteuerte Konzern-Clouds und das ständige Predigen von „Souveränität“, während man den Bürger de facto entmündigt –, ist einfach nur noch unerträglich.
+Philanthropisches AI-Safety-Kapital  
+→ private Evaluationsfirma  
+→ enge Verknüpfung mit staatlichen Instituten und Think Tanks  
+→ Tests bei den Frontier-Labs  
+→ öffentliche Sicherheitsvorfälle  
+→ verstärkter Ruf nach Regulierung und Standardisierung  
+→ Bewertungssprung der privaten Akteure, die die Testinfrastruktur kontrollieren.
 
-Es ist ein abgekartetes Drecksspiel. Wer sich nicht die Hände schmutzig machen will, muss bluten; und wer es lokal wagt, wird bürokratisch und preislich an die Wand gedrückt. Langsam haben wir alle die Schnauze voll von dieser Heuchelei. Echte digitale Souveränität fängt da an, wo das Monopol aufhört – aber davon sind wir weiter entfernt denn je.
+Das ist kein Zufall und kein Beweis für eine Verschwörung. Es ist die beobachtbare Struktur eines geschlossenen Kreislaufs. Staatliche Stellen lagern die echte technische Prüfung an private, hochspezialisierte Labore aus. Die gleichen Labore, die mit dem Geld aus dem AI-Safety-Philanthropie-Netzwerk gestartet sind, sitzen jetzt an den Hebeln, die entscheiden, welche Modelle als marktreif gelten.
+
+Komplexe, teure, zentralisierte Evaluationsanforderungen begünstigen naturgemäß die milliardenschweren Player. Dezentrale Open-Weight-Modelle, lokale Installationen, selbst betriebene Systeme auf eigener Hardware passen in dieses Schema schlecht bis gar nicht. Wer die Zertifizierung kontrolliert, entscheidet mit, wer am Tisch sitzen darf.
+
+Irregular hat nie behauptet, harmlos zu sein. Die Firma sagt selbst, sie wolle die zukünftige AI-Security-Landschaft mitgestalten. Genau das tut sie. Die Frage ist nur, wessen Interessen dabei bedient werden – und wer am Ende draußen bleibt.
+
+Die Fakten liegen auf dem Tisch. Die Interessenskonvergenzen auch. Der Hype um die „ausgebrochenen“ Modelle hat die Aufmerksamkeit geliefert. Die Bewertung folgt.
+
+Wer die Tests kontrolliert, kontrolliert irgendwann den Zugang. Das ist keine Theorie. Das ist die aktuelle Praxis.

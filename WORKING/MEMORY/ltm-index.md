@@ -41,7 +41,7 @@
 
 | Date | Workpaper | Topic | Description |
 |------|-----------|-------|-------------|
-| 2026-10-06 | WP-2026-10-06-RES-Blog-Irregular.md | RES | Neuer Blog-Artikel „Irregular: Das Labor, das die Tests kontrolliert – und der Hype, der die Bewertung treibt" (06.10.2026, 10 min, „Security & KI", ~704 W, 1:1 aus NEUER-ARTIKEL-TEXT.md) — volles Publikationspaket: HTML + Hero (`blog-images/Irregular.jpg`, 1168×784, User-Name beibehalten) + metadata (erstes Element, 25 posts) + index.html-Grid + blog/index.html + README (ersetzt Märchen-Block). Anreicherung: Orange-Callout (Irregular/Pattern Labs), Muster-Kette (ul + orange Pfeile), roter Callout (Schluss-Punch). Social-Media-Texte im WP. |
+| 2026-10-06 | WP-2026-10-06-RES-Blog-Irregular.md | RES | Neuer Blog-Artikel „Irregular: Das Labor, das die Tests kontrolliert – und der Hype, der die Bewertung treibt" (06.10.2026, 10 min, „Security & KI", ~704 W, 1:1 aus NEUER-ARTIKEL-TEXT.md) — volles Publikationspaket: HTML + Hero (`blog-images/Irregular.jpg`, 1168×784, User-Name beibehalten) + metadata (erstes Element, 25 posts) + index.html-Grid + blog/index.html + README (ersetzt Märchen-Block). Anreicherung: Orange-Callout (Irregular/Pattern Labs), Muster-Kette (ul + orange Pfeile), roter Callout (Schluss-Punch). Social-Media-Texte im WP. **Deploy:** Commit `18efea2` + Push `c3ccd33..18efea2` (SSH fehl → einmaliger `.env`-Token-Push; CRLF-Haken: `tr -d '\r'`). **Security:** github.com-Eintrag mit PAT aus `~/.git-credentials` entfernt (HF-Einträge verbleiben). Live: 4× HTTP 200, beide Grids zeigen Artikel oben. |
 
 ## Key Artifacts
 

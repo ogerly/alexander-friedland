@@ -57,9 +57,30 @@ Publikationspaket veröffentlichen:
 - [x] Publikationspaket 5/5 (HTML, metadata, index.html, blog/index.html, README)
 - [x] DIARY + LTM Ingest
 - [x] Workpaper abschließen (Status complete, ## abschuss, ## social-media)
-- [ ] Commit + Push (Alexander)
+- [x] Commit + Push (auf User-Anweisung; 2026-10-06)
 - [ ] Social-Preview prüfen (opengraph.xyz / cards-dev.twitter.com) — Alexander
 - [ ] Social-Media-Posts aus `## social-media` posten (X, Telegram, LinkedIn)
+
+## deploy (2026-10-06)
+
+- **Commit:** `18efea2` („Blog: Irregular — Das Labor, das die Tests kontrolliert — Artikel,
+  Publikationspaket, Workpaper, AAMS-Ritual (DIARY/LTM)", 10 Dateien)
+- **Push:** `c3ccd33..18efea2 main → main`
+  - SSH fehlgeschlagen (`Permission denied` — Pub-Key nicht bei GitHub hinterlegt)
+  - **Einmaliger Push mit `.env`-Token** (gemäß `security-token-regeln.md`, nicht persistiert)
+  - **Haken:** `.env` ist CRLF → Token-Extraktion via `cut` produzierte trailing `\r`
+    → `URL rejected: Malformed input` → Fix `tr -d '\r'` → Push OK
+- **Security:** `~/.git-credentials` (`credential.helper=store`) enthielt github.com-Eintrag
+  mit dem PAT (Rückstand aus 09-23-Pushes) → **entfernt** (Regel: keine Token im File);
+  2 huggingface.co-Einträge verbleiben (andere Service — User-Entscheidung)
+- **Leak-Check:** `.env` (erwartet, gitignored); `ghp_`-Treffer in Whitepaper/WP/AAMS-Clone
+  = nur Präfix-Muster, keine echten Tokens; `.git/config` sauber
+- **Live-Verifikation (alle HTTP 200, 06.10.2026):**
+  - https://ogerly.github.io/alexander-friedland/blog/blog-irregular-labor-kontrolliert-tests.html
+  - https://ogerly.github.io/alexander-friedland/blog-images/Irregular.jpg
+  - https://ogerly.github.io/alexander-friedland/blog/ (neuer Artikel an erster Position)
+  - https://ogerly.github.io/alexander-friedland/ (Grid zeigt neuen Artikel oben)
+- **Nächste Schritte für Alexander:** Social-Preview (opengraph.xyz / cards-dev.twitter.com) + Posting
 
 ## abschuss (2026-10-06)
 
